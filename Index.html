@@ -1,0 +1,14603 @@
+<!DOCTYPE html>
+<html lang="id">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#07111F">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Dirhub">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color"
+content="#08111F">
+
+<title>Dirhub Alpha V3</title>
+
+<!-- FONT -->
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<!-- TAILWIND -->
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- LUCIDE ICON -->
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+-webkit-tap-highlight-color:transparent;
+
+}
+
+:root{
+
+--bg:#08111F;
+
+--surface:#101B2D;
+
+--surface2:#162235;
+
+--primary:#4F7CFF;
+
+--primary2:#6E5BFF;
+
+--text:#FFFFFF;
+
+--muted:#94A3B8;
+
+--border:rgba(255,255,255,.06);
+
+--radius:22px;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:'Plus Jakarta Sans',sans-serif;
+
+background:var(--bg);
+
+color:var(--text);
+
+overflow-x:hidden;
+
+padding-bottom:110px;
+
+}
+
+/* ========================= */
+
+.container{
+
+width:100%;
+max-width:100%;
+padding:12px;
+
+}
+
+/* ========================= */
+
+.page{
+
+display:none;
+
+animation:fade .25s;
+
+}
+
+.page.active{
+
+display:block;
+
+}
+
+/* ========================= */
+
+.card{
+
+background:var(--surface);
+
+border:1px solid var(--border);
+
+border-radius:22px;
+
+}
+
+/* ========================= */
+
+button{
+
+font-family:inherit;
+
+cursor:pointer;
+
+border:none;
+
+outline:none;
+
+}
+
+/* ========================= */
+
+input,
+select,
+textarea{
+
+width:100%;
+
+padding:15px;
+
+font-size:15px;
+
+color:white;
+
+background:var(--surface2);
+
+border:1px solid var(--border);
+
+border-radius:16px;
+
+outline:none;
+
+font-family:inherit;
+
+transition:.25s;
+
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+
+border-color:var(--primary);
+
+}
+
+/* ========================= */
+
+h1{
+
+font-size:24px;
+
+font-weight:800;
+
+}
+
+p{
+
+color:var(--muted);
+
+font-size:14px;
+
+line-height:1.7;
+
+}
+
+/* ========================= */
+
+i{
+
+width:22px;
+
+height:22px;
+
+stroke-width:2;
+
+}
+
+/* ========================= */
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(10px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:none;
+
+}
+
+}
+
+
+/* =====================================
+HOME TODO
+PART 2
+===================================== */
+
+.homeTodoCard{
+  display:none;
+
+margin:18px 0;
+
+padding:18px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+background:#101B2D;
+
+border:1px solid rgba(255,255,255,.06);
+
+border-radius:22px;
+
+}
+
+.todoBell{
+
+position:relative;
+
+width:46px;
+
+height:46px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+border-radius:14px;
+
+background:#162235;
+
+color:#4F7CFF;
+
+}
+
+.todoBadge{
+
+position:absolute;
+
+right:-4px;
+
+top:-4px;
+
+width:18px;
+
+height:18px;
+
+border-radius:50%;
+
+background:#EF4444;
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:10px;
+
+font-weight:700;
+
+color:white;
+
+}
+
+.todoContent{
+
+flex:1;
+
+padding:0 14px;
+
+}
+
+.todoLabel{
+
+font-size:11px;
+
+letter-spacing:2px;
+
+color:#8EA3C7;
+
+font-weight:700;
+
+margin-bottom:4px;
+
+}
+
+#homeTodoText{
+
+font-size:14px;
+
+font-weight:600;
+
+color:white;
+
+}
+
+
+.supplier-panel{
+
+margin-top:20px;
+padding:22px;
+background:#101B2D;
+border:1px solid rgba(255,255,255,.06);
+border-radius:22px;
+
+}
+
+.supplier-header{
+
+margin-bottom:18px;
+
+}
+
+.supplier-header h3{
+
+font-size:18px;
+font-weight:800;
+margin-bottom:6px;
+
+}
+
+.supplier-header p{
+
+font-size:13px;
+color:#94A3B8;
+
+}
+
+.supplier-empty{
+
+padding:40px 20px;
+text-align:center;
+background:#162235;
+border:1px dashed rgba(255,255,255,.08);
+border-radius:18px;
+
+}
+
+.supplier-empty i{
+
+width:52px;
+height:52px;
+color:#4F7CFF;
+margin-bottom:14px;
+
+}
+
+.supplier-empty h4{
+
+font-size:20px;
+font-weight:800;
+margin-bottom:8px;
+
+}
+
+.supplier-empty p{
+
+font-size:13px;
+color:#94A3B8;
+}
+
+/*==================================
+WALLET STATUS
+==================================*/
+
+#walletButton{
+color:#64748B;
+transition:.3s;
+}
+
+#walletButton:hover{
+background:#182641;
+}
+
+.wallet-green{
+color:#22C55E;
+}
+
+.wallet-yellow{
+color:#FACC15;
+}
+
+.wallet-red{
+color:#EF4444;
+}
+}
+</style>
+
+</head>
+
+<body>
+
+<!--==================================
+DIRNOTE SPLASH
+PART 1A
+==================================-->
+
+<div id="splashScreen">
+
+<div class="splashLogo">
+
+D
+
+</div>
+
+<div class="splashTitle">
+
+Dirhub Alpha V3
+
+</div>
+
+<div class="splashSub">
+
+Smart Business Toolkit
+
+</div>
+
+<div class="splashLoader">
+
+<div class="splashBar"></div>
+
+</div>
+
+</div>
+
+<!-- =====================================
+PART 2
+HEADER + NAVIGATION
+===================================== -->
+
+<header class="header">
+
+<div class="header-wrap">
+
+<div class="brand">
+
+<div class="logo">
+
+D
+
+</div>
+
+<div>
+
+<div class="brand-title">
+Dirhub
+</div>
+
+<div class="brand-sub">
+Smart Business Toolkit
+</div>
+
+</div>
+
+</div>
+
+<div style="display:flex;gap:10px;">
+
+<!-- WALLET -->
+<button id="walletButton" class="menu-button">
+<i id="walletIcon" data-lucide="wallet"></i>
+</button>
+
+<div style="position:relative;">
+
+<button id="pinButton" class="menu-button">
+
+<i data-lucide="pin"></i>
+
+</button>
+
+<div id="pinBadge" class="pinBadge">
+
+0
+
+</div>
+
+</div>
+
+<button id="menuButton" class="menu-button">
+
+<i data-lucide="menu"></i>
+
+</button>
+
+</div>
+
+</div>
+
+</header>
+
+<div class="container">
+  
+<section id="home" class="page active">
+
+
+
+<!-- =====================================
+PART 4A
+DIRNOTE HOME HERO
+===================================== -->
+
+<div class="hero-card">
+
+    <div class="hero-header">
+
+        <div class="hero-user">
+
+            <span class="hero-dot"></span>
+
+            <div id="greetingText">
+                Selamat Malam, Dirman 👋
+            </div>
+
+        </div>
+
+        <div class="hero-badge">
+            LIVE INSIGHT
+        </div>
+
+    </div>
+
+    <div class="hero-divider"></div>
+
+    <div class="hero-label">
+        OPERATIONAL INTELLIGENT INSIGHT
+    </div>
+    
+<div class="focus-mini" onclick="openFocusTimer()">
+⏱
+</div>
+
+    <div id="quoteText" class="hero-quote">
+        Jangan malas mengisi log harian.
+        Bisnis tanpa pencatatan angka hanyalah tebakan.
+    </div>
+
+</div>
+
+
+<!--==================================
+UPDATE BAR V2
+PART 1
+===================================-->
+
+<div class="updateBar">
+
+<span class="updateTitle">
+
+UPDATE
+
+</span>
+
+<span id="updateAvg">
+
+-
+
+</span>
+
+<span class="updateLine">│</span>
+
+<span id="update7">
+
+-
+
+</span>
+
+<span class="updateLine">│</span>
+
+<span id="update30">
+
+-
+
+</span>
+
+</div>
+<!--==================================
+BUSINESS OVERVIEW V7
+PART 1 HTML
+===================================-->
+
+<div class="overview-card">
+
+<div class="overview-head">
+
+<div class="overview-label">
+BUSINESS OVERVIEW
+</div>
+
+<div style="display:flex;align-items:center;gap:12px;">
+
+<div id="todoMini" onclick="bukaHalaman('todo')">
+
+<i data-lucide="bell"></i>
+
+<span id="todoMiniBadge">0</span>
+
+<span>Todo</span>
+
+</div>
+
+<div class="overview-period">
+30 Hari
+</div>
+
+</div>
+
+</div>
+
+<div class="overview-body">
+
+<!--========================
+LEFT
+=========================-->
+
+<div class="overview-left">
+
+<div class="donut-box">
+
+<svg
+class="overview-donut"
+viewBox="0 0 120 120">
+
+<defs>
+
+<linearGradient
+id="donutGradient"
+x1="0%"
+y1="0%"
+x2="100%"
+y2="100%">
+
+<stop offset="0%" stop-color="#3B82F6"/>
+
+<stop offset="100%" stop-color="#7C4DFF"/>
+
+</linearGradient>
+
+</defs>
+
+<circle
+class="donut-bg"
+cx="60"
+cy="60"
+r="48">
+</circle>
+
+<circle
+id="overviewDonut"
+class="donut-fill"
+cx="60"
+cy="60"
+r="48">
+</circle>
+
+</svg>
+
+<div class="donut-center">
+
+<div id="overviewPercent">
+0%
+</div>
+
+<span>
+30 Hari
+</span>
+
+</div>
+
+</div>
+
+<div class="overview-order">
+
+<div id="overviewOrder">
+0 Order
+</div>
+
+<div id="overviewTarget">
+Target 45.000
+</div>
+
+</div>
+
+</div>
+
+<!--========================
+RIGHT
+=========================-->
+
+<div class="overview-right">
+
+<div class="progress-item">
+
+<div class="progress-top">
+
+<span>Hari Ini</span>
+
+<b id="todayProgressText">
+0%
+</b>
+
+</div>
+
+<div class="progress-bar">
+
+<div
+id="todayProgressBar"
+class="progress-fill">
+</div>
+
+</div>
+
+</div>
+
+<div class="progress-item">
+
+<div class="progress-top">
+
+<span>7 Hari</span>
+
+<b id="weekProgressText">
+0%
+</b>
+
+</div>
+
+<div class="progress-bar">
+
+<div
+id="weekProgressBar"
+class="progress-fill">
+</div>
+
+</div>
+
+</div>
+
+<div class="progress-item">
+
+<div class="progress-top">
+
+<span>30 Hari</span>
+
+<b id="monthProgressText">
+0%
+</b>
+
+</div>
+
+<div class="progress-bar">
+
+<div
+id="monthProgressBar"
+class="progress-fill">
+</div>
+
+</div>
+
+</div>
+
+<div class="overview-summary">
+
+<div class="summary-box">
+
+<small>
+Order
+</small>
+
+<b id="summaryOrder">
+0
+</b>
+
+</div>
+
+<div class="summary-box">
+
+<small>
+Target
+</small>
+
+<b id="summaryTarget">
+45.000
+</b>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<!-- =====================================
+HOME TODO
+PART 1
+===================================== -->
+
+<div id="homeTodoCard" class="homeTodoCard" style="display:none;">
+
+<div class="todoBell">
+
+<i data-lucide="bell"></i>
+
+<div id="todoBadge" class="todoBadge">
+0
+</div>
+
+</div>
+
+<div class="todoContent">
+
+<div class="todoLabel">
+TODO REMINDER
+</div>
+
+<div id="homeTodoText">
+Belum ada Todo.
+</div>
+
+</div>
+
+<i data-lucide="chevron-right"></i>
+
+</div>
+
+<!-- =====================================
+PART 5A
+VOLUME ORDER HARI INI
+===================================== -->
+
+<div class="volume-card">
+
+<div class="volume-head">
+
+<div class="volume-title">
+
+VOLUME ORDER HARI INI
+
+</div>
+
+<button
+id="volumeMode"
+class="volume-live"
+onclick="ubahTarget()">
+TARGET
+</button>
+
+</div>
+
+<div class="volume-number">
+
+<span id="todayOrder">0</span>
+
+<span class="volume-unit">Order</span>
+
+</div>
+
+<div class="volume-row">
+
+<span>
+
+Pencapaian Target Harian
+
+</span>
+
+<span id="todayPercent">
+
+0%
+
+</span>
+
+</div>
+
+<div class="volume-progress">
+
+<div
+id="volumeBar"
+class="volume-fill">
+
+</div>
+
+</div>
+
+<div class="volume-divider"></div>
+
+<div class="volume-footer">
+
+<div>
+
+<div class="footer-label">
+
+TARGET REALITA
+
+</div>
+
+<div
+id="targetOrder">
+
+1.500 Order
+
+</div>
+
+</div>
+
+<div>
+
+<div class="footer-label">
+
+SISTEM ENJIN
+
+</div>
+
+<div class="engine-status">
+
+<span class="engine-dot"></span>
+
+<span id="engineText">
+
+Intelligent
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<style>
+
+.volume-card{
+
+margin-top:18px;
+
+padding:22px;
+
+border-radius:24px;
+
+background:linear-gradient(
+135deg,
+#12192F,
+#171D39 55%,
+#231B43
+);
+
+border:1px solid rgba(110,110,255,.10);
+
+box-shadow:0 10px 30px rgba(0,0,0,.30);
+
+}
+
+.volume-head{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:14px;
+
+}
+
+.volume-title{
+
+font-size:11px;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+color:#8d94ff;
+
+}
+
+.volume-live{
+
+height:20px;
+
+padding:0 14px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:12px;
+
+background:rgba(93,95,255,.12);
+
+border:1px solid rgba(93,95,255,.18);
+
+font-size:8px;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+color:#AEB7FF;
+
+}
+
+.volume-number{
+
+display:flex;
+
+align-items:flex-end;
+
+gap:8px;
+
+margin-bottom:16px;
+
+}
+
+#todayOrder{
+
+font-size:34px;
+
+font-weight:800;
+
+line-height:1;
+
+}
+
+.volume-unit{
+
+font-size:18px;
+
+font-weight:500;
+
+color:#cbd5e1;
+
+margin-bottom:6px;
+
+}
+
+.volume-row{
+
+display:flex;
+
+justify-content:space-between;
+
+font-size:10px;
+
+color:#94a3b8;
+
+margin-bottom:10px;
+
+}
+
+#todayPercent{
+
+font-size:11px;
+
+font-weight:700;
+
+color:#ffffff;
+
+}
+
+.volume-progress{
+
+height:8px;
+
+background:#182235;
+
+border-radius:20px;
+
+overflow:hidden;
+
+}
+
+.volume-fill{
+
+width:0%;
+
+height:100%;
+
+background:linear-gradient(
+90deg,
+#5B7CFF,
+#7B5CFF
+);
+
+transition:.35s;
+
+}
+
+.volume-divider{
+
+height:1px;
+
+background:rgba(255,255,255,.06);
+
+margin:18px 0;
+
+}
+
+.volume-footer{
+
+display:flex;
+
+justify-content:space-between;
+
+}
+
+.footer-label{
+
+font-size:10px;
+
+letter-spacing:2px;
+
+color:#7f8ea8;
+
+margin-bottom:8px;
+
+}
+
+#targetOrder{
+
+font-size:13px;
+
+font-weight:700;
+
+}
+
+.engine-status{
+
+display:flex;
+
+align-items:center;
+
+gap:8px;
+
+font-size:13px;
+
+font-weight:700;
+
+color:#34d399;
+
+}
+
+.engine-dot{
+
+width:8px;
+
+height:8px;
+
+border-radius:50%;
+
+background:#22c55e;
+
+box-shadow:0 0 10px #22c55e;
+
+}
+
+
+/*==================================
+DIRNOTE HUTANG
+PART 2 CSS
+==================================*/
+
+#hutang{
+padding:12px 8px;
+background:#08111F;
+min-height:100vh;
+}
+
+.htg-app{
+width:100%;
+margin:0;
+}
+
+.htg-app{
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+.htg-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.htg-label{
+font-size:10px;
+letter-spacing:2px;
+font-weight:700;
+color:#6EA8FF;
+text-transform:uppercase;
+}
+
+.htg-title{
+margin-top:6px;
+font-size:16px;
+font-weight:700;
+color:#FFF;
+}
+
+.htg-btn{
+height:44px;
+padding:0 18px;
+border:none;
+border-radius:14px;
+background:linear-gradient(135deg,#3B82F6,#5B6CFF);
+color:#FFF;
+font-size:12px;
+font-weight:700;
+cursor:pointer;
+}
+
+.htg-dashboard{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+}
+
+.htg-box{
+background:#12213A;
+border:1px solid rgba(255,255,255,.05);
+border-radius:16px;
+padding:14px;
+}
+
+.htg-box div{
+font-size:10px;
+color:#A8B4C8;
+font-weight:500;
+}
+
+.htg-box b{
+font-size:10px;
+font-weight:700;
+color:#FFF;
+}
+
+#dashBayar{
+color:#22C55E;
+}
+
+#dashSisa{
+color:#EF4444;
+}
+
+.htg-search{
+height:46px;
+padding:0 14px;
+border:none;
+border-radius:14px;
+background:#12213A;
+color:#FFF;
+font-size:12px;
+outline:none;
+}
+
+.htg-search::placeholder{
+color:#7F8EA8;
+}
+
+.htg-list,
+.htg-detail,
+.htg-history{
+background:linear-gradient(180deg,#152845,#12213A);
+border:1px solid rgba(255,255,255,.06);
+border-radius:20px;
+padding:16px;
+}
+
+/* LIST SUPPLIER */
+.htg-item{
+flex:0 0 100%;
+width:100%;
+box-sizing:border-box;
+
+padding:18px;
+border-radius:18px;
+background:#172845;
+border:1px solid rgba(255,255,255,.05);
+
+scroll-snap-align:start;
+transition:.25s;
+}
+
+.htg-track{
+display:flex;
+gap:16px;
+overflow-x:auto;
+overflow-y:hidden;
+scroll-snap-type:x mandatory;
+scroll-behavior:smooth;
+scrollbar-width:none;
+}
+
+.htg-track::-webkit-scrollbar{
+display:none;
+}
+
+.htg-item{
+flex:0 0 100%;
+scroll-snap-align:start;
+
+background:#1B2C49;
+border-radius:18px;
+padding:18px;
+
+box-sizing:border-box;
+
+border:1px solid rgba(255,255,255,.05);
+}
+
+.htg-dots{
+display:flex;
+justify-content:center;
+gap:8px;
+margin-top:16px;
+}
+
+.htg-dot{
+width:8px;
+height:8px;
+border-radius:50%;
+background:rgba(255,255,255,.2);
+transition:.25s;
+}
+
+.htg-dot.active{
+width:24px;
+border-radius:20px;
+background:#5D7CFF;
+}
+
+.htg-item{
+min-width:180px;
+flex:0 0 auto;
+padding:18px;
+border-radius:16px;
+background:#1A2C49;
+border:1px solid rgba(255,255,255,.05);
+transition:.25s;
+cursor:pointer;
+}
+
+.htg-item:hover,
+.htg-item.active{
+background:#295CFF;
+transform:translateY(-2px);
+}
+
+.htg-item h4{
+margin:0;
+font-size:18px;
+font-weight:700;
+color:#FFF;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
+}
+
+/* HISTORY */
+.htg-history-title{
+font-size:12px;
+font-weight:700;
+letter-spacing:2px;
+text-transform:uppercase;
+color:#79A6FF;
+padding-bottom:12px;
+margin-bottom:16px;
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.htg-empty{
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:150px;
+border:1px dashed rgba(255,255,255,.08);
+border-radius:16px;
+background:rgba(255,255,255,.02);
+font-size:13px;
+color:#7F8EA8;
+text-align:center;
+}
+
+.htg-item:last-child{
+margin-bottom:0;
+}
+
+.htg-item:hover{
+background:#1B3358;
+}
+
+.htg-item.active{
+border:1px solid #4F7CFF;
+}
+
+.htg-popup{
+position:fixed;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.55);
+display:none;
+align-items:flex-end;
+justify-content:center;
+z-index:9999;
+}
+
+
+.htg-popup-box{
+width:100%;
+max-width:430px;
+max-height:90vh;
+overflow-y:auto;
+background:#101B2D;
+padding:22px;
+padding-bottom:120px;
+border-radius:24px 24px 0 0;
+}
+
+.htg-popup-box h3{
+font-size:10px;
+margin-bottom:16px;
+}
+
+.htg-popup-box input{
+margin-bottom:12px;
+}
+
+.htg-popup-action{
+display:flex;
+gap:12px;
+}
+
+.htg-popup-action button{
+flex:1;
+height:46px;
+border:none;
+border-radius:14px;
+font-size:12px;
+font-weight:700;
+cursor:pointer;
+}
+
+#batalSupplier{
+background:#1E293B;
+color:#FFF;
+}
+
+#simpanSupplier{
+background:#3B82F6;
+color:#FFF;
+}
+
+
+/*==================================
+DIRNOTE ORDER
+PART 1
+==================================*/
+
+.order-page{
+
+display:flex;
+flex-direction:column;
+gap:18px;
+
+}
+
+.order-header{
+
+margin-top:12px;
+
+}
+
+.order-label{
+
+font-size:11px;
+font-weight:700;
+letter-spacing:2px;
+color:#7DA2FF;
+margin-bottom:8px;
+
+}
+
+.order-header h2{
+
+font-size:28px;
+font-weight:800;
+margin-bottom:6px;
+
+}
+
+.order-header p{
+
+font-size:13px;
+color:#94A3B8;
+
+}
+
+.order-card{
+
+padding:20px;
+background:#101B2D;
+border:1px solid rgba(255,255,255,.06);
+border-radius:24px;
+
+}
+
+.order-group{
+
+margin-bottom:18px;
+
+}
+
+.order-group:last-of-type{
+
+margin-bottom:0;
+
+}
+
+.order-group label{
+
+display:block;
+margin-bottom:8px;
+font-size:12px;
+font-weight:700;
+color:#CBD5E1;
+
+}
+
+.order-save{
+
+margin-top:22px;
+width:100%;
+height:54px;
+border:none;
+border-radius:18px;
+background:linear-gradient(135deg,#3B82F6,#6366F1);
+color:#FFF;
+font-size:15px;
+font-weight:700;
+
+}
+
+
+.tool-btn{
+
+height:48px;
+border:none;
+border-radius:16px;
+background:#162235;
+color:#FFF;
+font-size:13px;
+font-weight:700;
+
+}
+
+.order-history{
+
+padding:20px;
+background:#101B2D;
+border:1px solid rgba(255,255,255,.06);
+border-radius:24px;
+
+}
+
+.history-head{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:18px;
+
+}
+
+.history-label{
+
+font-size:11px;
+font-weight:700;
+letter-spacing:2px;
+color:#7DA2FF;
+
+}
+
+#historyTotal{
+
+font-size:12px;
+font-weight:700;
+color:#94A3B8;
+
+}
+
+.history-empty{
+
+padding:42px 20px;
+text-align:center;
+font-size:13px;
+color:#94A3B8;
+
+}
+
+.history-item{
+
+padding:14px;
+margin-bottom:10px;
+
+background:#162235;
+border:1px solid rgba(255,255,255,.05);
+
+border-radius:18px;
+
+}
+
+.history-title{
+
+font-size:16px;
+font-weight:800;
+
+margin-bottom:4px;
+
+}
+
+.history-sub{
+
+margin-top:2px;
+
+font-size:11px;
+color:#94A3B8;
+
+}
+
+.history-action{
+
+display:flex;
+gap:8px;
+
+margin-top:12px;
+
+}
+
+.history-action{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.history-action button{
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+flex:1;
+
+height:42px;
+
+border:none;
+
+border-radius:12px;
+
+font-size:13px;
+font-weight:700;
+
+margin:0;
+line-height:1;
+
+}
+
+.history-action button:first-child{
+background:#23314C;
+color:#fff;
+}
+
+.history-action button:last-child{
+background:#DC2626;
+color:#fff;
+}
+
+/* PIN HOME ISI */
+
+.noteEmpty{
+margin-top:18px;
+padding:55px 20px;
+text-align:center;
+background:#101B2D;
+border:1px dashed rgba(255,255,255,.08);
+border-radius:22px;
+}
+
+.noteEmpty i{
+width:54px;
+height:54px;
+color:#4F7CFF;
+margin-bottom:16px;
+}
+
+.noteEmpty h3{
+font-size:16px;
+font-weight:800;
+color:#FFF;
+margin-bottom:8px;
+}
+
+.noteEmpty p{
+font-size:12px;
+line-height:1.8;
+color:#94A3B8;
+}
+
+.pinBadge{
+
+position:absolute;
+top:-4px;
+right:-4px;
+
+width:18px;
+height:18px;
+
+border-radius:50%;
+
+background:#EF4444;
+
+display:none;
+
+justify-content:center;
+align-items:center;
+
+font-size:10px;
+font-weight:700;
+color:#FFF;
+
+}
+
+/*==================================
+DIRNOTE SPLASH
+PART 1B
+==================================*/
+
+#splashScreen{
+
+position:fixed;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:#08111F;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+z-index:999999;
+
+transition:.5s;
+
+}
+
+.splashLogo{
+
+width:90px;
+height:90px;
+
+border-radius:28px;
+
+background:linear-gradient(135deg,#4F7CFF,#6E5BFF);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:42px;
+font-weight:800;
+
+color:white;
+
+box-shadow:0 0 35px rgba(79,124,255,.35);
+
+}
+
+.splashTitle{
+
+margin-top:24px;
+
+font-size:22px;
+
+font-weight:800;
+
+}
+
+.splashSub{
+
+margin-top:8px;
+
+font-size:14px;
+
+color:#94A3B8;
+
+}
+
+.splashLoader{
+
+margin-top:35px;
+
+width:180px;
+height:6px;
+
+background:#162235;
+
+border-radius:50px;
+
+overflow:hidden;
+
+}
+
+.splashBar{
+
+height:100%;
+
+width:0%;
+
+background:linear-gradient(90deg,#4F7CFF,#6E5BFF);
+
+animation:splashLoading .9s forwards;
+
+}
+
+@keyframes splashLoading{
+
+to{
+
+width:100%;
+
+}
+
+}
+
+
+.noteTopAction{
+
+display:flex;
+align-items:center;
+gap:8px;
+
+margin-top:2px;
+
+}
+
+.notePinIcon{
+
+width:34px;
+height:34px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+border-radius:10px;
+
+background:#162235;
+
+color:#4F7CFF;
+
+box-shadow:0 0 12px rgba(79,124,255,.20);
+
+flex-shrink:0;
+
+}
+
+.notePinIcon i{
+
+width:16px;
+height:16px;
+
+stroke-width:2.4;
+
+}
+
+/*==================================
+CATATAN V4
+PART 2 CSS
+==================================*/
+
+.catatan-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin:8px 0 20px;
+}
+
+.catatan-label{
+font-size:12px;
+font-weight:700;
+letter-spacing:2px;
+color:#6EA8FF;
+}
+
+.catatan-header h2{
+margin-top:6px;
+font-size:16px;
+font-weight:800;
+color:#FFF;
+}
+
+.catatan-header p{
+margin-top:4px;
+font-size:12px;
+color:#94A3B8;
+}
+
+#btnTambahCatatan{
+width:48px;
+height:48px;
+border:none;
+border-radius:16px;
+background:#3B82F6;
+color:#FFF;
+font-size:24px;
+font-weight:700;
+}
+
+.catatan-empty{
+padding:50px 20px;
+text-align:center;
+background:#101B2D;
+border:1px solid rgba(255,255,255,.06);
+border-radius:18px;
+}
+
+.catatan-empty h3{
+font-size:16px;
+font-weight:700;
+color:#FFF;
+margin-bottom:8px;
+}
+
+.catatan-empty p{
+font-size:12px;
+color:#94A3B8;
+}
+
+.catatan-modal{
+
+position:fixed;
+
+inset:0;
+
+display:flex;
+
+align-items:flex-start;
+
+justify-content:center;
+
+overflow-y:auto;
+
+padding:20px;
+
+background:rgba(0,0,0,.45);
+
+-webkit-overflow-scrolling:touch;
+
+box-sizing:border-box;
+
+z-index:9999;
+
+}
+
+.catatan-box{
+
+width:100%;
+
+background:#101B2D;
+
+padding:20px;
+
+border-radius:24px 24px 0 0;
+
+max-height:90vh;
+
+overflow-y:auto;
+
+box-sizing:border-box;
+
+-webkit-overflow-scrolling:touch;
+
+}
+
+.catatan-box h3{
+font-size:16px;
+font-weight:700;
+margin-bottom:18px;
+}
+
+.catatan-box input,
+.catatan-box textarea{
+margin-bottom:14px;
+}
+
+#previewFoto{
+display:block;
+width:100%;
+border-radius:16px;
+margin-bottom:14px;
+}
+
+.catatan-button{
+
+position:sticky;
+
+bottom:0;
+
+display:flex;
+
+gap:10px;
+
+padding:14px 0;
+
+background:#101B2D;
+
+margin-top:20px;
+
+z-index:20;
+
+}
+
+.catatan-button button{
+flex:1;
+height:48px;
+border:none;
+border-radius:14px;
+font-size:14px;
+font-weight:700;
+}
+
+#btnBatalCatatan{
+background:#1E293B;
+color:#FFF;
+}
+
+#btnSimpanCatatan{
+background:#3B82F6;
+color:#FFF;
+}
+
+/* CARD */
+
+.catatan-item{
+margin-bottom:16px;
+padding:18px;
+background:linear-gradient(
+135deg,
+#16243C,
+#1B2D4A
+);
+border:1px solid rgba(79,124,255,.15);
+border-radius:22px;
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+.catatan-image{
+width:100%;
+display:block;
+border-radius:14px;
+margin-bottom:14px;
+}
+
+.catatan-title{
+font-size:16px;
+font-weight:700;
+color:#FFF;
+margin-bottom:10px;
+}
+
+.catatan-content{
+font-size:14px;
+line-height:1.7;
+color:#CBD5E1;
+white-space:pre-wrap;
+}
+
+.catatan-date{
+margin-top:14px;
+font-size:12px;
+color:#94A3B8;
+}
+
+.catatan-action{
+display:flex;
+gap:8px;
+margin-top:16px;
+}
+
+.catatan-action button{
+flex:1;
+height:40px;
+border:none;
+border-radius:12px;
+background:#162235;
+color:#FFF;
+font-size:12px;
+font-weight:700;
+}
+
+.catatan-pin.active{
+background:#3B82F6;
+}
+
+/* =========================
+ANALISIS
+ORDER RATA-RATA
+PART 2 CSS
+========================= */
+
+.analisis-detail{
+
+margin-top:18px;
+
+border-top:1px solid rgba(255,255,255,.06);
+
+padding-top:10px;
+
+}
+
+.analisis-row{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:14px 0;
+
+border-bottom:1px solid rgba(255,255,255,.05);
+
+}
+
+.analisis-row:last-child{
+
+border-bottom:none;
+
+padding-bottom:0;
+
+}
+
+.analisis-row span{
+
+font-size:12px;
+
+font-weight:500;
+
+color:#94A3B8;
+
+}
+
+.analisis-row b{
+
+font-size:13px;
+
+font-weight:700;
+
+color:#FFFFFF;
+
+text-align:right;
+
+}
+
+/* WARNA STATUS */
+
+.avg-good{
+
+color:#22C55E!important;
+
+}
+
+.avg-warning{
+
+color:#F59E0B!important;
+
+}
+
+.avg-danger{
+
+color:#EF4444!important;
+
+}
+
+/* =========================
+ANALISIS
+PART 2 CSS
+========================= */
+
+.analisis-header{
+margin:8px 0 22px;
+}
+
+.analisis-badge{
+display:inline-flex;
+align-items:center;
+gap:6px;
+padding:6px 12px;
+border-radius:999px;
+background:rgba(79,124,255,.12);
+border:1px solid rgba(79,124,255,.18);
+color:#8FB4FF;
+font-size:10px;
+font-weight:700;
+letter-spacing:2px;
+text-transform:uppercase;
+}
+
+.analisis-header h2{
+margin-top:10px;
+font-size:16px;
+font-weight:800;
+color:#FFF;
+}
+
+.analisis-header p{
+margin-top:6px;
+font-size:12px;
+line-height:1.7;
+color:#94A3B8;
+}
+
+.analisis-card{
+
+margin-bottom:16px;
+padding:18px;
+
+background:linear-gradient(
+135deg,
+#152847 0%,
+#1B3157 45%,
+#223B66 100%
+);
+
+border:1px solid rgba(79,124,255,.35);
+
+border-radius:22px;
+
+box-shadow:
+0 0 0 1px rgba(79,124,255,.08),
+0 12px 35px rgba(79,124,255,.18);
+
+transition:.25s;
+
+}
+
+.analisis-card:last-child{
+margin-bottom:0;
+}
+
+.analisis-card:hover{
+
+transform:translateY(-2px);
+
+box-shadow:
+0 16px 35px rgba(0,0,0,.35);
+
+}
+
+.analisis-top{
+
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+
+}
+
+.analisis-title{
+
+font-size:10px;
+font-weight:700;
+letter-spacing:2px;
+text-transform:uppercase;
+color:#8D94FF;
+
+margin-bottom:10px;
+
+}
+
+.analisis-value{
+
+font-size:16px;
+font-weight:800;
+color:#FFF;
+
+}
+
+.analisis-growth{
+
+min-width:78px;
+height:32px;
+
+padding:0 12px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+border-radius:12px;
+
+font-size:12px;
+font-weight:700;
+
+background:#162235;
+color:#CBD5E1;
+
+}
+
+.analisis-growth.up{
+
+background:rgba(34,197,94,.12);
+color:#22C55E;
+
+}
+
+.analisis-growth.down{
+
+background:rgba(239,68,68,.12);
+color:#EF4444;
+
+}
+
+.analisis-growth.flat{
+
+background:rgba(148,163,184,.12);
+color:#94A3B8;
+
+}
+
+.analisis-bottom{
+
+margin-top:18px;
+padding-top:14px;
+
+border-top:1px solid rgba(255,255,255,.06);
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+}
+
+.analisis-bottom span{
+
+font-size:11px;
+color:#94A3B8;
+
+}
+
+.analisis-bottom strong{
+
+font-size:12px;
+font-weight:700;
+color:#FFF;
+
+}
+
+/* =========================
+ANALISIS
+TARGET HARIAN
+PART 2 CSS
+========================= */
+
+.target-card{
+
+margin-bottom:18px;
+padding:22px;
+
+background:linear-gradient(
+135deg,
+#12192F,
+#171D39 55%,
+#231B43
+);
+
+border:1px solid rgba(79,124,255,.10);
+
+border-radius:24px;
+
+box-shadow:
+0 12px 32px rgba(0,0,0,.28);
+
+overflow:hidden;
+
+}
+
+.target-head{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+margin-bottom:24px;
+
+}
+
+.target-title{
+
+display:flex;
+align-items:center;
+gap:10px;
+
+font-size:12px;
+font-weight:700;
+letter-spacing:2px;
+text-transform:uppercase;
+
+color:#8D94FF;
+
+}
+
+.target-title i{
+
+width:22px;
+height:22px;
+
+color:#6E7CFF;
+
+}
+
+.target-edit{
+
+height:42px;
+padding:0 18px;
+
+display:flex;
+align-items:center;
+gap:8px;
+
+background:rgba(93,95,255,.10);
+
+border:1px solid rgba(93,95,255,.18);
+
+border-radius:14px;
+
+color:#AEB7FF;
+
+font-size:12px;
+font-weight:700;
+
+}
+
+.target-edit i{
+
+width:16px;
+height:16px;
+
+}
+
+.target-body{
+
+display:grid;
+
+grid-template-columns:230px 1fr;
+
+gap:28px;
+
+align-items:start;
+
+}
+
+.target-left{
+
+display:flex;
+flex-direction:column;
+align-items:center;
+
+}
+
+#targetDonut{
+
+width:220px;
+height:220px;
+
+}
+
+.target-legend{
+
+width:100%;
+
+margin-top:18px;
+
+display:flex;
+flex-direction:column;
+gap:14px;
+
+}
+
+.legend-item{
+
+display:flex;
+align-items:center;
+gap:10px;
+
+font-size:13px;
+color:#CBD5E1;
+
+}
+
+.legend-item b{
+
+margin-left:auto;
+
+font-size:13px;
+color:white;
+
+}
+
+.legend-box{
+
+width:16px;
+height:16px;
+
+border-radius:5px;
+
+}
+
+.legend-box.success{
+
+background:#22C55E;
+
+}
+
+.legend-box.danger{
+
+background:#EF4444;
+
+}
+
+.target-right{
+
+display:flex;
+flex-direction:column;
+
+}
+
+.target-row{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:18px 0;
+
+border-bottom:1px solid rgba(255,255,255,.06);
+
+}
+
+.target-row:last-child{
+
+border-bottom:none;
+
+}
+
+.target-row span{
+
+font-size:14px;
+
+color:#94A3B8;
+
+}
+
+.target-row b{
+
+font-size:15px;
+font-weight:700;
+
+color:#FFF;
+
+text-align:right;
+
+}
+
+.target-info{
+
+display:flex;
+align-items:center;
+gap:16px;
+
+padding:20px;
+
+background:linear-gradient(
+135deg,
+#16386F,
+#1E4FA5
+);
+
+border:1px solid rgba(79,124,255,.45);
+
+border-radius:24px;
+
+margin-bottom:18px;
+
+box-shadow:
+0 0 24px rgba(79,124,255,.18);
+
+}
+
+.target-info-icon{
+
+width:58px;
+height:58px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+border-radius:18px;
+
+background:rgba(255,255,255,.08);
+
+color:#A8D8FF;
+
+box-shadow:
+0 0 18px rgba(79,124,255,.25);
+
+flex-shrink:0;
+
+}
+
+.target-info-icon i{
+
+width:28px;
+height:28px;
+
+}
+
+.target-info-text{
+
+flex:1;
+
+display:flex;
+align-items:center;
+
+}
+
+#targetInsight{
+
+font-size:15px;
+
+line-height:1.8;
+
+font-weight:500;
+
+color:#F8FBFF;
+
+}
+
+#targetInsight b{
+
+color:#FFFFFF;
+
+font-weight:800;
+
+}
+
+.target-detail{
+
+height:52px;
+
+padding:0 22px;
+
+display:flex;
+align-items:center;
+gap:8px;
+
+background:rgba(255,255,255,.10);
+
+border:1px solid rgba(255,255,255,.12);
+
+border-radius:16px;
+
+color:#FFFFFF;
+
+font-size:14px;
+font-weight:700;
+
+}
+
+.target-detail i{
+
+width:18px;
+height:18px;
+
+}
+
+/* WARNA NILAI */
+
+.target-good{
+
+color:#22C55E !important;
+
+}
+
+.target-bad{
+
+color:#EF4444 !important;
+
+}
+
+.target-warning{
+
+color:#F59E0B !important;
+
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+.target-body{
+
+grid-template-columns:1fr;
+
+gap:24px;
+
+}
+
+.target-right{
+
+margin-top:4px;
+
+}
+
+#targetDonut{
+
+width:210px;
+height:210px;
+
+}
+
+.target-detail{
+
+width:100%;
+justify-content:center;
+
+margin-top:14px;
+
+}
+
+.target-info{
+
+flex-direction:column;
+align-items:flex-start;
+
+}
+
+/* =========================
+ANALISIS
+KALENDER
+PART 2 CSS
+========================= */
+
+.calendar-card{
+
+margin-bottom:18px;
+padding:20px;
+
+background:linear-gradient(
+135deg,
+#12192F,
+#171D39 55%,
+#231B43
+);
+
+border:1px solid rgba(79,124,255,.10);
+
+border-radius:24px;
+
+box-shadow:
+0 12px 30px rgba(0,0,0,.28);
+
+}
+
+.calendar-head{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+margin-bottom:22px;
+
+}
+
+.calendar-nav{
+
+width:42px;
+height:42px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:#162235;
+
+border-radius:14px;
+
+color:#AEB7FF;
+
+}
+
+.calendar-nav i{
+
+width:18px;
+height:18px;
+
+}
+
+.calendar-title{
+
+text-align:center;
+flex:1;
+
+}
+
+.calendar-label{
+
+font-size:10px;
+font-weight:700;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+color:#8D94FF;
+
+margin-bottom:6px;
+
+}
+
+#calendarMonth{
+
+font-size:17px;
+font-weight:800;
+
+color:#FFF;
+
+}
+
+.calendar-week{
+
+display:grid;
+
+grid-template-columns:repeat(7,1fr);
+
+gap:8px;
+
+margin-bottom:12px;
+
+}
+
+.calendar-week span{
+
+text-align:center;
+
+font-size:11px;
+font-weight:700;
+
+color:#7F8EA8;
+
+}
+
+.calendar-grid{
+
+display:grid;
+
+grid-template-columns:repeat(7,1fr);
+
+gap:8px;
+
+}
+
+.calendar-day{
+
+aspect-ratio:1/1;
+
+border-radius:16px;
+
+background:#162235;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+align-items:center;
+
+border:1px solid rgba(255,255,255,.05);
+
+transition:.25s;
+
+cursor:pointer;
+
+}
+
+.calendar-day:hover{
+
+transform:translateY(-2px);
+
+}
+
+.calendar-date{
+
+font-size:14px;
+font-weight:700;
+
+color:white;
+
+}
+
+.calendar-order{
+
+margin-top:4px;
+
+font-size:9px;
+
+color:#94A3B8;
+
+}
+
+/* STATUS */
+
+.calendar-success{
+
+background:rgba(34,197,94,.15);
+
+border:1px solid rgba(34,197,94,.35);
+
+}
+
+.calendar-fail{
+
+background:rgba(239,68,68,.15);
+
+border:1px solid rgba(239,68,68,.35);
+
+}
+
+.calendar-empty{
+
+opacity:.45;
+
+}
+
+/* LEGEND */
+
+.calendar-legend{
+
+margin-top:18px;
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+font-size:11px;
+
+color:#94A3B8;
+
+}
+
+.calendar-legend div{
+
+display:flex;
+
+align-items:center;
+
+gap:6px;
+
+}
+
+.dot{
+
+width:10px;
+height:10px;
+
+border-radius:50%;
+
+}
+
+.dot.green{
+
+background:#22C55E;
+
+}
+
+.dot.red{
+
+background:#EF4444;
+
+}
+
+.dot.gray{
+
+background:#475569;
+
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+.calendar-grid{
+
+gap:6px;
+
+}
+
+.calendar-day{
+
+border-radius:12px;
+
+}
+
+.calendar-date{
+
+font-size:12px;
+
+}
+
+.calendar-order{
+
+font-size:8px;
+
+}
+
+/* =========================
+ANALISIS
+POLA HARI PENJUALAN
+PART 2 CSS
+========================= */
+
+.weekday-card{
+
+margin-bottom:18px;
+padding:22px;
+
+background:linear-gradient(
+135deg,
+#12192F,
+#171D39 55%,
+#231B43
+);
+
+border:1px solid rgba(79,124,255,.10);
+
+border-radius:24px;
+
+box-shadow:
+0 12px 32px rgba(0,0,0,.28);
+
+}
+
+.weekday-head{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+margin-bottom:20px;
+
+}
+
+.weekday-title{
+
+display:flex;
+align-items:center;
+gap:10px;
+
+font-size:12px;
+font-weight:700;
+letter-spacing:2px;
+text-transform:uppercase;
+
+color:#8D94FF;
+
+}
+
+.weekday-title i{
+
+width:20px;
+height:20px;
+
+color:#6E7CFF;
+
+}
+
+.weekday-section{
+
+margin-top:22px;
+
+}
+
+.weekday-section:first-child{
+
+margin-top:0;
+
+}
+
+.weekday-label{
+
+margin-bottom:12px;
+
+font-size:11px;
+font-weight:700;
+letter-spacing:2px;
+text-transform:uppercase;
+
+color:#CBD5E1;
+
+}
+
+.weekday-item{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:14px 16px;
+
+margin-bottom:10px;
+
+background:#101B2D;
+
+border:1px solid rgba(255,255,255,.06);
+
+border-radius:16px;
+
+transition:.25s;
+
+}
+
+.weekday-item:hover{
+
+transform:translateY(-2px);
+
+background:#162235;
+
+}
+
+.weekday-left{
+
+display:flex;
+align-items:center;
+gap:12px;
+
+}
+
+.weekday-rank{
+
+width:34px;
+height:34px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+border-radius:12px;
+
+background:#162235;
+
+font-size:16px;
+
+}
+
+.weekday-info{
+
+display:flex;
+flex-direction:column;
+
+}
+
+.weekday-name{
+
+font-size:14px;
+font-weight:700;
+color:#FFF;
+
+}
+
+.weekday-count{
+
+margin-top:3px;
+
+font-size:11px;
+color:#94A3B8;
+
+}
+
+.weekday-value{
+
+text-align:right;
+
+}
+
+.weekday-order{
+
+font-size:15px;
+font-weight:800;
+color:#FFF;
+
+}
+
+.weekday-sub{
+
+margin-top:3px;
+
+font-size:11px;
+color:#94A3B8;
+
+}
+
+.weekday-empty{
+
+padding:30px 20px;
+
+text-align:center;
+
+background:#101B2D;
+
+border:1px dashed rgba(255,255,255,.08);
+
+border-radius:18px;
+
+font-size:13px;
+
+color:#7F8EA8;
+
+}
+
+/* Warna Ranking */
+
+.rank-gold{
+
+background:rgba(250,204,21,.15);
+color:#FACC15;
+
+}
+
+.rank-silver{
+
+background:rgba(203,213,225,.15);
+color:#CBD5E1;
+
+}
+
+.rank-bronze{
+
+background:rgba(180,83,9,.18);
+color:#D97706;
+
+}
+
+/* Mobile */
+
+@media(max-width:700px){
+
+.weekday-item{
+
+padding:14px;
+
+}
+
+.weekday-name{
+
+font-size:13px;
+
+}
+
+.weekday-order{
+
+font-size:14px;
+
+
+}
+/*==================================
+DIRNOTE TOOLS
+PART 2 CSS
+==================================*/
+
+.tools-header{
+
+margin:8px 0 24px;
+
+}
+
+.tools-label{
+
+display:inline-block;
+
+padding:6px 12px;
+
+border-radius:999px;
+
+background:rgba(255,255,255,.05);
+
+font-size:10px;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+color:#94A3B8;
+
+}
+
+.tools-header h2{
+
+margin-top:12px;
+
+font-size:24px;
+
+font-weight:800;
+
+color:#FFF;
+
+}
+
+.tools-header p{
+
+margin-top:8px;
+
+font-size:13px;
+
+line-height:1.7;
+
+color:#94A3B8;
+
+}
+
+/* GRID */
+
+.tools-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:14px;
+
+margin-top:20px;
+
+}
+
+/* CARD */
+
+.tool-card{
+
+background:#12192A;
+
+border:none;
+
+border-radius:22px;
+
+padding:24px 16px;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+justify-content:center;
+
+transition:.25s;
+
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+}
+
+.tool-card:active{
+
+transform:scale(.97);
+
+}
+
+.tool-card:hover{
+
+background:#172238;
+
+}
+
+/* ICON */
+
+.tool-icon{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+margin-bottom:18px;
+
+color:#FFF;
+
+}
+
+.tool-icon svg{
+
+width:32px;
+
+height:32px;
+
+stroke:#FFF;
+
+stroke-width:2;
+
+}
+
+/* TITLE */
+
+.tool-title{
+
+font-size:13px;
+
+font-weight:700;
+
+line-height:1.5;
+
+text-align:center;
+
+color:#FFF;
+
+}
+
+/* MODAL */
+
+.tool-modal{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+right:0;
+
+bottom:0;
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+background:rgba(0,0,0,.65);
+
+backdrop-filter:blur(8px);
+
+z-index:9999;
+
+}
+
+.tool-box{
+
+width:92%;
+
+max-width:420px;
+
+background:#101826;
+
+border-radius:24px;
+
+padding:22px;
+
+position:relative;
+
+box-shadow:0 20px 60px rgba(0,0,0,.45);
+
+}
+
+.tool-close{
+
+position:absolute;
+
+top:16px;
+
+right:16px;
+
+width:36px;
+
+height:36px;
+
+border:none;
+
+background:none;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+color:#FFF;
+
+cursor:pointer;
+
+}
+
+.tool-close svg{
+
+width:22px;
+
+height:22px;
+
+stroke:#FFF;
+
+}
+
+/* INPUT */
+
+.tool-input{
+
+width:100%;
+
+padding:14px 16px;
+
+margin-top:14px;
+
+background:#182234;
+
+border:none;
+
+border-radius:14px;
+
+color:#FFF;
+
+font-size:14px;
+
+outline:none;
+
+box-sizing:border-box;
+
+}
+
+/* BUTTON */
+
+.tool-btn{
+
+width:100%;
+
+margin-top:18px;
+
+padding:14px;
+
+border:none;
+
+border-radius:14px;
+
+background:#FFF;
+
+color:#08111F;
+
+font-size:14px;
+
+font-weight:700;
+
+cursor:pointer;
+
+}
+
+/* RESULT */
+
+.tool-result{
+
+margin-top:20px;
+
+color:#FFF;
+
+text-align:center;
+
+line-height:1.7;
+
+}
+
+/*==================================
+BUSINESS OVERVIEW V7
+PART 2 CSS
+==================================*/
+
+
+/*=====================
+HEADER
+======================*/
+
+.overview-head{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:20px;
+
+}
+
+.overview-label{
+
+font-size:10px;
+
+font-weight:700;
+
+letter-spacing:3px;
+
+text-transform:uppercase;
+
+color:#7EA6FF;
+
+}
+
+.overview-period{
+
+padding:7px 14px;
+
+background:#182338;
+
+border-radius:14px;
+
+font-size:12px;
+
+font-weight:700;
+
+color:#FFF;
+
+}
+
+/*=====================
+BODY
+======================*/
+
+.overview-body{
+
+display:flex;
+
+align-items:stretch;
+
+gap:18px;
+
+}
+
+/*=====================
+LEFT
+======================*/
+
+.overview-left{
+
+width:38%;
+
+padding-right:18px;
+
+border-right:1px solid rgba(255,255,255,.06);
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+/*=====================
+DONUT
+======================*/
+
+.donut-box{
+
+position:relative;
+
+width:130px;
+
+height:130px;
+
+}
+
+.overview-donut{
+
+width:130px;
+
+height:130px;
+
+transform:rotate(-90deg);
+
+}
+
+.donut-bg{
+
+fill:none;
+
+stroke:#23324B;
+
+stroke-width:10;
+
+}
+
+.donut-fill{
+
+fill:none;
+
+stroke:url(#donutGradient);
+
+stroke-width:10;
+
+stroke-linecap:round;
+
+stroke-dasharray:302;
+
+stroke-dashoffset:302;
+
+filter:drop-shadow(0 0 12px rgba(79,124,255,.35));
+
+transition:.6s ease;
+
+}
+
+.donut-center{
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+#overviewPercent{
+
+font-size:22px;
+
+font-weight:800;
+
+color:#FFF;
+
+line-height:1;
+
+}
+
+.donut-center span{
+
+margin-top:6px;
+
+font-size:12px;
+
+color:#94A3B8;
+
+}
+
+/*=====================
+ORDER
+======================*/
+
+.overview-order{
+
+margin-top:16px;
+
+text-align:center;
+
+}
+
+#overviewOrder{
+
+font-size:14px;
+
+font-weight:800;
+
+color:#FFF;
+
+}
+
+#overviewTarget{
+
+margin-top:4px;
+
+font-size:12px;
+
+color:#94A3B8;
+
+}
+
+/*=====================
+RIGHT
+======================*/
+
+.overview-right{
+
+flex:1;
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+/*=====================
+PROGRESS
+======================*/
+
+.progress-item{
+
+margin-bottom:18px;
+
+}
+
+.progress-top{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:8px;
+
+}
+
+.progress-top span{
+
+font-size:12px;
+
+font-weight:600;
+
+color:#E5E7EB;
+
+}
+
+.progress-top b{
+
+font-size:14px;
+
+font-weight:800;
+
+color:#FFF;
+
+}
+
+.progress-bar{
+
+height:9px;
+
+background:#1A2742;
+
+border-radius:99px;
+
+overflow:hidden;
+
+}
+
+.progress-fill{
+
+width:0%;
+
+height:100%;
+
+border-radius:99px;
+
+background:linear-gradient(90deg,#3B82F6,#7C4DFF);
+
+box-shadow:0 0 12px rgba(79,124,255,.45);
+
+transition:width .6s ease;
+
+}
+
+/*=====================
+SUMMARY
+======================*/
+
+.overview-summary{
+
+margin-top:auto;
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:12px;
+
+padding-top:16px;
+
+border-top:1px solid rgba(255,255,255,.06);
+
+}
+
+.summary-box{
+
+background:#162235;
+
+border:1px solid rgba(255,255,255,.04);
+
+border-radius:12px;
+
+padding:10px;
+
+}
+
+.summary-box small{
+
+display:block;
+
+font-size:11px;
+
+color:#94A3B8;
+
+margin-bottom:6px;
+
+}
+
+.summary-box b{
+
+font-size:14px;
+
+font-weight:800;
+
+color:#FFF;
+
+}
+
+/*==================================
+UPDATE BAR V2
+PART 2 CSS
+==================================*/
+
+.updateBar{
+
+margin:18px 0;
+
+height:42px;
+
+padding:0 16px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+gap:10px;
+
+background:#101B2D;
+
+border:1px solid rgba(255,255,255,.06);
+
+border-radius:22px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.20);
+
+}
+
+.updateTitle{
+
+font-size:10px;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+color:#8EA3C7;
+
+text-transform:uppercase;
+
+}
+
+#updateAvg{
+
+font-size:12px;
+
+font-weight:800;
+
+color:#FFFFFF;
+
+}
+
+#update7{
+
+font-size:12px;
+
+font-weight:700;
+
+color:#22C55E;
+
+}
+
+#update30{
+
+font-size:12px;
+
+font-weight:700;
+
+color:#EF4444;
+
+}
+
+.updateLine{
+
+font-size:11px;
+
+color:rgba(255,255,255,.18);
+
+font-weight:600;
+
+user-select:none;
+
+}
+
+/*==================================
+MINI FOCUS ICON
+==================================*/
+
+.focus-mini{
+
+position:absolute;
+
+top:70px;
+
+right:22px;
+
+font-size:40px;
+cursor:pointer;
+color:#8EA8FF;
+z-index:20;
+transition:.25s;
+
+}
+
+.focus-mini:hover{
+
+transform:scale(1.15);
+
+color:#4F7CFF;
+
+}
+
+/*==================================
+FOCUS TIMER
+==================================*/
+
+.focus-popup{
+
+position:fixed;
+left:0;
+top:0;
+width:100%;
+height:100%;
+display:none;
+
+justify-content:center;
+align-items:center;
+
+background:rgba(0,0,0,.55);
+backdrop-filter:blur(6px);
+
+z-index:99999;
+
+}
+
+.focus-box{
+
+width:92%;
+max-width:340px;
+
+background:#101B2D;
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:24px;
+
+padding:22px;
+
+}
+
+.focus-head{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:20px;
+
+}
+
+.focus-head h3{
+
+font-size:18px;
+
+font-weight:700;
+
+color:#FFF;
+
+}
+
+.focus-head button{
+
+background:none;
+
+border:none;
+
+color:#94A3B8;
+
+font-size:22px;
+
+cursor:pointer;
+
+}
+
+.focus-box label{
+
+display:block;
+
+margin:14px 0 8px;
+
+font-size:12px;
+
+font-weight:700;
+
+color:#CBD5E1;
+
+}
+
+#focusCountdown{
+
+margin:22px 0;
+
+font-size:40px;
+
+font-weight:800;
+
+text-align:center;
+
+color:#4F7CFF;
+
+}
+
+.focusStartBtn{
+
+width:100%;
+
+height:50px;
+
+border:none;
+
+border-radius:16px;
+
+background:linear-gradient(135deg,#4F7CFF,#6E5BFF);
+
+color:#FFF;
+
+font-size:15px;
+
+font-weight:700;
+
+cursor:pointer;
+
+}
+/*==================================
+SETTING MODAL
+PART 4B
+==================================*/
+
+.setting-modal{
+
+position:fixed;
+
+left:0;
+top:0;
+
+width:100%;
+height:100%;
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+background:rgba(0,0,0,.55);
+
+backdrop-filter:blur(5px);
+
+z-index:999999;
+
+}
+
+.setting-box{
+
+width:90%;
+
+max-width:340px;
+
+background:#101B2D;
+
+border-radius:22px;
+
+padding:22px;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.setting-box h3{
+
+margin:0 0 18px;
+
+font-size:18px;
+
+color:white;
+
+}
+
+.setting-box input{
+
+width:100%;
+
+height:46px;
+
+padding:0 14px;
+
+background:#162235;
+
+border:none;
+
+border-radius:14px;
+
+color:white;
+
+box-sizing:border-box;
+
+}
+
+.setting-action{
+
+display:flex;
+
+gap:10px;
+
+margin-top:18px;
+
+}
+
+.setting-action button{
+
+flex:1;
+
+height:46px;
+
+border:none;
+
+border-radius:14px;
+
+font-weight:700;
+
+cursor:pointer;
+
+}
+
+.setting-action button:first-child{
+
+background:#243247;
+
+color:white;
+
+}
+
+.setting-action button:last-child{
+
+background:#4F7CFF;
+
+color:white;
+
+}
+
+.pin-input{
+
+position:relative;
+
+margin-bottom:12px;
+
+}
+
+.pin-input input{
+
+margin-bottom:0;
+
+padding-right:50px;
+
+}
+
+.pin-input span{
+
+position:absolute;
+
+right:16px;
+
+top:50%;
+
+transform:translateY(-50%);
+
+cursor:pointer;
+
+font-size:18px;
+
+user-select:none;
+
+opacity:.8;
+
+}
+
+.history-action{
+display:flex;
+align-items:center;
+gap:10px;
+justify-content:flex-start;
+}
+
+.history-action span{
+margin-right:auto;
+font-size:14px;
+font-weight:700;
+}
+
+.history-action .tool-btn{
+display:flex;
+align-items:center;
+justify-content:center;
+height:42px;
+padding:0 18px;
+}
+
+.strategy-thumb{
+
+width:70px;
+height:70px;
+
+border-radius:16px;
+
+object-fit:cover;
+
+background:#162235;
+
+border:1px solid rgba(255,255,255,.08);
+
+flex-shrink:0;
+
+}
+
+.status-badge{
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+height:42px;
+
+padding:0 18px;
+
+border-radius:12px;
+
+font-size:13px;
+font-weight:700;
+
+color:#fff;
+
+}
+
+.status-process{
+
+background:#23314C;
+animation:pulseProcess 1.2s infinite;
+
+}
+
+.status-success{
+
+background:#16A34A;
+
+}
+
+.status-failed{
+
+background:#DC2626;
+
+}
+
+@keyframes pulseProcess{
+
+0%{
+opacity:1;
+transform:scale(1);
+}
+
+50%{
+opacity:.45;
+transform:scale(.96);
+}
+
+100%{
+opacity:1;
+transform:scale(1);
+}
+
+}
+
+.status-process{
+
+display:inline-flex;
+align-items:center;
+font-weight:700;
+color:#FFD54A;
+animation:pulseProcess 1.2s infinite;
+
+}
+
+/*=========================
+TODO MINI
+=========================*/
+
+#todoMini{
+
+display:flex;
+align-items:center;
+justify-content:center;
+gap:8px;
+
+height:32px;
+padding:0 12px;
+
+background:#182338;
+
+border:1px solid rgba(255,255,255,.05);
+
+border-radius:22px;
+
+color:#fff;
+font-size:13px;
+font-weight:700;
+
+position:relative;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+#todoMini:hover{
+
+background:#1D2A42;
+
+}
+
+#todoMini i{
+
+width:18px;
+height:18px;
+
+color:#4F7CFF;
+
+}
+
+#todoMini span:last-child{
+
+line-height:1;
+
+}
+
+#todoMiniBadge{
+
+position:absolute;
+
+top:-4px;
+right:-4px;
+
+width:18px;
+height:18px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+background:#EF4444;
+color:#fff;
+
+border-radius:50%;
+
+font-size:10px;
+font-weight:700;
+
+border:2px solid #08111F;
+
+}
+
+/* Lonceng bergoyang */
+
+.todoShake{
+
+animation:todoShake 1.2s ease-in-out infinite;
+
+}
+
+@keyframes todoShake{
+
+0%,100%{
+transform:rotate(0deg);
+}
+
+20%{
+transform:rotate(-15deg);
+}
+
+40%{
+transform:rotate(15deg);
+}
+
+60%{
+transform:rotate(-10deg);
+}
+
+80%{
+transform:rotate(10deg);
+}
+
+}
+
+.editorToolbar{
+
+position:sticky;
+top:0;
+z-index:9999;
+display:flex;
+
+display:flex;
+gap:10px;
+margin:15px 0;
+flex-wrap:wrap;
+
+}
+
+.editorToolbar button{
+
+width:42px;
+height:42px;
+
+border:none;
+border-radius:12px;
+
+background:#1a2740;
+color:#fff;
+
+font-size:18px;
+
+}
+
+.editorToolbar button:active{
+
+transform:scale(.95);
+
+}
+
+.editorA4{
+
+background:#fff;
+color:#222;
+
+width:120mm;
+max-width:100%;
+
+min-height:60mm;
+
+max-height:70vh;
+
+overflow-y:auto;
+
+padding:30px;
+
+margin:20px auto;
+
+border-radius:18px;
+
+outline:none;
+
+box-sizing:border-box;
+
+}
+
+</style>
+<script>
+  
+  let TARGET_HARIAN =
+Number(localStorage.getItem("DIRNOTE_TARGET")) || 1500;
+
+document.getElementById("targetOrder").innerHTML=
+TARGET_HARIAN.toLocaleString("id-ID")+" Order";
+
+</script>
+
+</section>
+
+<section id="analisis" class="page">
+
+<!-- =========================
+ANALISIS
+POLA HARI PENJUALAN
+PART 1 HTML
+========================= -->
+
+<div class="weekday-card">
+
+    <div class="weekday-head">
+
+        <div class="weekday-title">
+
+            <i data-lucide="calendar-days"></i>
+
+            <span>POLA HARI PENJUALAN</span>
+
+        </div>
+
+    </div>
+
+    <!-- 3 HARI TERAMAI RATA-RATA -->
+
+    <div class="weekday-section">
+
+        <div class="weekday-label">
+            🟢 3 Hari Teramai (Rata-rata)
+        </div>
+
+        <div id="weekdayRamaiAvg">
+
+            <div class="weekday-empty">
+                Belum ada data.
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- 3 HARI TERSEPI RATA-RATA -->
+
+    <div class="weekday-section">
+
+        <div class="weekday-label">
+            🔵 3 Hari Tersepi (Rata-rata)
+        </div>
+
+        <div id="weekdaySepiAvg">
+
+            <div class="weekday-empty">
+                Belum ada data.
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- 3 HARI PALING RAMAI -->
+
+    <div class="weekday-section">
+
+        <div class="weekday-label">
+            🔥 3 Hari Paling Ramai
+        </div>
+
+        <div id="weekdayRamaiReal">
+
+            <div class="weekday-empty">
+                Belum ada data.
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- 3 HARI PALING SEPI -->
+
+    <div class="weekday-section">
+
+        <div class="weekday-label">
+            ❄ 3 Hari Paling Sepi
+        </div>
+
+        <div id="weekdaySepiReal">
+
+            <div class="weekday-empty">
+                Belum ada data.
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================
+ANALISIS
+KALENDER
+PART 1 HTML
+========================= -->
+
+<div class="calendar-card">
+
+    <div class="calendar-head">
+
+        <button
+        class="calendar-nav"
+        onclick="prevMonth()">
+
+            <i data-lucide="chevron-left"></i>
+
+        </button>
+
+        <div class="calendar-title">
+
+            <div class="calendar-label">
+                KALENDER ANALISIS
+            </div>
+
+            <div id="calendarMonth">
+                Juli 2026
+            </div>
+
+        </div>
+
+        <button
+        class="calendar-nav"
+        onclick="nextMonth()">
+
+            <i data-lucide="chevron-right"></i>
+
+        </button>
+
+    </div>
+
+    <!-- Hari -->
+
+    <div class="calendar-week">
+
+        <span>Sen</span>
+        <span>Sel</span>
+        <span>Rab</span>
+        <span>Kam</span>
+        <span>Jum</span>
+        <span>Sab</span>
+        <span>Min</span>
+
+    </div>
+
+    <!-- Isi Kalender -->
+
+    <div
+    id="calendarGrid"
+    class="calendar-grid">
+
+    </div>
+
+    <!-- Keterangan -->
+
+    <div class="calendar-legend">
+
+        <div>
+            <span class="dot green"></span>
+            Target
+        </div>
+
+        <div>
+            <span class="dot red"></span>
+            Belum
+        </div>
+
+        <div>
+            <span class="dot gray"></span>
+            Kosong
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================
+ANALISIS
+TARGET HARIAN
+PART 1 HTML
+========================= -->
+
+<div class="target-card">
+
+    <div class="target-head">
+
+        <div class="target-title">
+
+            <i data-lucide="target"></i>
+
+            <span>TARGET HARIAN</span>
+
+        </div>
+
+        <button
+        class="target-edit"
+        onclick="ubahTarget()">
+
+            Ubah Target
+
+            <i data-lucide="pencil"></i>
+
+        </button>
+
+    </div>
+
+    <div class="target-body">
+
+        <!-- DONUT -->
+
+        <div class="target-left">
+
+            <canvas
+            id="targetDonut"
+            width="220"
+            height="220">
+            </canvas>
+
+            <div class="target-legend">
+
+                <div class="legend-item">
+
+                    <span class="legend-box success"></span>
+
+                    <span>
+                    Target Tercapai
+                    </span>
+
+                    <b id="legendSuccess">
+                    0 Hari
+                    </b>
+
+                </div>
+
+                <div class="legend-item">
+
+                    <span class="legend-box danger"></span>
+
+                    <span>
+                    Belum Tercapai
+                    </span>
+
+                    <b id="legendFail">
+                    0 Hari
+                    </b>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- DETAIL -->
+
+        <div class="target-right">
+
+            <div class="target-row">
+
+                <span>Target</span>
+
+                <b id="targetValue">
+                1.500 Order
+                </b>
+
+            </div>
+
+            <div class="target-row">
+
+                <span>Rata-rata</span>
+
+                <b id="targetAverage">
+                -
+                </b>
+
+            </div>
+
+            <div class="target-row">
+
+                <span>Selisih</span>
+
+                <b id="targetSelisih">
+                -
+                </b>
+
+            </div>
+
+            <div class="target-row">
+
+                <span>Target Tercapai</span>
+
+                <b id="targetSuccess">
+                -
+                </b>
+
+            </div>
+
+            <div class="target-row">
+
+                <span>Belum Tercapai</span>
+
+                <b id="targetFail">
+                -
+                </b>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="target-info">
+
+    <div class="target-info-icon">
+
+        <i data-lucide="trending-up"></i>
+
+    </div>
+
+    <div class="target-info-text">
+
+        <div id="targetInsight">
+
+            Menunggu data order...
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =========================
+ANALISIS
+ORDER RATA-RATA
+PART 1 HTML
+========================= -->
+
+<div class="analisis-card">
+
+<div class="analisis-title">
+ORDER RATA-RATA
+</div>
+
+<div class="analisis-detail">
+
+<div class="analisis-row">
+
+<span>Rata-rata Harian</span>
+
+<b id="avgOrderHarian">-</b>
+
+</div>
+
+<div class="analisis-row">
+
+<span>Total Hari Tercatat</span>
+
+<b id="totalHariOrder">-</b>
+
+</div>
+
+<div class="analisis-row">
+
+<span>Total Order</span>
+
+<b id="totalOrderAnalisis">-</b>
+
+</div>
+
+<div class="analisis-row">
+
+<span>Hari Ramai</span>
+
+<b id="hariRamai">-</b>
+
+</div>
+
+<div class="analisis-row">
+
+<span>Order Hari Ramai</span>
+
+<b id="orderHariRamai">-</b>
+
+</div>
+
+<div class="analisis-row">
+
+<span>Hari Sepi</span>
+
+<b id="hariSepi">-</b>
+
+</div>
+
+<div class="analisis-row">
+
+<span>Order Hari Sepi</span>
+
+<b id="orderHariSepi">-</b>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- =========================
+ANALISIS
+PART 1
+========================= -->
+
+<div class="analisis-header">
+
+<div class="analisis-badge">
+● LIVE ANALISIS
+</div>
+
+<h2>Analisis Performa</h2>
+
+<p>
+Pantau perkembangan bisnis berdasarkan data order yang tersimpan.
+</p>
+
+</div>
+
+<!-- 1 HARI -->
+
+<div class="analisis-card">
+
+<div class="analisis-top">
+
+<div>
+
+<div class="analisis-title">
+1 Hari Terakhir
+</div>
+
+<div
+id="anHariOrder"
+class="analisis-value">
+-
+</div>
+
+</div>
+
+<div
+id="anHariGrowth"
+class="analisis-growth">
+-
+</div>
+
+</div>
+
+<div class="analisis-bottom">
+
+<span>
+vs Hari Sebelumnya
+</span>
+
+<strong id="anHariVs">
+-
+</strong>
+
+</div>
+
+</div>
+
+<!-- 7 HARI -->
+
+<div class="analisis-card">
+
+<div class="analisis-top">
+
+<div>
+
+<div class="analisis-title">
+7 Hari Terakhir
+</div>
+
+<div
+id="anMingguOrder"
+class="analisis-value">
+-
+</div>
+
+</div>
+
+<div
+id="anMingguGrowth"
+class="analisis-growth">
+-
+</div>
+
+</div>
+
+<div class="analisis-bottom">
+
+<span>
+vs 7 Hari Sebelumnya
+</span>
+
+<strong id="anMingguVs">
+-
+</strong>
+
+</div>
+
+</div>
+
+<!-- 30 HARI -->
+
+<div class="analisis-card">
+
+<div class="analisis-top">
+
+<div>
+
+<div class="analisis-title">
+30 Hari Terakhir
+</div>
+
+<div
+id="anBulanOrder"
+class="analisis-value">
+-
+</div>
+
+</div>
+
+<div
+id="anBulanGrowth"
+class="analisis-growth">
+-
+</div>
+
+</div>
+
+<div class="analisis-bottom">
+
+<span>
+vs 30 Hari Sebelumnya
+</span>
+
+<strong id="anBulanVs">
+-
+</strong>
+
+</div>
+
+</div>
+</section>
+  
+<!--==================================
+STRATEGY LAB
+PART 1
+===================================-->
+
+<section id="strategyLab" class="page">
+
+<div class="order-page">
+
+<div class="order-header">
+
+<div class="order-label">
+
+STRATEGY LAB
+
+</div>
+
+<h2>
+
+Pengujian Strategi
+
+</h2>
+
+<p>
+
+Catat setiap eksperimen, ukur hasilnya, lalu gunakan strategi terbaik.
+
+</p>
+
+</div>
+
+<button
+id="btnNewStrategy"
+class="order-save">
+
+Tambah Produk Baru Kedalam LAB
+
+</button>
+
+<div class="order-history">
+
+<div class="history-head"
+onclick="toggleStrategyList()">
+
+<div class="history-label">
+
+SEMUA STRATEGI
+
+</div>
+
+<div style="display:flex;align-items:center;gap:8px;">
+
+<div id="strategyCount">
+
+0 Strategi
+
+</div>
+
+<i
+id="strategyArrow"
+data-lucide="chevron-down">
+
+</i>
+
+</div>
+
+</div>
+
+<div id="strategyBody">
+
+<div id="strategyList">
+
+<div class="history-empty">
+
+<i data-lucide="library-big"></i>
+
+<h3>
+
+Belum Ada Strategi
+
+</h3>
+
+<p>
+
+Tambahkan strategi pertama Anda.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!--==================================
+STRATEGY LAB
+PART 2
+WORKSPACE
+===================================-->
+</section>
+<section id="strategyWorkspace" class="page">
+
+<div class="order-page">
+
+<div class="order-header">
+
+<button
+class="tool-btn"
+id="btnBackStrategy">
+
+<i data-lucide="arrow-left"></i>
+
+Kembali
+
+</button>
+
+<div class="order-label">
+
+PRODUK DALAM LAB STRATEGY RISET
+
+</div>
+
+<h2 id="strategyName">
+
+Voucher 5%
+
+</h2>
+
+<p id="strategyDesc">
+
+Deskripsi strategi
+
+</p>
+
+</div>
+
+
+<!-- STATUS -->
+
+<div class="overview-card">
+
+<div class="overview-summary">
+
+<div class="summary-box">
+
+<small>Digunakan</small>
+
+<b id="useCount">
+
+0x
+
+</b>
+
+</div>
+
+<div class="summary-box">
+
+<small>Berhasil</small>
+
+<b id="successCount">
+
+0
+
+</b>
+
+</div>
+
+<div class="summary-box">
+
+<small>Gagal</small>
+
+<b id="failedCount">
+
+0
+
+</b>
+
+</div>
+
+<div class="summary-box">
+
+<small>Biaya</small>
+
+<b id="totalCost">
+
+Rp0
+
+</b>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="order-tools">
+
+<button
+id="btnAddHistory"
+class="order-save">
+
+Tambah Riwayat
+
+</button>
+
+<button
+id="btnExportStrategy"
+class="tool-btn">
+
+<i data-lucide="download"></i>
+
+Export
+
+</button>
+
+</div>
+
+
+<div class="order-history">
+
+<div class="history-head">
+
+<div class="history-label">
+
+RIWAYAT PENGGUNAAN
+
+</div>
+
+<div id="historyCount">
+
+0
+
+</div>
+
+</div>
+
+<div id="historyList">
+
+<div class="history-empty">
+
+<i data-lucide="history"></i>
+
+<h3>
+
+Belum Ada Riwayat
+
+</h3>
+
+<p>
+
+Setiap penggunaan strategi akan muncul di sini.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===========================
+MODAL STRATEGY LAB BARU
+============================ -->
+
+<div id="strategyModal" class="htg-popup">
+
+<div class="htg-popup-box">
+
+<div class="order-label">
+
+STRATEGY BARU
+
+</div>
+
+<h3>
+
+Tambah Strategy
+
+</h3>
+
+<div class="order-group">
+
+<label>Nama Produk</label>
+
+<input
+id="strategyTitle"
+type="text"
+placeholder="Contoh : Poloshirt A">
+
+<div class="order-group">
+
+<label>Target yang Ingin Dicapai</label>
+
+<input
+id="strategyTarget"
+type="text"
+placeholder="Contoh : ROAS 10">
+</div>
+
+<input
+id="strategyCategoryCustom"
+type="text"
+placeholder="Tulis kategori sendiri..."
+style="display:none;margin-top:12px;">
+
+</div>
+
+<div class="order-group">
+
+<label>Deskripsi</label>
+
+<textarea
+id="strategyDescription"
+rows="4"
+placeholder="Jelaskan strategi ini..."></textarea>
+
+</div>
+
+<div class="order-group">
+
+<label>Tambah Gambar</label>
+
+<label class="upload-box">
+
+<input
+type="file"
+id="strategyImage"
+accept="image/*"
+hidden>
+
+<div class="upload-preview">
+
+<i data-lucide="image-plus"></i>
+
+<p>Upload Gambar</p>
+
+</div>
+
+</label>
+
+</div>
+
+<div class="htg-popup-action">
+
+<button
+id="btnCancelStrategy"
+class="tool-btn">
+
+Batal
+
+</button>
+
+<button
+id="btnSaveStrategy"
+class="order-save">
+
+Simpan
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ===========================
+MODAL TAMBAH RIWAYAT
+============================ -->
+
+<div id="historyModal" class="htg-popup">
+
+<div class="htg-popup-box">
+
+<div class="order-label">
+
+RIWAYAT STRATEGY
+
+</div>
+
+<h3>
+
+Tambah Riwayat
+
+</h3>
+
+<div class="order-group">
+
+</div>
+
+<div class="order-group">
+
+<label>Tanggal</label>
+
+<input
+id="historyDate"
+type="date">
+
+</div>
+
+<div class="order-group">
+
+<label>Biaya</label>
+
+<input
+id="historyCost"
+type="number"
+placeholder="0">
+
+<label>Aksi</label>
+
+<select id="historyAction">
+
+<option value="">Pilih Aksi</option>
+
+<option>⬆️ ROAS</option>
+<option>⬇️ ROAS</option>
+<option>⬆️ Budget</option>
+<option>⬇️ Budget</option>
+<option>⬆️ Harga</option>
+<option>⬇️ Harga</option>
+<option>Flash Sale</option>
+<option>Promo Beli 2 Diskon</option>
+<option>Promo Beli 3 Diskon</option>
+<option>Ads Video</option>
+<option>Push Video Tiktok</option>
+<option>Push Video Shopee</option>
+<option>Ganti Judul</option>
+<option>Kawin Produk</option>
+<option>Voucher</option>
+<option>Add SKU</option>
+<option>Add Video</option>
+<option>Kurangin SKU</option>
+<option>Ganti descripsi</option>
+<option>Ganti humbnail</option>
+</select>
+
+</div>
+
+<div class="order-group">
+
+<label>Hasil</label>
+
+<select id="historyResult">
+
+<option value="process">
+
+🟡 Proses
+
+</option>
+
+<option value="success">
+
+🟢 Berhasil
+
+</option>
+
+<option value="failed">
+
+🔴 Gagal
+
+</option>
+
+</select>
+
+</div>
+
+<div class="order-group">
+
+<label>Catatan</label>
+
+<textarea
+id="historyNote"
+rows="4"
+placeholder="Contoh : Order naik 28%, CTR meningkat."></textarea>
+
+</div>
+
+<div class="htg-popup-action">
+
+<button
+id="btnCancelHistory"
+class="tool-btn">
+
+Batal
+
+</button>
+
+<button
+id="btnSaveHistory"
+class="order-save">
+
+Simpan Riwayat
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+  
+<section id="input" class="page">
+
+<div class="order-page">
+
+<div class="order-header">
+
+<div class="order-label">
+INPUT ORDER
+</div>
+
+<h2>Order Harian</h2>
+
+<p>Catat total order setiap hari.</p>
+
+</div>
+
+<div class="order-card">
+
+<div class="order-group">
+
+<label>Tanggal</label>
+
+<input
+type="date"
+id="orderTanggal">
+
+</div>
+
+<div class="order-group">
+
+<label>Jumlah Order</label>
+
+<input
+type="number"
+id="orderJumlah"
+placeholder="Contoh : 1250">
+
+</div>
+
+<div class="order-group">
+
+<label>Sumber</label>
+
+<select id="orderSumber">
+
+<option value="Online">
+Online
+</option>
+
+<option value="Offline">
+Offline
+</option>
+
+<option value="Gabungan">
+Gabungan
+</option>
+
+</select>
+
+</div>
+
+<button
+id="btnSimpanOrder"
+class="order-save">
+
+Simpan Order
+
+</button>
+
+<div class="order-tools">
+
+<button
+id="btnImportJson"
+class="tool-btn">
+
+📥 Import JSON
+
+</button>
+
+<button
+id="btnExportJson"
+class="tool-btn">
+
+📤 Export JSON
+
+</button>
+
+</div>
+
+<input
+type="file"
+id="importJsonFile"
+accept=".json"
+hidden>
+
+</div>
+
+<div class="order-history">
+
+<div class="history-head">
+
+<div class="history-label">
+
+RIWAYAT ORDER
+
+</div>
+
+<div
+id="historyTotal">
+
+0 Data
+
+</div>
+
+</div>
+
+<div
+id="historyOrderList">
+
+<div class="history-empty">
+
+Belum ada data order.
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =====================================
+CATATAN V4
+PART 1
+HTML
+===================================== -->
+
+<section id="catatan" class="page">
+
+<div class="catatan-header">
+
+<div>
+
+<div class="catatan-label">
+CATATAN
+</div>
+
+<h2>Catatan</h2>
+
+<p>Simpan ide, informasi, dan aktivitas penting.</p>
+
+</div>
+
+<button id="btnTambahCatatan">
++
+</button>
+
+</div>
+
+<div id="catatanList">
+
+<div class="catatan-empty">
+
+<h3>Belum Ada Catatan</h3>
+
+<p>Tekan tombol + untuk membuat catatan.</p>
+
+</div>
+
+</div>
+
+<!-- MODAL -->
+
+<div id="catatanModal" class="catatan-modal">
+
+<div class="catatan-box">
+
+<h3>Catatan Baru</h3>
+
+<input
+id="catatanJudul"
+type="text"
+placeholder="Judul Catatan">
+
+<input
+type="file"
+id="catatanFoto"
+accept="image/*">
+
+<img
+id="previewFoto"
+style="display:none;">
+
+<div class="editorToolbar">
+
+<button type="button" onclick="formatDoc('bold')">
+<b>B</b>
+</button>
+
+<button type="button" onclick="formatDoc('italic')">
+<i>I</i>
+</button>
+
+<button type="button" onclick="formatDoc('underline')">
+<u>U</u>
+</button>
+
+<button type="button" onclick="formatDoc('insertHorizontalRule')">
+➖
+</button>
+
+<button type="button" onclick="formatDoc('insertUnorderedList')">
+•
+</button>
+
+<button type="button" onclick="formatDoc('justifyLeft')">
+≡
+</button>
+
+</div>
+
+<div
+id="catatanIsi"
+class="editorA4"
+contenteditable="true">
+</div>
+
+<div class="catatan-button">
+
+<button id="btnBatalCatatan">
+Batal
+</button>
+
+<button id="btnSimpanCatatan">
+Simpan
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!--==================================
+DIRNOTE TOOLS
+PART 1 HTML
+===================================-->
+
+<section id="tools" class="page">
+
+<div class="tools-header">
+
+<div class="tools-label">
+BUSINESS TOOLS
+</div>
+
+<h2>Business Tools</h2>
+
+<p>
+Kumpulan alat bantu untuk operasional bisnis dan marketplace.
+</p>
+
+</div>
+
+<div class="tools-grid">
+
+<button class="tool-card" onclick="openTool('persen')">
+
+<div class="tool-icon">
+<i data-lucide="calculator"></i>
+</div>
+
+<div class="tool-title">
+Kalkulator Persen
+</div>
+
+</button>
+
+<button class="tool-card" onclick="openTool('roas')">
+
+<div class="tool-icon">
+<i data-lucide="chart-column"></i>
+</div>
+
+<div class="tool-title">
+Kalkulator ROAS
+</div>
+
+</button>
+
+<button class="tool-card" onclick="openTool('sku')">
+
+<div class="tool-icon">
+<i data-lucide="tag"></i>
+</div>
+
+<div class="tool-title">
+SKU Generator
+</div>
+
+</button>
+
+<button class="tool-card" onclick="openTool('barcode')">
+
+<div class="tool-icon">
+<i data-lucide="package"></i>
+</div>
+
+<div class="tool-title">
+Barcode Generator
+</div>
+
+</button>
+
+<button class="tool-card" onclick="openTool('qrcode')">
+
+<div class="tool-icon">
+<i data-lucide="qr-code"></i>
+</div>
+
+<div class="tool-title">
+QR Code Generator
+</div>
+
+</button>
+
+<button class="tool-card" onclick="openTool('scanner')">
+
+<div class="tool-icon">
+<i data-lucide="scan-line"></i>
+</div>
+
+<div class="tool-title">
+Barcode Scanner
+</div>
+
+</button>
+
+</div>
+
+</section>
+
+<!-- TOOL MODAL -->
+
+<div class="tool-modal" id="toolModal">
+
+<div class="tool-box">
+
+<button
+class="tool-close"
+onclick="closeToolModal()">
+
+<i data-lucide="x"></i>
+
+</button>
+
+<div id="toolContent"></div>
+
+</div>
+
+</div>
+
+<section id="hutang" class="page">
+  
+  
+<!-- =========================
+DIRNOTE HUTANG V1
+PART 1
+========================= -->
+
+<div class="htg-app">
+
+<div class="htg-header">
+
+<div>
+
+<div class="htg-label">
+HUTANG SUPPLIER
+</div>
+
+<h2 class="htg-title">
+Kelola Hutang
+</h2>
+
+</div>
+
+<button id="btnTambahSupplier" class="htg-btn">
+
++ Supplier
+
+</button>
+
+</div>
+
+
+<div class="htg-dashboard">
+
+<div class="htg-box">
+
+<div>Total Hutang</div>
+
+<b id="dashHutang">
+Rp0
+</b>
+
+</div>
+
+<div class="htg-box">
+
+<div>Total Dibayar</div>
+
+<b id="dashBayar">
+Rp0
+</b>
+
+</div>
+
+<div class="htg-box">
+
+<div>Sisa Hutang</div>
+
+<b id="dashSisa">
+Rp0
+</b>
+
+</div>
+
+</div>
+
+
+<input
+id="cariSupplier"
+class="htg-search"
+placeholder="Cari supplier...">
+
+<div class="htg-list">
+
+<div
+id="supplierList"
+class="htg-track">
+
+<div class="htg-empty">
+Belum ada supplier
+</div>
+
+</div>
+
+<div
+id="htgDots"
+class="htg-dots">
+
+</div>
+
+</div>
+
+
+<div
+id="supplierDetail"
+class="htg-detail">
+
+<div class="htg-empty">
+
+Pilih supplier
+
+</div>
+
+</div>
+
+
+<div class="htg-history">
+
+<div class="htg-history-title">
+
+Riwayat
+
+</div>
+
+<div id="hutangHistoryList">
+
+<div class="htg-empty">
+
+Belum ada transaksi
+
+</div>
+
+</div>
+
+<div class="order-tools">
+
+<button
+type="button"
+id="btnPrintHutang"
+class="tool-btn">
+
+🖨 PDF
+
+</button>
+
+<button
+type="button"
+id="btnBackupHutang"
+class="tool-btn">
+
+📤 Backup
+
+</button>
+
+<button
+type="button"
+id="btnImportHutang"
+class="tool-btn">
+
+📥 Import
+
+</button>
+
+</div>
+
+<input
+type="file"
+id="importHutangFile"
+accept=".json"
+hidden>
+
+</div>
+
+</div>
+
+
+<!-- POPUP -->
+
+<div
+id="popupSupplier"
+class="htg-popup">
+
+<div class="htg-popup-box">
+
+<h3>Tambah Supplier</h3>
+
+<input
+id="namaSupplier"
+placeholder="Nama supplier">
+
+<div class="htg-popup-action">
+
+<button id="batalSupplier">
+
+Batal
+
+</button>
+
+<button id="simpanSupplier">
+
+Simpan
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- POPUP HUTANG -->
+<div id="popupHutang" class="htg-popup">
+
+<div class="htg-popup-box">
+
+<h3>Tambah Hutang</h3>
+
+<input
+id="hutangNominal"
+type="number"
+placeholder="Nominal">
+
+<input
+id="hutangTanggal"
+type="date">
+
+<input
+id="hutangKeterangan"
+placeholder="Keterangan">
+
+<div class="htg-popup-action">
+
+<button onclick="tutupPopupHutang()">
+Batal
+</button>
+
+<button id="saveHutang">
+Simpan
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- POPUP BAYAR -->
+
+<div id="popupBayar" class="htg-popup">
+
+<div class="htg-popup-box">
+
+<h3>Bayar Hutang</h3>
+
+<input
+id="bayarNominal"
+type="number"
+placeholder="Nominal">
+
+<input
+id="bayarTanggal"
+type="date">
+
+<input
+id="bayarKeterangan"
+placeholder="Keterangan">
+
+<div class="htg-popup-action">
+
+<button onclick="tutupPopupBayar()">
+Batal
+</button>
+
+<button id="saveBayar">
+Simpan
+</button>
+
+</div>
+
+</div>
+
+</div>
+  
+</section>
+
+
+<section id="todo" class="page">
+
+<!-- =====================================
+TODO V3
+PART 1
+===================================== -->
+
+<div class="todo-header">
+
+<div>
+
+<div class="todo-label">
+
+TODO LIST
+
+</div>
+
+<h2>Kelola Pekerjaan</h2>
+
+<p>Semua pekerjaan dan deadline Anda.</p>
+
+</div>
+
+<button id="btnTambahTodo">
+
+<i data-lucide="plus"></i>
+
+</button>
+
+</div>
+
+<div id="todoList">
+
+<div class="todo-empty">
+
+<i data-lucide="list-checks"></i>
+
+<h3>Belum Ada Todo</h3>
+
+<p>Tekan tombol + untuk menambahkan pekerjaan.</p>
+
+</div>
+
+</div>
+
+<div id="todoModal" class="todo-modal">
+
+<div class="todo-box">
+
+<h3>Tambah Todo</h3>
+
+<input
+id="todoJudul"
+type="text"
+placeholder="Nama pekerjaan">
+
+<input
+id="todoTanggal"
+type="date">
+
+<input
+id="todoJam"
+type="time">
+
+<textarea
+id="todoCatatan"
+rows="3"
+placeholder="Catatan"></textarea>
+
+<div class="todo-button">
+
+<button id="btnBatalTodo">
+
+Batal
+
+</button>
+
+<button id="btnSimpanTodo">
+
+Simpan
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="setting" class="page">
+
+<div class="container">
+
+<div class="section-title">
+⚙️ Setting
+</div>
+
+<!-- AKUN -->
+
+<div class="card">
+
+<div class="card-title">
+👤 Akun
+</div>
+
+<button
+class="tool-btn"
+id="btnUsername">
+
+👤 Username :
+<span id="settingUsername"
+style="margin-left:auto;font-weight:700;">
+Owner
+</span>
+
+</button>
+
+<button
+class="tool-btn"
+onclick="gantiUsername()">
+
+✏️ Ganti Username
+
+</button>
+
+<button
+class="tool-btn"
+onclick="openPinModal()">
+
+🔒 Ganti PIN
+
+</button>
+
+<button
+class="tool-btn"
+onclick="logoutApp()">
+
+🚪 Logout
+
+</button>
+
+</div>
+
+<!-- DATABASE -->
+
+<div class="card" style="margin-top:16px;">
+
+<div class="card-title">
+💾 Database
+</div>
+
+<button
+class="tool-btn"
+onclick="backupDatabase()">
+
+📤 Backup Semua Data
+
+</button>
+
+<button
+class="tool-btn"
+onclick="restoreDatabase()">
+
+📥 Restore Semua Data
+
+</button>
+
+<button
+class="tool-btn"
+onclick="resetDatabase()">
+
+🗑 Reset Semua Data
+
+</button>
+
+</div>
+
+<div style="margin-top:28px;text-align:center;font-size:11px;color:#94A3B8;line-height:1.8;">
+
+Dirhub
+
+<br>
+
+Smart Business Toolkit
+
+<br>
+
+Version Alpha V3
+
+</div>
+
+</div>
+
+</section>
+
+</div>
+
+<nav class="bottom-nav">
+
+<button class="nav-item active"
+onclick="bukaHalaman('home',this)">
+
+<i data-lucide="house"></i>
+
+<span>Home</span>
+
+</button>
+
+<button class="nav-item"
+onclick="bukaHalaman('analisis',this)">
+
+<i data-lucide="chart-column"></i>
+
+<span>Analisis</span>
+
+</button>
+
+<button class="nav-input"
+onclick="bukaHalaman('input',this)">
+
+<i data-lucide="plus"></i>
+
+</button>
+
+<button class="nav-item"
+onclick="bukaHalaman('catatan',this)">
+
+<i data-lucide="book-text"></i>
+
+<span>Catatan</span>
+
+</button>
+
+
+<button class="nav-item"
+onclick="bukaHalaman('tools',this)">
+
+<i data-lucide="blocks"></i>
+
+<span>Tools</span>
+
+</button>
+
+</nav>
+
+<style>
+
+
+
+/* ================= HEADER ================= */
+
+.header{
+
+position:sticky;
+
+top:0;
+
+z-index:1000;
+
+background:rgba(8,16,32,.92);
+
+backdrop-filter:blur(24px);
+
+border-bottom:1px solid rgba(255,255,255,.05);
+
+}
+
+.header-wrap{
+max-width:430px;
+
+margin:auto;
+
+padding:18px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+.brand{
+
+display:flex;
+
+align-items:center;
+
+gap:14px;
+
+}
+
+.logo{
+
+width:46px;
+
+height:46px;
+
+border-radius:16px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:20px;
+
+font-weight:800;
+
+background:linear-gradient(135deg,#3B82F6,#6366F1);
+
+box-shadow:0 8px 24px rgba(59,130,246,.25);
+
+}
+
+.brand-title{
+
+font-size:20px;
+
+font-weight:800;
+
+}
+
+.brand-sub{
+
+font-size:11px;
+
+color:#7F8EA8;
+
+margin-top:2px;
+
+}
+
+.menu-button{
+
+width:46px;
+
+height:46px;
+
+border-radius:14px;
+
+background:#13213A;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+color:#CBD5E1;
+
+transition:.25s;
+
+}
+
+.menu-button:hover{
+
+background:#1A2B47;
+
+}
+
+/* ================= NAVIGATION ================= */
+
+.bottom-nav{
+
+position:fixed;
+
+left:0px;
+
+right:0px;
+
+bottom:0px;
+
+height:90px;
+
+background:#101B2F;
+
+border:1px solid rgba(255,255,255,.06);
+
+border-radius:1px;
+
+display:flex;
+
+justify-content:space-around;
+
+align-items:center;
+
+box-shadow:
+
+0 15px 40px rgba(0,0,0,.45);
+
+z-index:1000;
+
+}
+
+.nav-item{
+
+background:none;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+gap:4px;
+
+color:#7F8EA8;
+
+font-size:10px;
+
+font-weight:600;
+
+transition:.25s;
+
+}
+
+.nav-item i{
+
+width:21px;
+
+height:21px;
+
+}
+
+.nav-item.active{
+
+color:#FFFFFF;
+
+transform:translateY(-6px);
+
+}
+
+.nav-item.active i{
+
+stroke:#4F7CFF;
+
+}
+
+.nav-input{
+
+width:58px;
+
+height:58px;
+
+border-radius:50%;
+
+background:linear-gradient(135deg,#3B82F6,#6366F1);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+margin-top:-26px;
+
+border:3px solid #08111F;
+
+box-shadow:
+
+0 10px 25px rgba(59,130,246,.35);
+
+transition:.25s;
+
+}
+
+.nav-input i{
+
+width:26px;
+
+height:26px;
+
+color:white;
+
+}
+
+.nav-input:active{
+
+transform:scale(.93);
+
+}
+/* =====================================
+PART 4B
+DIRNOTE HERO STYLE
+===================================== */
+
+.hero-card{
+
+position:relative;
+
+overflow:hidden;
+
+margin-top:6px;
+
+margin-bottom:14px;
+
+padding:12px;
+
+border-radius:24px;
+
+background:linear-gradient(
+180deg,
+#000000 0%,
+#08111F 0%
+);
+
+border:1px solid rgba(110,110,255,.10);
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.30);
+
+}
+
+/* Glow Biru */
+
+.hero-card::before{
+
+content:"";
+
+position:absolute;
+
+left:-80px;
+
+top:50%;
+
+transform:translateY(-50%);
+
+width:170px;
+
+height:170px;
+
+background:radial-gradient(
+circle,
+rgba(64,120,255,.18),
+transparent 72%
+);
+
+pointer-events:none;
+
+}
+
+/* ======================== */
+
+.hero-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:14px;
+
+}
+
+.hero-user{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+flex:1;
+
+}
+
+.hero-dot{
+
+width:8px;
+
+height:8px;
+
+border-radius:40%;
+
+background:#5d78ff;
+
+box-shadow:
+
+0 0 8px #5d78ff,
+
+0 0 18px #5d78ff,
+
+0 0 30px #5d78ff;
+
+animation:heroPulse 1.6s infinite;
+
+}
+
+@keyframes heroPulse{
+
+0%,100%{
+
+opacity:.45;
+
+transform:scale(.9);
+
+}
+
+50%{
+
+opacity:1;
+
+transform:scale(1.15);
+
+}
+
+}
+
+#greetingText{
+
+font-size:12px;
+
+font-weight:200;
+
+line-height:1.35;
+
+color:#ffffff;
+
+}
+
+/* ======================== */
+
+.hero-badge{
+
+height:20px;
+
+padding:0 18px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:14px;
+
+background:rgba(93,95,255,.12);
+
+border:1px solid rgba(93,95,255,.18);
+
+font-size:8px;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+color:#aeb7ff;
+
+white-space:nowrap;
+
+}
+
+/* ======================== */
+
+.hero-divider{
+
+height:1px;
+
+background:rgba(255,255,255,.06);
+
+margin:18px 0;
+
+}
+
+.hero-label{
+
+font-size:10px;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+color:#8d94ff;
+
+margin-bottom:14px;
+
+}
+
+.hero-quote{
+
+font-size:14px;
+
+line-height:1.85;
+
+font-weight:400;
+
+color:#d9e0f0;
+
+}
+/*==================================
+SETTING V1
+PART 1
+==================================*/
+
+.section-title{
+
+font-size:22px;
+
+font-weight:700;
+
+margin-bottom:18px;
+
+color:#fff;
+
+}
+
+.card{
+
+background:#101B2D;
+
+border:1px solid rgba(255,255,255,.06);
+
+border-radius:20px;
+
+padding:18px;
+
+margin-bottom:18px;
+
+}
+
+.card-title{
+
+font-size:13px;
+
+font-weight:700;
+
+color:#94A3B8;
+
+margin-bottom:14px;
+
+letter-spacing:1px;
+
+text-transform:uppercase;
+
+}
+
+.tool-btn{
+
+width:100%;
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+padding:14px 16px;
+
+margin-bottom:10px;
+
+background:#162235;
+
+border:none;
+
+border-radius:14px;
+
+color:#fff;
+
+font-size:14px;
+
+cursor:pointer;
+
+transition:.2s;
+
+}
+
+.tool-btn:last-child{
+
+margin-bottom:0;
+
+}
+
+.tool-btn:hover{
+
+background:#1B2A42;
+
+}
+
+.tool-btn:active{
+
+transform:scale(.98);
+
+}
+</style>
+
+<script>
+
+function bukaHalaman(id,btn){
+
+document.querySelectorAll(".page").forEach(function(page){
+
+page.classList.remove("active");
+
+});
+
+document.getElementById(id).classList.add("active");
+
+document.querySelectorAll(".nav-item").forEach(function(item){
+
+item.classList.remove("active");
+
+});
+
+if(btn){
+
+btn.classList.add("active");
+
+}
+
+/* REFRESH HALAMAN TOOLS */
+
+if(id==="insight"){
+
+setTimeout(function(){
+
+if(typeof drawPredictionChart==="function"){
+
+drawPredictionChart();
+
+}
+
+},100);
+
+}
+
+}
+
+lucide.createIcons();
+
+</script>
+
+<!-- =====================================
+PART 3
+PREMIUM SIDEBAR
+===================================== -->
+
+<!-- Overlay -->
+
+<div id="overlay"
+
+onclick="closeSidebar()"
+
+style="
+display:none;
+position:fixed;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.45);
+backdrop-filter:blur(4px);
+z-index:1500;
+">
+</div>
+
+<!-- Sidebar -->
+
+<aside id="sidebar">
+
+<div class="sidebar-header">
+
+<div class="sidebar-logo">
+
+D
+
+</div>
+
+<div>
+
+<div class="sidebar-title">
+Dirhub
+</div>
+
+<div class="sidebar-sub">
+Smart Business Toolkit
+</div>
+
+</div>
+
+</div>
+
+<div class="sidebar-divider"></div>
+
+<div class="sidebar-menu">
+
+<button class="sidebar-item"
+onclick="openTodo()">
+<i data-lucide="list-todo"></i>
+<span>Todo List</span>
+</button>
+
+<button
+class="sidebar-item"
+onclick="openStrategyLab()">
+<i data-lucide="target"></i>
+<span>Strategy Center</span>
+</button>
+
+
+<button class="sidebar-item" onclick="openHutang()">
+<i data-lucide="wallet"></i>
+<span>Hutang</span>
+</button>
+
+<button class="sidebar-item"
+onclick="bukaHalaman('setting');closeSidebar();">
+    <i data-lucide="settings"></i>
+    <span>Setting</span>
+</button>
+
+</div>
+
+<div class="sidebar-footer">
+
+Dirhub | Smart Business Toolkit
+
+</div>
+
+</aside>
+
+<style>
+
+#sidebar{
+
+position:fixed;
+
+left:-310px;
+
+top:0;
+
+width:290px;
+
+height:100%;
+
+background:#0F1B30;
+
+border-right:1px solid rgba(255,255,255,.06);
+
+transition:.35s;
+
+z-index:2000;
+
+overflow:auto;
+
+box-shadow:20px 0 50px rgba(0,0,0,.45);
+
+}
+
+.sidebar-header{
+
+padding:28px;
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+}
+
+.sidebar-logo{
+
+width:52px;
+
+height:52px;
+
+border-radius:18px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:22px;
+
+font-weight:800;
+
+background:linear-gradient(135deg,#3B82F6,#6366F1);
+
+box-shadow:0 10px 30px rgba(59,130,246,.25);
+
+}
+
+.sidebar-title{
+
+font-size:20px;
+
+font-weight:800;
+
+}
+
+.sidebar-sub{
+
+font-size:12px;
+
+color:#7F8EA8;
+
+margin-top:2px;
+
+}
+
+.sidebar-divider{
+
+height:1px;
+
+background:rgba(255,255,255,.05);
+
+margin:0 20px 20px;
+
+}
+
+.sidebar-menu{
+
+padding:0 18px;
+
+}
+
+.sidebar-item{
+
+width:100%;
+
+height:56px;
+
+margin-bottom:10px;
+
+border:none;
+
+border-radius:16px;
+
+background:transparent;
+
+display:flex;
+
+align-items:center;
+
+gap:14px;
+
+padding:0 16px;
+
+color:#CBD5E1;
+
+font-size:15px;
+
+font-weight:600;
+
+transition:.25s;
+
+}
+
+.sidebar-item i{
+
+width:22px;
+
+height:22px;
+
+color:#8EA3C7;
+
+}
+
+.sidebar-item:hover{
+
+background:#182641;
+
+transform:translateX(6px);
+
+}
+
+.sidebar-footer{
+
+position:absolute;
+
+left:24px;
+
+bottom:24px;
+
+font-size:12px;
+
+color:#64748B;
+
+}
+
+</style>
+
+<script>
+
+const menuButton=document.getElementById("menuButton");
+
+menuButton.onclick=function(){
+
+document.getElementById("sidebar").style.left="0";
+
+document.getElementById("overlay").style.display="block";
+
+}
+
+function closeSidebar(){
+
+document.getElementById("sidebar").style.left="-310px";
+
+document.getElementById("overlay").style.display="none";
+}
+
+function openTodo(){
+
+closeSidebar();
+
+bukaHalaman("todo");
+
+}
+function openStrategyLab(){
+
+closeSidebar();
+
+bukaHalaman("strategyLab");
+
+}
+
+let strategyOpen=true;
+
+function toggleStrategyList(){
+
+strategyOpen=!strategyOpen;
+
+document.getElementById("strategyBody").style.display=
+strategyOpen?"block":"none";
+
+document.getElementById("strategyArrow")
+.setAttribute(
+"data-lucide",
+strategyOpen
+?"chevron-down"
+:"chevron-right"
+);
+
+lucide.createIcons();
+
+}
+
+function openHutang(){
+
+closeSidebar();
+
+bukaHalaman("hutang");
+
+}
+
+lucide.createIcons();
+
+</script>
+
+<!-- =====================================
+PART 4C
+DIRNOTE HERO ENGINE
+===================================== -->
+
+<script>
+
+/* ===========================
+SAPAAN OTOMATIS
+=========================== */
+
+function updateGreeting(){
+
+const jam=new Date().getHours();
+
+let salam="";
+
+if(jam>=4 && jam<11){
+
+salam="Selamat Pagi";
+
+}else if(jam>=11 && jam<15){
+
+salam="Selamat Siang";
+
+}else if(jam>=15 && jam<18){
+
+salam="Selamat Sore";
+
+}else{
+
+salam="Selamat Malam";
+
+}
+
+document.getElementById("greetingText").innerHTML=
+salam+", Dirman";
+
+}
+
+/* ===========================
+BUSINESS QUOTES
+=========================== */
+
+const heroQuotes=[
+
+"Data lebih jujur daripada perasaan.",
+
+"Jangan sibuk, jadilah produktif.",
+
+"Disiplin mengalahkan motivasi.",
+
+"Keputusan terbaik lahir dari angka.",
+
+"Bisnis yang terukur lebih mudah bertumbuh.",
+
+"Keputusan terbaik selalu dimulai dari data.",
+
+"Belajar. Terapkan. Ulangi.",
+
+"Satu langkah lebih baik daripada diam.",
+
+"Bisnis sehat dimulai dari pencatatan.",
+
+"Kebiasaan kecil membangun bisnis besar."
+
+];
+
+/* ===========================
+QUOTE ACAK
+=========================== */
+
+function updateQuote(){
+
+const index=Math.floor(
+Math.random()*heroQuotes.length
+);
+
+document.getElementById("quoteText").innerHTML=
+heroQuotes[index];
+
+}
+
+/* ===========================
+GANTI QUOTE
+=========================== */
+
+setInterval(function(){
+
+updateQuote();
+
+},15000);
+
+/* ===========================
+INIT
+=========================== */
+
+document.addEventListener("DOMContentLoaded",function(){
+
+updateGreeting();
+
+updateQuote();
+
+});
+
+</script>
+
+<!-- =====================================
+TODO V3
+PART 2
+STYLE
+===================================== -->
+
+<style>
+
+.todo-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-top:8px;
+
+margin-bottom:24px;
+
+}
+
+.todo-label{
+
+font-size:11px;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+color:#8D94FF;
+
+margin-bottom:8px;
+
+}
+
+.todo-header h2{
+
+font-size:28px;
+
+font-weight:800;
+
+margin-bottom:6px;
+
+}
+
+.todo-header p{
+
+font-size:13px;
+
+color:#94A3B8;
+
+}
+
+#btnTambahTodo{
+
+width:54px;
+
+height:54px;
+
+border-radius:18px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:linear-gradient(135deg,#4F7CFF,#6E5BFF);
+
+box-shadow:0 12px 30px rgba(79,124,255,.35);
+
+color:white;
+
+}
+
+#btnTambahTodo i{
+
+width:24px;
+
+height:24px;
+
+}
+
+.todo-empty{
+
+padding:42px 24px;
+
+text-align:center;
+
+background:#101B2D;
+
+border:1px solid rgba(255,255,255,.06);
+
+border-radius:24px;
+
+}
+
+.todo-empty i{
+
+width:52px;
+
+height:52px;
+
+color:#6E5BFF;
+
+margin-bottom:16px;
+
+}
+
+.todo-empty h3{
+
+font-size:20px;
+
+margin-bottom:8px;
+
+}
+
+.todo-empty p{
+
+font-size:13px;
+
+color:#94A3B8;
+
+}
+
+.todo-modal{
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+display:none;
+
+align-items:flex-end;
+
+background:rgba(0,0,0,.55);
+
+backdrop-filter:blur(4px);
+
+z-index:9999;
+
+}
+
+.todo-box{
+
+width:100%;
+
+background:#101B2D;
+
+padding:22px;
+
+border-radius:28px 28px 0 0;
+
+}
+
+.todo-box h3{
+
+font-size:22px;
+
+margin-bottom:18px;
+
+}
+
+.todo-box input,
+
+.todo-box textarea{
+
+margin-bottom:14px;
+
+}
+
+.todo-button{
+
+display:flex;
+
+gap:12px;
+
+margin-top:8px;
+
+}
+
+.todo-button button{
+
+flex:1;
+
+height:50px;
+
+border-radius:16px;
+
+font-size:15px;
+
+font-weight:700;
+
+}
+
+#btnBatalTodo{
+
+background:#1E293B;
+
+color:white;
+
+}
+
+#btnSimpanTodo{
+
+background:linear-gradient(135deg,#4F7CFF,#6E5BFF);
+
+color:white;
+
+}
+
+</style>
+
+<!-- =====================================
+TODO V3
+PART 3
+ENGINE
+===================================== -->
+
+<script>
+
+let todoData=[];
+
+const todoModal=document.getElementById("todoModal");
+
+document.getElementById("btnTambahTodo").onclick=function(){
+
+todoModal.style.display="flex";
+
+}
+
+document.getElementById("btnBatalTodo").onclick=function(){
+
+todoModal.style.display="none";
+
+}
+
+document.getElementById("btnSimpanTodo").onclick=function(){
+
+const judul=document.getElementById("todoJudul").value.trim();
+
+const tanggal=document.getElementById("todoTanggal").value;
+
+const jam=document.getElementById("todoJam").value;
+
+const catatan=document.getElementById("todoCatatan").value.trim();
+
+if(judul==""){
+
+alert("Masukkan nama pekerjaan.");
+
+return;
+
+}
+
+todoData.push({
+
+judul:judul,
+
+tanggal:tanggal,
+
+jam:jam,
+
+catatan:catatan,
+
+status:false
+
+});
+
+renderTodo();
+
+document.getElementById("todoJudul").value="";
+
+document.getElementById("todoTanggal").value="";
+
+document.getElementById("todoJam").value="";
+
+document.getElementById("todoCatatan").value="";
+
+todoModal.style.display="none";
+
+}
+
+function renderTodo(){
+
+const list=document.getElementById("todoList");
+
+list.innerHTML="";
+
+if(todoData.length==0){
+
+list.innerHTML=`
+
+<div class="todo-empty">
+
+<i data-lucide="list-checks"></i>
+
+<h3>Belum Ada Todo</h3>
+
+<p>Tekan tombol + untuk menambahkan pekerjaan.</p>
+
+</div>
+
+`;
+
+lucide.createIcons();
+
+return;
+
+}
+
+todoData.forEach(function(item){
+
+list.innerHTML+=`
+
+<div class="todo-item">
+
+<div class="todo-title">
+
+${item.judul}
+
+</div>
+
+<div class="todo-date">
+
+${item.tanggal} ${item.jam}
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+lucide.createIcons();
+
+</script>
+
+<style>
+
+.todo-item{
+
+background:#101B2D;
+
+border:1px solid rgba(255,255,255,.06);
+
+border-radius:18px;
+
+padding:16px;
+
+margin-bottom:12px;
+
+}
+
+.todo-title{
+
+font-size:15px;
+
+font-weight:700;
+
+color:#fff;
+
+margin-bottom:6px;
+
+}
+
+.todo-date{
+
+font-size:12px;
+
+color:#94A3B8;
+
+}
+
+</style>
+
+<!-- =====================================
+TODO V3
+PART 4
+LOCAL STORAGE
+===================================== -->
+
+<script>
+
+function saveTodo(){
+
+localStorage.setItem(
+"DIRNOTE_TODO",
+JSON.stringify(todoData)
+);
+
+}
+
+function loadTodo(){
+
+const data=
+localStorage.getItem("DIRNOTE_TODO");
+
+if(data){
+
+todoData=JSON.parse(data);
+
+renderTodo();
+
+}
+
+}
+
+const simpanLama=
+document.getElementById("btnSimpanTodo").onclick;
+
+document.getElementById("btnSimpanTodo").onclick=function(){
+
+simpanLama();
+
+saveTodo();
+
+};
+
+document.addEventListener(
+"DOMContentLoaded",
+function(){
+
+loadTodo();
+
+});
+
+</script>
+
+<!-- =====================================
+TODO V3
+PART 5
+EDIT • HAPUS • SELESAI
+===================================== -->
+
+<script>
+
+function renderTodo(){
+
+const list=document.getElementById("todoList");
+
+list.innerHTML="";
+
+if(todoData.length===0){
+
+list.innerHTML=`
+<div class="todo-empty">
+<i data-lucide="list-checks"></i>
+<h3>Belum Ada Todo</h3>
+<p>Tekan tombol + untuk menambahkan pekerjaan.</p>
+</div>
+`;
+
+lucide.createIcons();
+
+return;
+
+}
+
+todoData.forEach(function(item,index){
+
+list.innerHTML+=`
+
+<div class="todo-item ${item.status?'todo-done':''}">
+
+<div class="todo-title">
+
+${item.status?'✅ ':''}${item.judul}
+
+</div>
+
+<div class="todo-date">
+
+${item.tanggal} ${item.jam}
+
+</div>
+
+<div class="todo-action">
+
+<button onclick="todoSelesai(${index})">
+
+✔
+
+</button>
+
+<button onclick="todoEdit(${index})">
+
+✏
+
+</button>
+
+<button onclick="todoHapus(${index})">
+
+🗑
+
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+function todoSelesai(index){
+
+todoData[index].status=!todoData[index].status;
+
+stopBeep();
+saveTodo();
+renderTodo();
+}
+
+function todoEdit(index){
+stopBeep();
+document.getElementById("todoJudul").value=todoData[index].judul;
+
+document.getElementById("todoTanggal").value=todoData[index].tanggal;
+
+document.getElementById("todoJam").value=todoData[index].jam;
+
+document.getElementById("todoCatatan").value=todoData[index].catatan;
+
+todoData.splice(index,1);
+
+saveTodo();
+
+renderTodo();
+
+document.getElementById("todoModal").style.display="flex";
+
+}
+
+function todoHapus(index){
+
+if(confirm("Hapus Todo ini?")){
+
+stopBeep();
+todoData.splice(index,1);
+saveTodo();
+renderTodo();
+}
+
+}
+
+renderTodo();
+
+</script>
+
+<style>
+
+.todo-action{
+
+display:flex;
+
+gap:10px;
+
+margin-top:14px;
+
+}
+
+.todo-action button{
+
+width:42px;
+
+height:42px;
+
+border-radius:12px;
+
+background:#182235;
+
+color:#fff;
+
+font-size:18px;
+
+}
+
+.todo-done{
+
+opacity:.65;
+
+}
+
+.todo-done .todo-title{
+
+text-decoration:line-through;
+
+}
+
+</style>
+
+<!-- =====================================
+TODO V3
+PART 6
+DEADLINE ENGINE
+===================================== -->
+
+<script>
+
+function checkTodoDeadline(){
+
+const sekarang=new Date().getTime();
+
+todoData.forEach(function(item,index){
+
+if(item.status)return;
+
+if(!item.tanggal || !item.jam)return;
+
+const deadline=new Date(
+
+item.tanggal+"T"+item.jam
+
+).getTime();
+
+if(sekarang>=deadline){
+
+// Getar HP
+if(navigator.vibrate){
+
+navigator.vibrate([300,200,300,200,600]);
+
+}
+
+// Bunyi Alert Browser
+
+// Bunyi Beep
+const audio=const audio = new Audio("audio/ting.mp3");
+audio.play();
+);
+
+audio.loop=true;
+
+audio.play();
+
+// Getar HP
+if(navigator.vibrate){
+
+navigator.vibrate([500,300,500,300,500]);
+
+}
+
+}
+
+});
+
+}
+
+setInterval(
+
+checkTodoDeadline,
+
+30000
+
+);
+
+document.addEventListener(
+
+"DOMContentLoaded",
+
+checkTodoDeadline
+
+);
+
+</script>
+
+<script>
+
+/* =====================================
+HOME TODO
+PART 3
+===================================== */
+
+function updateHomeTodo(){
+
+const aktif=todoData.filter(function(item){
+
+return item.status===false;
+
+});
+
+const badge=document.getElementById("todoBadge");
+
+const text=document.getElementById("homeTodoText");
+
+if(aktif.length===0){
+
+badge.style.display="none";
+
+text.innerHTML="Belum ada Todo.";
+
+return;
+
+}
+
+badge.style.display="flex";
+
+badge.innerHTML=aktif.length;
+
+text.innerHTML=aktif[0].judul;
+
+const miniBadge =
+document.getElementById("todoMiniBadge");
+
+const miniBell =
+document.querySelector("#todoMini i");
+
+if(aktif.length===0){
+
+miniBadge.style.display="none";
+
+miniBell.classList.remove("todoShake");
+
+}else{
+
+miniBadge.style.display="flex";
+
+miniBadge.innerHTML=aktif.length;
+
+miniBell.classList.add("todoShake");
+
+}
+
+}
+
+setInterval(updateHomeTodo,1000);
+
+document.addEventListener(
+
+"DOMContentLoaded",
+updateHomeTodo
+
+);
+
+</script>
+
+<!-- =====================================
+HOME TODO
+PART 4
+OPEN TODO
+===================================== -->
+
+<script>
+
+document.getElementById("homeTodoCard").onclick=function(){
+
+bukaHalaman("todo");
+
+closeSidebar();
+
+};
+
+</script>
+
+<!-- =====================================
+HOME TODO
+PART 5
+ANIMATION
+===================================== -->
+
+<style>
+
+/* LONCENG */
+
+.todoBell.ring{
+
+animation:todoBellRing 1.8s infinite;
+
+transform-origin:top center;
+
+}
+
+@keyframes todoBellRing{
+
+0%,100%{
+
+transform:rotate(0deg);
+
+}
+
+15%{
+
+transform:rotate(-18deg);
+
+}
+
+30%{
+
+transform:rotate(18deg);
+
+}
+
+45%{
+
+transform:rotate(-12deg);
+
+}
+
+60%{
+
+transform:rotate(12deg);
+
+}
+
+75%{
+
+transform:rotate(0deg);
+
+}
+
+/* CARD HIDUP */
+
+}
+
+.homeTodoCard.live{
+
+animation:cardLive 2.5s ease-in-out infinite;
+
+box-shadow:
+
+0 0 18px rgba(79,124,255,.18);
+
+border-color:rgba(79,124,255,.30);
+
+}
+
+@keyframes cardLive{
+
+0%,100%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-3px);
+
+}
+
+}
+
+}
+</style>
+
+<script>
+
+function updateTodoAnimation(){
+
+const aktif=todoData.filter(function(item){
+
+return item.status===false;
+
+});
+
+const bell=document.querySelector(".todoBell");
+
+const card=document.getElementById("homeTodoCard");
+
+if(aktif.length===0){
+
+bell.classList.remove("ring");
+
+card.classList.remove("live");
+
+return;
+
+}
+
+bell.classList.add("ring");
+
+card.classList.add("live");
+
+}
+
+setInterval(updateTodoAnimation,1000);
+
+document.addEventListener(
+
+"DOMContentLoaded",
+
+updateTodoAnimation
+
+);
+
+</script>
+
+<!-- =====================================
+HOME TODO
+PART 6
+REMINDER ENGINE V1
+===================================== -->
+
+<script>
+
+let reminderTimer=null;
+
+function reminderEngine(){
+
+const aktif=todoData.filter(function(item){
+
+return item.status===false;
+
+});
+
+if(aktif.length===0){
+
+stopBeep();
+
+return;
+
+}
+
+const item=aktif[0];
+
+if(!item.tanggal || !item.jam){
+
+stopBeep();
+
+return;
+
+}
+
+const sekarang=Date.now();
+
+const deadline=new Date(
+
+item.tanggal+"T"+item.jam
+
+).getTime();
+
+const sisa=deadline-sekarang;
+
+/* Mulai alarm 10 menit sebelum deadline */
+
+if(sisa<=600000){
+
+startBeep();
+
+if(navigator.vibrate){
+
+navigator.vibrate([500,300,500,300]);
+
+}
+
+}else{
+
+stopBeep();
+
+}
+
+}
+
+setInterval(
+
+reminderEngine,
+
+1000
+
+);
+
+document.addEventListener(
+
+"DOMContentLoaded",
+
+reminderEngine
+
+);
+
+</script>
+
+<!-- =====================================
+TODO V3
+PART 7
+BEEP ENGINE
+===================================== -->
+
+<script>
+
+let alarmAudio=null;
+
+function startBeep(){
+
+if(alarmAudio)return;
+
+alarmAudio=new Audio(
+"https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg"
+);
+
+alarmAudio.loop=true;
+
+alarmAudio.play().catch(function(){});
+
+}
+
+function stopBeep(){
+
+if(!alarmAudio)return;
+
+alarmAudio.pause();
+
+alarmAudio.currentTime=0;
+
+alarmAudio=null;
+
+if(navigator.vibrate){
+
+navigator.vibrate(0);
+
+}
+
+}
+
+</script>
+
+
+<script>
+/*====================================
+DIRNOTE HUTANG
+PART 3 ENGINE
+====================================*/
+
+let supplierData =
+JSON.parse(localStorage.getItem("DIRNOTE_SUPPLIER")) || [];
+
+let supplierAktif = -1;
+
+const popup = document.getElementById("popupSupplier");
+
+document.getElementById("btnTambahSupplier").onclick = function () {
+    popup.style.display = "flex";
+};
+
+document.getElementById("batalSupplier").onclick = function () {
+    popup.style.display = "none";
+};
+
+function simpanSupplierData(){
+    localStorage.setItem(
+        "DIRNOTE_SUPPLIER",
+        JSON.stringify(supplierData)
+    );
+}
+
+function renderSupplier(){
+
+    const list =
+    document.getElementById("supplierList");
+
+    if(supplierData.length===0){
+
+        list.innerHTML=
+        '<div class="htg-empty">Belum ada supplier</div>';
+
+        return;
+    }
+
+    list.innerHTML="";
+
+    supplierData.forEach(function(item,index){
+
+        list.innerHTML+=`
+<div class="htg-item ${supplierAktif===index?'active':''}">
+
+<div onclick="pilihSupplier(${index})">
+
+<div style="font-size:13px;font-weight:700">
+${item.nama}
+</div>
+
+<div style="font-size:11px;color:#94A3B8;margin-top:6px">
+Sisa :
+Rp${(item.sisa||0).toLocaleString("id-ID")}
+</div>
+
+</div>
+
+<div style="display:flex;gap:8px;margin-top:12px;">
+
+<button
+class="htg-btn"
+style="flex:1;height:38px;font-size:11px;"
+onclick="editSupplier(${index})">
+Edit
+</button>
+
+<button
+class="htg-btn"
+style="flex:1;height:38px;background:#EF4444;font-size:11px;"
+onclick="hapusSupplier(${index})">
+Hapus
+</button>
+
+</div>
+
+</div>
+`;
+        
+    });
+
+}
+
+function pilihSupplier(index){
+
+    supplierAktif=index;
+
+    renderSupplier();
+
+    document.getElementById("supplierDetail").innerHTML=`
+<div style="font-size:14px;font-weight:700">
+${supplierData[index].nama}
+</div>
+
+<div style="margin-top:8px;font-size:11px;color:#94A3B8">
+Terakhir Transaksi :
+${supplierData[index].history && supplierData[index].history.length
+? supplierData[index].history[supplierData[index].history.length-1].tanggal
+: "-"}
+</div>
+
+<div style="margin-top:12px;font-size:12px">
+Total Hutang :
+Rp${(supplierData[index].hutang||0).toLocaleString("id-ID")}
+</div>
+
+<div style="font-size:12px;margin-top:6px">
+Total Dibayar :
+Rp${(supplierData[index].bayar||0).toLocaleString("id-ID")}
+</div>
+
+<div style="font-size:12px;margin-top:6px">
+Sisa :
+Rp${(supplierData[index].sisa||0).toLocaleString("id-ID")}
+</div>
+`;
+}
+
+document.getElementById("simpanSupplier").onclick=function(){
+
+    const nama =
+    document.getElementById("namaSupplier")
+    .value.trim();
+
+    if(nama===""){
+
+        alert("Nama supplier wajib diisi");
+        return;
+
+    }
+
+    supplierData.push({
+
+        nama:nama,
+        hutang:0,
+        bayar:0,
+        sisa:0,
+        history:[]
+
+    });
+
+    simpanSupplierData();
+
+    document.getElementById("namaSupplier").value="";
+
+    popup.style.display="none";
+
+    renderSupplier();
+
+};
+
+renderSupplier();
+
+</script>
+<script>
+
+document.getElementById("batalHutang").onclick=function(){
+
+document.getElementById("hutangOverlay").style.display="none";
+
+};
+
+document.getElementById("batalBayar").onclick=function(){
+
+document.getElementById("bayarOverlay").style.display="none";
+
+};
+
+function bukaPopupHutang(){
+
+document.getElementById("hutangOverlay").style.display="flex";
+
+}
+
+function bukaPopupBayar(){
+
+document.getElementById("bayarOverlay").style.display="flex";
+
+}
+
+</script>
+
+<script>
+
+/*====================================
+DIRNOTE HUTANG
+PART 4B
+ENGINE TRANSAKSI
+====================================*/
+
+document.getElementById("saveHutang").onclick=function(){
+
+if(supplierAktif==-1){
+
+alert("Pilih supplier terlebih dahulu");
+
+return;
+
+}
+
+const nominal=Number(document.getElementById("hutangNominal").value);
+
+if(nominal<=0){
+
+alert("Masukkan nominal");
+
+return;
+
+}
+
+const s=supplierData[supplierAktif];
+
+s.hutang+=nominal;
+s.sisa=s.hutang-s.bayar;
+
+if(!s.history)s.history=[];
+
+s.history.push({
+
+jenis:"HUTANG",
+
+nominal:nominal,
+
+tanggal:new Date().toLocaleString("id-ID"),
+
+keterangan:document.getElementById("hutangKeterangan").value
+
+});
+
+simpanSupplierData();
+
+document.getElementById("hutangOverlay").style.display="none";
+
+document.getElementById("hutangNominal").value="";
+
+document.getElementById("hutangKeterangan").value="";
+
+renderSupplier();
+
+pilihSupplier(supplierAktif);
+
+};
+
+document.getElementById("saveBayar").onclick=function(){
+
+if(supplierAktif==-1){
+
+alert("Pilih supplier terlebih dahulu");
+
+return;
+
+}
+
+const nominal=Number(document.getElementById("bayarNominal").value);
+
+if(nominal<=0){
+
+alert("Masukkan nominal");
+
+return;
+
+}
+
+const s=supplierData[supplierAktif];
+
+s.bayar+=nominal;
+s.sisa=s.hutang-s.bayar;
+
+if(!s.history)s.history=[];
+
+s.history.push({
+
+jenis:"BAYAR",
+
+nominal:nominal,
+
+tanggal:new Date().toLocaleString("id-ID"),
+
+keterangan:document.getElementById("bayarKeterangan").value
+
+});
+
+simpanSupplierData();
+
+document.getElementById("bayarOverlay").style.display="none";
+
+document.getElementById("bayarNominal").value="";
+
+document.getElementById("bayarKeterangan").value="";
+
+renderSupplier();
+
+pilihSupplier(supplierAktif);
+
+};
+
+</script>
+
+<script>
+
+/*====================================
+DIRNOTE HUTANG
+PART 4C
+DASHBOARD + RIWAYAT
+====================================*/
+
+function updateDashboard(){
+
+let hutang=0;
+let bayar=0;
+
+supplierData.forEach(function(s){
+
+hutang+=s.hutang||0;
+bayar+=s.bayar||0;
+
+});
+
+document.getElementById("dashHutang").innerHTML=
+"Rp"+hutang.toLocaleString("id-ID");
+
+document.getElementById("dashBayar").innerHTML=
+"Rp"+bayar.toLocaleString("id-ID");
+
+document.getElementById("dashSisa").innerHTML=
+"Rp"+(hutang-bayar).toLocaleString("id-ID");
+
+}
+
+const pilihSupplierLama=pilihSupplier;
+
+pilihSupplier=function(index){
+
+pilihSupplierLama(index);
+
+const s=supplierData[index];
+
+const history = document.getElementById("hutangHistoryList");
+
+history.innerHTML="";
+
+if(!s.history || s.history.length===0){
+
+history.innerHTML=
+'<div class="htg-empty">Belum ada transaksi</div>';
+
+updateDashboard();
+
+return;
+
+}
+s.history.slice().reverse().forEach(function(item,index){
+
+const indexAsli = s.history.length - 1 - index;
+
+history.innerHTML+=`
+
+<div class="htg-item">
+
+<div style="font-size:13px;font-weight:700;">
+${item.jenis}
+</div>
+
+<div style="margin-top:6px;font-size:12px;">
+Rp${item.nominal.toLocaleString("id-ID")}
+</div>
+
+<div style="margin-top:6px;font-size:11px;color:#94A3B8;">
+${item.tanggal}
+</div>
+
+<div style="margin-top:4px;font-size:11px;color:#94A3B8;">
+${item.keterangan||""}
+</div>
+
+<div style="margin-top:10px;display:flex;gap:8px;">
+
+<button
+class="htg-btn"
+style="flex:1;background:#EF4444;"
+onclick="hapusHistory(${indexAsli})">
+Hapus
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+updateDashboard();
+
+};
+
+updateDashboard();
+
+</script>
+
+<script>
+
+/*====================================
+DIRNOTE HUTANG
+PART 4D
+TOMBOL TRANSAKSI
+====================================*/
+
+const pilihSupplierAsli = pilihSupplier;
+
+pilihSupplier = function(index){
+
+    pilihSupplierAsli(index);
+
+    const detail=document.getElementById("supplierDetail");
+
+    detail.innerHTML += `
+
+    <div style="display:flex;gap:10px;margin-top:18px;">
+
+        <button
+        onclick="bukaPopupHutang()"
+        class="htg-btn"
+        style="flex:1;">
+
+        + Hutang
+
+        </button>
+
+        <button
+        onclick="bukaPopupBayar()"
+        class="htg-btn"
+        style="flex:1;background:#22C55E;">
+
+        Bayar
+
+        </button>
+
+    </div>
+
+    `;
+
+};
+
+</script>
+
+<script>
+
+/* PART 4E */
+
+function bukaPopupHutang(){
+
+document.getElementById("popupHutang").style.display="flex";
+
+}
+
+function tutupPopupHutang(){
+
+document.getElementById("popupHutang").style.display="none";
+
+}
+
+function bukaPopupBayar(){
+
+document.getElementById("popupBayar").style.display="flex";
+
+}
+
+function tutupPopupBayar(){
+
+document.getElementById("popupBayar").style.display="none";
+
+}
+
+</script>
+
+<script>
+
+/*====================================
+DIRNOTE HUTANG
+FINAL ENGINE SIMPAN
+====================================*/
+
+window.addEventListener("load",function(){
+
+const btnHutang=document.getElementById("saveHutang");
+const btnBayar=document.getElementById("saveBayar");
+
+if(btnHutang){
+
+btnHutang.onclick=function(){
+
+if(supplierAktif<0){
+alert("Pilih supplier terlebih dahulu");
+return;
+}
+
+const nominal=parseInt(
+document.getElementById("hutangNominal").value
+)||0;
+
+if(nominal<=0){
+alert("Masukkan nominal");
+return;
+}
+
+const ket=
+document.getElementById("hutangKeterangan").value;
+
+const s=supplierData[supplierAktif];
+
+s.hutang+=nominal;
+s.sisa=s.hutang-s.bayar;
+
+if(!s.history)s.history=[];
+
+const tanggal = document.getElementById("hutangTanggal").value;
+
+s.history.push({
+jenis:"HUTANG",
+nominal:nominal,
+keterangan:ket,
+tanggal:tanggal
+});
+
+simpanSupplierData();
+
+renderSupplier();
+pilihSupplier(supplierAktif);
+
+updateDashboard();
+updateWalletStatus();
+
+document.getElementById("popupHutang").style.display="none";
+
+document.getElementById("hutangNominal").value="";
+document.getElementById("hutangKeterangan").value="";
+
+};
+
+}
+
+if(btnBayar){
+
+btnBayar.onclick=function(){
+
+if(supplierAktif<0){
+alert("Pilih supplier terlebih dahulu");
+return;
+}
+
+const nominal=parseInt(
+document.getElementById("bayarNominal").value
+)||0;
+
+if(nominal<=0){
+alert("Masukkan nominal");
+return;
+}
+
+const ket=
+document.getElementById("bayarKeterangan").value;
+
+const s=supplierData[supplierAktif];
+
+s.bayar+=nominal;
+s.sisa=s.hutang-s.bayar;
+
+if(!s.history)s.history=[];
+
+s.history.push({
+jenis:"BAYAR",
+nominal:nominal,
+keterangan:ket,
+tanggal:new Date().toLocaleString("id-ID")
+});
+
+simpanSupplierData();
+
+renderSupplier();
+pilihSupplier(supplierAktif);
+
+updateDashboard();
+updateWalletStatus();
+
+document.getElementById("popupBayar").style.display="none";
+
+document.getElementById("bayarNominal").value="";
+document.getElementById("bayarKeterangan").value="";
+
+};
+
+}
+
+});
+
+
+function editSupplier(index){
+
+let nama=prompt(
+"Nama Supplier",
+supplierData[index].nama
+);
+
+if(!nama)return;
+
+supplierData[index].nama=nama;
+
+simpanSupplierData();
+
+renderSupplier();
+
+}
+
+function hapusSupplier(index){
+
+if(!confirm("Hapus supplier ini?")) return;
+
+supplierData.splice(index,1);
+
+supplierAktif=-1;
+
+simpanSupplierData();
+
+renderSupplier();
+
+document.getElementById("supplierDetail").innerHTML=
+'<div class="htg-empty">Pilih supplier</div>';
+
+document.getElementById("hutangHistoryList").innerHTML=
+'<div class="htg-empty">Belum ada transaksi</div>';
+
+updateDashboard();
+updateWalletStatus();
+
+
+}
+
+function hapusHistory(index){
+
+if(!confirm("Hapus transaksi ini?")) return;
+
+const s = supplierData[supplierAktif];
+
+s.history.splice(index,1);
+
+/* Hitung ulang */
+
+s.hutang = 0;
+s.bayar = 0;
+
+s.history.forEach(function(item){
+
+if(item.jenis==="HUTANG"){
+
+s.hutang += Number(item.nominal)||0;
+
+}else{
+
+s.bayar += Number(item.nominal)||0;
+
+}
+
+});
+
+s.sisa = s.hutang - s.bayar;
+
+simpanSupplierData();
+
+pilihSupplier(supplierAktif);
+
+}
+</script>
+
+<script>
+/*==================================
+DIRNOTE ORDER
+PART 2A
+ENGINE DASAR
+==================================*/
+
+let orderData=
+JSON.parse(
+localStorage.getItem("DIRNOTE_ORDER")
+)||[];
+
+/*==============================*/
+
+function saveOrderData(){
+
+localStorage.setItem(
+"DIRNOTE_ORDER",
+JSON.stringify(orderData)
+);
+
+}
+
+/*==============================*/
+
+function updateVolumeHome(){
+
+const now=new Date();
+
+const today=
+now.getFullYear()+"-"+
+String(now.getMonth()+1).padStart(2,"0")+"-"+
+String(now.getDate()).padStart(2,"0");
+
+let jumlah=0;
+
+
+orderData.forEach(function(item){
+
+console.log(orderData);
+
+if(item.tanggal===today){
+
+jumlah+=Number(item.jumlah)||0;
+
+}
+
+});
+
+const persen=
+Math.min(
+100,
+(jumlah/TARGET_HARIAN)*100
+);
+
+if(document.getElementById("todayOrder")){
+
+document.getElementById("todayOrder").innerHTML=
+jumlah.toLocaleString("id-ID");
+
+}
+
+if(document.getElementById("todayPercent")){
+
+document.getElementById("todayPercent").innerHTML=
+persen.toFixed(0)+"%";
+
+}
+
+if(document.getElementById("volumeBar")){
+
+document.getElementById("volumeBar").style.width=
+persen+"%";
+
+}
+
+}
+
+/*==============================*/
+
+function renderOrderHistory(){
+
+const list=
+document.getElementById("historyOrderList");
+
+const total=
+document.getElementById("historyTotal");
+
+if(!list)return;
+
+orderData.sort(function(a,b){
+
+return b.tanggal.localeCompare(a.tanggal);
+
+});
+
+total.innerHTML=
+orderData.length+" Data";
+
+if(orderData.length===0){
+
+list.innerHTML=
+'<div class="history-empty">Belum ada data order.</div>';
+
+updateVolumeHome();
+
+return;
+
+}
+
+list.innerHTML="";
+
+orderData.forEach(function(item){
+
+list.innerHTML+=`
+
+<div class="history-item">
+
+<div class="history-title">
+
+${item.jumlah.toLocaleString("id-ID")} Order
+
+</div>
+
+<div class="history-sub">
+
+${item.tanggal} • ${item.sumber}
+
+</div>
+
+</div>
+
+`;
+
+});
+
+updateVolumeHome();
+
+}
+
+document.addEventListener(
+
+"DOMContentLoaded",
+
+
+function(){
+
+document.getElementById("orderTanggal").value=
+new Date().toISOString().split("T")[0];
+
+renderOrderHistory();
+updates();
+updateRingkasanOrder();
+updateTargetAnalisis();
+
+}
+
+);
+
+
+</script>
+
+<script>
+/*==================================
+DIRNOTE ORDER
+PART 2B
+EDIT + HAPUS
+==================================*/
+
+let editIndex=-1;
+
+/*==============================*/
+
+renderOrderHistory=function(){
+
+const list=
+document.getElementById("historyOrderList");
+
+const total=
+document.getElementById("historyTotal");
+
+if(!list)return;
+
+orderData.sort(function(a,b){
+
+return b.tanggal.localeCompare(a.tanggal);
+
+});
+
+total.innerHTML=
+orderData.length+" Data";
+
+if(orderData.length===0){
+
+list.innerHTML=
+'<div class="history-empty">Belum ada data order.</div>';
+
+updateVolumeHome();
+
+return;
+
+}
+
+list.innerHTML="";
+
+orderData.forEach(function(item,index){
+
+list.innerHTML+=`
+
+<div class="history-item">
+
+<div class="history-title">
+
+${item.jumlah.toLocaleString("id-ID")} Order
+
+</div>
+
+<div class="history-sub">
+
+${item.tanggal} • ${item.sumber}
+
+</div>
+
+<div class="history-action">
+
+<button
+onclick="editOrder(${index})">
+
+✏ Edit
+
+</button>
+
+<button
+onclick="hapusOrder(${index})">
+
+🗑 Hapus
+
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+updateVolumeHome();
+
+};
+
+/*==============================*/
+
+function editOrder(index){
+
+editIndex=index;
+
+const item=
+orderData[index];
+
+document.getElementById("orderTanggal").value=
+item.tanggal;
+
+document.getElementById("orderJumlah").value=
+item.jumlah;
+
+document.getElementById("orderSumber").value=
+item.sumber;
+
+bukaHalaman("input");
+
+document.querySelector(".nav-item").classList.remove("active");
+
+document.getElementById("orderTanggal").focus();
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+}
+
+/*==============================*/
+
+function hapusOrder(index){
+
+if(!confirm("Hapus data ini?")) return;
+
+orderData.splice(index,1);
+
+saveOrderData();
+
+renderOrderHistory();
+
+updateAnalisis();
+updateRingkasanOrder();
+updateTargetAnalisis();
+updatePolaHari();
+drawPredictionChart();
+
+updateBusinessOverview();
+
+}
+
+/*==============================*/
+
+document.getElementById("btnSimpanOrder").onclick=function(){
+
+const tanggal=
+document.getElementById("orderTanggal").value;
+
+const jumlah=
+parseInt(
+document.getElementById("orderJumlah").value
+)||0;
+
+const sumber=
+document.getElementById("orderSumber").value;
+
+if(tanggal===""){
+
+alert("Tanggal wajib diisi.");
+
+return;
+
+}
+
+if(jumlah<=0){
+
+alert("Masukkan jumlah order.");
+
+return;
+
+}
+
+/* MODE EDIT */
+
+if(editIndex>=0){
+
+orderData[editIndex].tanggal=
+tanggal;
+
+orderData[editIndex].jumlah=
+jumlah;
+
+orderData[editIndex].sumber=
+sumber;
+
+editIndex=-1;
+
+}
+
+/* MODE TAMBAH */
+
+else{
+
+const index=
+orderData.findIndex(function(item){
+
+return item.tanggal===tanggal;
+
+});
+
+if(index>=0){
+
+orderData[index].jumlah=
+jumlah;
+
+orderData[index].sumber=
+sumber;
+
+}else{
+
+orderData.push({
+
+id:Date.now(),
+
+tanggal:tanggal,
+
+jumlah:jumlah,
+
+sumber:sumber
+
+});
+
+}
+
+}
+
+saveOrderData();
+
+renderOrderHistory();
+
+updateAnalisis();
+updateRingkasanOrder();
+updateTargetAnalisis();
+updatePolaHari();
+updateBusinessOverview();
+
+document.getElementById("orderJumlah").value="";
+
+};
+
+renderOrderHistory();
+
+</script>
+
+<script>
+/*==================================
+DIRNOTE ORDER
+PART 2C
+IMPORT • EXPORT JSON
+==================================*/
+
+/*==============================
+EXPORT JSON
+==============================*/
+
+document.getElementById("btnExportJson").onclick=function(){
+
+if(orderData.length===0){
+
+alert("Belum ada data order.");
+
+return;
+
+}
+
+/* urutkan berdasarkan tanggal */
+
+const dataExport=
+orderData.slice().sort(function(a,b){
+
+return b.tanggal.localeCompare(a.tanggal);
+
+});
+
+const json=
+JSON.stringify(
+dataExport,
+null,
+2
+);
+
+const blob=new Blob(
+[json],
+{
+type:"application/json"
+}
+);
+
+const url=
+URL.createObjectURL(blob);
+
+const a=
+document.createElement("a");
+
+a.href=url;
+
+a.download="dirnote-order.json";
+
+document.body.appendChild(a);
+
+a.click();
+
+document.body.removeChild(a);
+
+URL.revokeObjectURL(url);
+
+};
+
+/*==============================
+IMPORT JSON
+==============================*/
+
+document.getElementById("btnImportJson").onclick=function(){
+
+document.getElementById("importJsonFile").click();
+
+};
+
+document.getElementById("importJsonFile").onchange=function(e){
+
+const file=e.target.files[0];
+
+if(!file)return;
+
+const reader=new FileReader();
+
+reader.onload=function(){
+
+try{
+
+const json=
+JSON.parse(reader.result);
+
+if(!Array.isArray(json)){
+
+alert("Format JSON tidak valid.");
+
+return;
+
+}
+
+/* validasi struktur */
+
+const valid=
+json.every(function(item){
+
+return(
+
+item.hasOwnProperty("id") &&
+item.hasOwnProperty("tanggal") &&
+item.hasOwnProperty("jumlah") &&
+item.hasOwnProperty("sumber")
+
+);
+
+});
+
+if(!valid){
+
+alert("Struktur JSON tidak sesuai.");
+
+return;
+
+}
+
+orderData=json;
+
+saveOrderData();
+
+renderOrderHistory();
+
+updateVolumeHome();
+updateAnalisis();
+updateRingkasanOrder();
+updateTargetAnalisis();
+updatePolaHari();
+
+alert("Import berhasil.");
+
+}catch(err){
+
+alert("File JSON tidak valid.");
+
+}
+
+};
+
+reader.readAsText(file);
+
+this.value="";
+
+};
+
+</script>
+
+<script>
+
+/*==================================
+DIRNOTE
+PIN BUTTON ENGINE
+==================================*/
+
+document.addEventListener("DOMContentLoaded",function(){
+
+const pinButton=document.getElementById("pinButton");
+
+if(!pinButton) return;
+
+pinButton.onclick=function(){
+
+/* Tutup sidebar jika sedang terbuka */
+
+if(typeof closeSidebar==="function"){
+
+closeSidebar();
+
+}
+
+/* Buka halaman Catatan */
+
+if(typeof bukaHalaman==="function"){
+
+const btn=document.querySelectorAll(".nav-item")[3];
+
+bukaHalaman("catatan",btn);
+
+}
+
+/* Scroll ke atas */
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+/* Jika nanti ada filter Pin */
+
+if(typeof showPinnedNotes==="function"){
+
+showPinnedNotes();
+
+}
+
+};
+
+});
+
+
+function updatePinBadge(){
+
+    const badge = document.getElementById("pinBadge");
+
+    if(!badge) return;
+
+    const total = noteData.filter(function(item){
+        return item.pin===true;
+    }).length;
+
+    badge.innerHTML = total;
+
+    if(total>0){
+        badge.style.display="flex";
+    }else{
+        badge.style.display="none";
+    }
+
+}
+
+document.addEventListener(
+"DOMContentLoaded",
+updatePinBadge
+
+
+);
+</script>
+<script>
+
+/*==================================
+DIRNOTE SPLASH
+PART 1C
+==================================*/
+
+window.addEventListener("load",function(){
+
+setTimeout(function(){
+
+const splash=
+document.getElementById("splashScreen");
+
+splash.style.opacity="0";
+
+setTimeout(function(){
+
+splash.remove();
+
+},500);
+
+},700);
+
+});
+</script>
+
+<!-- =====================================
+CATATAN V4
+PART 3
+ENGINE DASAR
+===================================== -->
+
+<script>
+
+let catatanData=
+JSON.parse(
+localStorage.getItem("DIRNOTE_CATATAN")
+)||[];
+
+let editCatatanIndex=-1;
+
+let fotoCatatan="";
+
+/* ==========================
+SIMPAN DATABASE
+========================== */
+
+function saveCatatan(){
+
+localStorage.setItem(
+"DIRNOTE_CATATAN",
+JSON.stringify(catatanData)
+);
+
+}
+
+/* ==========================
+RESET FORM
+========================== */
+
+function resetCatatanForm(){
+
+editCatatanIndex=-1;
+
+fotoCatatan="";
+
+document.getElementById("catatanJudul").value="";
+
+document.getElementById("catatanIsi").innerHTML = "";
+
+document.getElementById("catatanFoto").value="";
+
+const img=
+document.getElementById("previewFoto");
+
+img.src="";
+
+img.style.display="none";
+
+}
+
+/* ==========================
+BUKA MODAL
+========================== */
+
+document.getElementById("btnTambahCatatan").onclick=function(){
+
+resetCatatanForm();
+
+document.getElementById("catatanModal").style.display="flex";
+
+};
+
+/* ==========================
+TUTUP MODAL
+========================== */
+
+document.getElementById("btnBatalCatatan").onclick=function(){
+
+document.getElementById("catatanModal").style.display="none";
+
+resetCatatanForm();
+
+};
+
+/* ==========================
+UPLOAD FOTO
+========================== */
+
+document.getElementById("catatanFoto").onchange=function(e){
+
+const file=e.target.files[0];
+
+if(!file)return;
+
+const reader=new FileReader();
+
+reader.onload=function(){
+
+fotoCatatan=reader.result;
+
+const img=
+document.getElementById("previewFoto");
+
+img.src=fotoCatatan;
+
+img.style.display="block";
+
+};
+
+reader.readAsDataURL(file);
+
+};
+
+/* ==========================
+SIMPAN CATATAN
+========================== */
+
+document.getElementById("btnSimpanCatatan").onclick=function(){
+
+const judul=
+document.getElementById("catatanJudul").value.trim();
+
+const isi=
+document.getElementById("catatanIsi").innerHTML;
+
+if(judul===""){
+
+alert("Judul wajib diisi.");
+
+return;
+
+}
+
+const tanggal=
+new Date().toLocaleString("id-ID");
+
+/* MODE EDIT */
+
+if(editCatatanIndex>=0){
+
+catatanData[editCatatanIndex].judul=judul;
+catatanData[editCatatanIndex].isi=isi;
+catatanData[editCatatanIndex].foto=fotoCatatan;
+catatanData[editCatatanIndex].tanggal=tanggal;
+
+}
+
+/* MODE TAMBAH */
+
+else{
+
+catatanData.unshift({
+
+id:Date.now(),
+
+judul:judul,
+
+isi:isi,
+
+foto:fotoCatatan,
+
+tanggal:tanggal,
+
+pin:false
+
+});
+
+}
+
+saveCatatan();
+
+document.getElementById("catatanModal").style.display="none";
+
+resetCatatanForm();
+
+/* Render akan dibuat di Part 4 */
+
+if(typeof renderCatatan==="function"){
+
+renderCatatan();
+
+}
+
+};
+
+</script>
+
+<!-- =====================================
+CATATAN V4
+PART 4
+RENDER
+===================================== -->
+
+<script>
+
+function renderCatatan(){
+
+const list=
+document.getElementById("catatanList");
+
+if(!list)return;
+
+/* DATA KOSONG */
+
+if(catatanData.length===0){
+
+list.innerHTML=`
+
+<div class="catatan-empty">
+
+<h3>Belum Ada Catatan</h3>
+
+<p>Tekan tombol + untuk membuat catatan.</p>
+
+</div>
+
+`;
+
+return;
+
+}
+
+/* PIN DI PALING ATAS */
+
+const data=
+catatanData.slice().sort(function(a,b){
+
+if(a.pin===b.pin){
+
+return b.id-a.id;
+
+}
+
+return (b.pin?1:0)-(a.pin?1:0);
+
+});
+
+list.innerHTML="";
+
+data.forEach(function(item){
+
+const index=
+catatanData.findIndex(function(x){
+
+return x.id===item.id;
+
+});
+
+list.innerHTML+=`
+
+<div class="catatan-item">
+
+${item.foto?
+
+`<img
+src="${item.foto}"
+class="catatan-image">`
+
+:""}
+
+<div class="catatan-title">
+
+${item.pin?"📌 ":""}${item.judul}
+
+</div>
+
+<div class="catatan-divider"></div>
+
+<div class="catatan-action">
+
+<button onclick="togglePin(${index})">
+📌
+</button>
+
+<button onclick="editCatatan(${index})">
+✏️
+</button>
+
+<button onclick="exportPdf(${index})">
+📄
+</button>
+
+<button onclick="hapusCatatan(${index})">
+🗑️
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+/* Render saat aplikasi dibuka */
+
+document.addEventListener(
+
+"DOMContentLoaded",
+
+renderCatatan
+
+);
+
+</script>
+
+<!-- =====================================
+CATATAN V4
+PART 5
+EDIT
+===================================== -->
+
+<script>
+
+function editCatatan(index){
+
+const item=catatanData[index];
+
+editCatatanIndex=index;
+
+document.getElementById("catatanJudul").value=
+item.judul;
+
+document.getElementById("catatanIsi").innerHTML = item.isi;
+
+fotoCatatan=item.foto||"";
+
+const preview=
+document.getElementById("previewFoto");
+
+if(item.foto){
+
+preview.src=item.foto;
+
+preview.style.display="block";
+
+}else{
+
+preview.src="";
+preview.style.display="none";
+
+}
+
+document.getElementById("catatanModal").style.display="flex";
+
+}
+
+</script>
+
+<!-- =====================================
+CATATAN V4
+PART 6
+PIN + BADGE
+===================================== -->
+
+<script>
+
+/* ==========================
+PIN CATATAN
+========================== */
+
+function togglePin(index){
+
+catatanData[index].pin=
+!catatanData[index].pin;
+
+saveCatatan();
+
+renderCatatan();
+
+updatePinBadge();
+
+}
+
+/* ==========================
+BADGE PIN
+========================== */
+
+function updatePinBadge(){
+
+const badge=
+document.getElementById("pinBadge");
+
+if(!badge)return;
+
+const total=
+catatanData.filter(function(item){
+
+return item.pin===true;
+
+}).length;
+
+badge.innerHTML=total;
+
+badge.style.display=
+total>0 ? "flex" : "none";
+
+}
+
+/* ==========================
+UPDATE SAAT LOAD
+========================== */
+
+document.addEventListener(
+"DOMContentLoaded",
+function(){
+renderOrderHistory();
+updateAnalisis();
+updateRingkasanOrder();
+updateTargetAnalisis();
+updatePolaHari();
+
+updatePinBadge();
+
+});
+
+/* ==========================
+UPDATE SETELAH RENDER
+========================== */
+
+const renderCatatanLama=
+renderCatatan;
+
+renderCatatan=function(){
+
+renderCatatanLama();
+
+updatePinBadge();
+
+};
+
+function formatDoc(cmd){
+
+document.execCommand(cmd,false,null);
+
+document.getElementById("catatanIsi").focus();
+
+}
+
+</script>
+
+<!-- =====================================
+CATATAN V4
+PART 7
+EXPORT PDF
+===================================== -->
+
+<script>
+
+async function exportPdf(index){
+
+const item=catatanData[index];
+
+const {jsPDF}=window.jspdf;
+
+const pdf=new jsPDF();
+
+pdf.setFont("helvetica","bold");
+pdf.setFontSize(18);
+pdf.text(item.judul,15,20);
+
+pdf.setFont("helvetica","normal");
+pdf.setFontSize(10);
+pdf.text(item.tanggal,15,30);
+
+let y=42;
+
+/* FOTO */
+
+if(item.foto){
+
+try{
+
+pdf.addImage(
+item.foto,
+"JPEG",
+15,
+y,
+60,
+60
+);
+
+y+=70;
+
+}catch(e){}
+
+}
+
+/* ISI */
+
+pdf.setFontSize(12);
+
+const isi=
+pdf.splitTextToSize(
+item.isi,
+180
+);
+
+pdf.text(
+isi,
+15,
+y
+);
+
+pdf.save(
+(item.judul||"Catatan")+".pdf"
+);
+
+}
+
+</script>
+
+<!-- =====================================
+CATATAN V4
+PART 8
+HAPUS CATATAN
+===================================== -->
+
+<script>
+
+function hapusCatatan(index){
+
+const item=catatanData[index];
+
+if(!confirm(
+'Hapus catatan "'+item.judul+'"?'
+)){
+return;
+}
+
+catatanData.splice(index,1);
+
+saveCatatan();
+
+renderCatatan();
+
+updatePinBadge();
+
+if(catatanData.length===0){
+
+resetCatatanForm();
+
+}
+
+}
+
+/*=============================
+SEARCH SUPPLIER
+=============================*/
+
+document.getElementById("cariSupplier").addEventListener("input", function(){
+
+const keyword=this.value.toLowerCase();
+
+const list=document.getElementById("supplierList");
+
+list.innerHTML="";
+
+const hasil=supplierData.filter(function(item){
+
+return item.nama.toLowerCase().includes(keyword);
+
+});
+
+if(hasil.length===0){
+
+list.innerHTML='<div class="htg-empty">Supplier tidak ditemukan</div>';
+
+return;
+
+}
+
+hasil.forEach(function(item){
+
+const index=supplierData.indexOf(item);
+
+list.innerHTML+=`
+
+<div class="htg-item ${supplierAktif===index?'active':''}">
+
+<div onclick="pilihSupplier(${index})">
+
+<div style="font-size:13px;font-weight:700">
+${item.nama}
+</div>
+
+<div style="margin-top:6px;font-size:11px;color:#94A3B8">
+Sisa : Rp${(item.sisa||0).toLocaleString("id-ID")}
+</div>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+});
+
+/*==================================
+WALLET HUTANG ENGINE
+==================================*/
+
+function updateWalletStatus(){
+
+let total=0;
+
+supplierData.forEach(function(item){
+total+=item.sisa||0;
+});
+
+const icon=document.getElementById("walletIcon");
+
+if(!icon)return;
+
+icon.classList.remove(
+"wallet-green",
+"wallet-yellow",
+"wallet-red"
+);
+
+if(total>=200000000){
+
+icon.classList.add("wallet-red");
+
+}else if(total>=150000000){
+
+icon.classList.add("wallet-yellow");
+
+}else if(total>=100000000){
+
+icon.classList.add("wallet-green");
+
+}
+
+}
+
+document.getElementById("walletButton").onclick=function(){
+
+bukaHalaman("hutang");
+
+closeSidebar();
+
+};
+
+window.addEventListener("load",updateWalletStatus);
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+window.addEventListener("load",function(){
+
+const btn=document.getElementById("btnPrintHutang");
+
+if(!btn)return;
+
+btn.onclick=function(){
+
+buatPdfSupplier();
+
+};
+
+});
+
+function buatPdfSupplier(){
+
+if(supplierAktif<0){
+alert("Pilih supplier terlebih dahulu.");
+return;
+}
+
+const s=supplierData[supplierAktif];
+
+const { jsPDF } = window.jspdf;
+const pdf = new jsPDF("p","mm","a4");
+
+let y = 20;
+let sisa = 0;
+
+/* =====================================
+WATERMARK DIRNOTE
+===================================== */
+
+pdf.saveGraphicsState();
+
+pdf.setTextColor(220,228,245);
+
+pdf.setDrawColor(220,228,245);
+
+pdf.setLineWidth(0.6);
+
+pdf.roundedRect(
+35,
+110,
+140,
+34,
+2,
+2
+);
+
+pdf.setFont("helvetica","bold");
+
+pdf.setFontSize(20);
+
+pdf.text(
+" D I R N O T E ",
+105,
+123,
+{align:"center"}
+);
+
+pdf.setFont("helvetica","normal");
+
+pdf.setFontSize(10);
+
+pdf.text(
+"Powered by Dirman",
+105,
+134,
+{align:"center"}
+);
+
+pdf.restoreGraphicsState();
+
+/* ===================================== */
+
+pdf.setFont("helvetica","bold");
+pdf.setFontSize(24);
+pdf.text("DIRNOTE",20,20);
+
+pdf.setFontSize(15);
+pdf.text("LAPORAN HUTANG SUPPLIER",20,32);
+
+pdf.setFont("helvetica","normal");
+pdf.setFontSize(11);
+
+pdf.text("Supplier : "+s.nama,20,50);
+
+pdf.text(
+"Tanggal Cetak : "+new Date().toLocaleDateString("id-ID"),
+20,
+60
+);
+
+pdf.line(20,70,190,70);
+
+y=82;
+
+pdf.setFont("helvetica","bold");
+pdf.setFontSize(11);
+
+pdf.text("Tanggal",20,y);
+pdf.text("Keterangan",60,y);
+pdf.text("Hutang",120,y);
+pdf.text("Bayar",155,y);
+pdf.text("Sisa",190,y,{align:"right"});
+
+y+=5;
+
+pdf.line(20,y,190,y);
+
+y+=10;
+
+pdf.setFont("helvetica","normal");
+pdf.setFontSize(10);
+
+if(s.history && s.history.length){
+
+s.history.forEach(function(item){
+
+let hutang="";
+let bayar="";
+
+if(item.jenis==="HUTANG"){
+hutang="Rp"+item.nominal.toLocaleString("id-ID");
+sisa+=item.nominal;
+}else{
+bayar="Rp"+item.nominal.toLocaleString("id-ID");
+sisa-=item.nominal;
+}
+
+pdf.text(item.tanggal.substring(0,10),20,y);
+
+pdf.text(
+(item.keterangan || "-").substring(0,25),
+60,
+y
+);
+
+pdf.text(hutang,120,y);
+
+pdf.text(bayar,155,y);
+
+pdf.text(
+"Rp"+sisa.toLocaleString("id-ID"),
+190,
+y,
+{align:"right"}
+);
+
+y+=10;
+
+if(y>265){
+
+pdf.addPage();
+
+y=20;
+
+}
+
+if(y>270){
+
+pdf.addPage();
+
+y=20;
+
+}
+
+});
+
+}
+
+y+=8;
+
+pdf.line(20,y,190,y);
+
+y+=12;
+
+pdf.setFont("helvetica","bold");
+pdf.setFontSize(12);
+
+pdf.text("TOTAL HUTANG",20,y);
+pdf.text(
+"Rp"+s.hutang.toLocaleString("id-ID"),
+190,
+y,
+{align:"right"}
+);
+
+y+=8;
+
+pdf.text("TOTAL DIBAYAR",20,y);
+pdf.text(
+"Rp"+s.bayar.toLocaleString("id-ID"),
+190,
+y,
+{align:"right"}
+);
+
+y+=8;
+
+pdf.text("SISA HUTANG",20,y);
+pdf.text(
+"Rp"+s.sisa.toLocaleString("id-ID"),
+190,
+y,
+{align:"right"}
+);
+
+pdf.save("Hutang-"+s.nama+".pdf");
+
+}
+</script>
+
+<script>
+
+/*==================================
+DIRNOTE HUTANG
+BACKUP & IMPORT
+==================================*/
+
+const btnBackup=document.getElementById("btnBackupHutang");
+const btnImport=document.getElementById("btnImportHutang");
+const fileImport=document.getElementById("importHutangFile");
+
+/*==============================
+BACKUP
+==============================*/
+
+if(btnBackup){
+
+btnBackup.onclick=function(){
+
+const data={
+supplierData:supplierData
+};
+
+const json=JSON.stringify(data,null,2);
+
+const blob=new Blob(
+[json],
+{
+type:"application/json"
+}
+);
+
+const url=URL.createObjectURL(blob);
+
+const a=document.createElement("a");
+
+a.href=url;
+
+a.download="dirnote-hutang.json";
+
+document.body.appendChild(a);
+
+a.click();
+
+document.body.removeChild(a);
+
+URL.revokeObjectURL(url);
+
+};
+
+}
+
+/*==============================
+IMPORT
+==============================*/
+
+if(btnImport){
+
+btnImport.onclick=function(){
+
+fileImport.click();
+
+};
+
+}
+
+if(fileImport){
+
+fileImport.onchange=function(e){
+
+const file=e.target.files[0];
+
+if(!file)return;
+
+const reader=new FileReader();
+
+reader.onload=function(){
+
+try{
+
+const data=JSON.parse(reader.result);
+
+if(!data.supplierData){
+
+alert("File tidak valid.");
+
+return;
+
+}
+
+supplierData=data.supplierData;
+
+localStorage.setItem(
+"DIRNOTE_SUPPLIER",
+JSON.stringify(supplierData)
+);
+
+supplierAktif=-1;
+
+renderSupplier();
+
+updateDashboard();
+
+updateWalletStatus();
+
+document.getElementById("supplierDetail").innerHTML=
+'<div class="htg-empty">Pilih supplier</div>';
+
+document.getElementById("historyList").innerHTML=
+'<div class="htg-empty">Belum ada transaksi</div>';
+
+alert("Import berhasil.");
+
+}catch(err){
+
+alert("File JSON tidak valid.");
+
+}
+
+};
+
+reader.readAsText(file);
+
+this.value="";
+
+};
+}
+
+/*==================================
+DIRNOTE ANALISIS
+PART 3 ENGINE
+==================================*/
+
+function totalOrder(mulai, akhir){
+
+let total=0;
+
+orderData.forEach(function(item){
+
+const t=new Date(item.tanggal);
+
+t.setHours(0,0,0,0);
+
+if(t>=mulai && t<akhir){
+
+total+=Number(item.jumlah)||0;
+
+}
+
+});
+
+return total;
+
+}
+
+function persenAnalisis(sekarang,sebelumnya){
+
+if(sebelumnya===0){
+
+if(sekarang===0) return 0;
+
+return 100;
+
+}
+
+return ((sekarang-sebelumnya)/sebelumnya)*100;
+
+}
+
+function tampilGrowth(el,persen){
+
+el.classList.remove("up","down","flat");
+
+if(persen>0){
+
+el.classList.add("up");
+
+el.innerHTML=
+"↑ +"+persen.toFixed(1).replace(".",",")+"%";
+
+}else if(persen<0){
+
+el.classList.add("down");
+
+el.innerHTML=
+"↓ "+Math.abs(persen).toFixed(1).replace(".",",")+"%";
+
+}else{
+
+el.classList.add("flat");
+
+el.innerHTML="0%";
+
+}
+
+}
+
+function updateAnalisis(){
+
+const hari=new Date();
+
+hari.setHours(0,0,0,0);
+
+/* =================
+1 HARI
+================= */
+
+const besok=new Date(hari);
+besok.setDate(besok.getDate()+1);
+
+const kemarin=new Date(hari);
+kemarin.setDate(kemarin.getDate()-1);
+
+const hariIni = totalOrder(hari, besok);
+const hariLalu = totalOrder(kemarin, hari);
+
+document.getElementById("anHariOrder").innerHTML=
+hariIni.toLocaleString("id-ID")+" Order";
+
+document.getElementById("anHariVs").innerHTML=
+hariLalu.toLocaleString("id-ID")+" Order";
+
+tampilGrowth(
+document.getElementById("anHariGrowth"),
+persenAnalisis(hariIni,hariLalu)
+);
+
+/* =================
+7 HARI
+================= */
+
+const mingguAwal=new Date(hari);
+
+mingguAwal.setDate(mingguAwal.getDate()-6);
+
+const mingguLaluAwal=new Date(hari);
+
+mingguLaluAwal.setDate(mingguLaluAwal.getDate()-13);
+
+const mingguLaluAkhir=new Date(hari);
+
+mingguLaluAkhir.setDate(mingguLaluAkhir.getDate()-7);
+
+const mingguIni=
+totalOrder(mingguAwal,besok);
+
+const mingguLalu=
+totalOrder(mingguLaluAwal,mingguLaluAkhir);
+
+document.getElementById("anMingguOrder").innerHTML=
+mingguIni.toLocaleString("id-ID")+" Order";
+
+document.getElementById("anMingguVs").innerHTML=
+mingguLalu.toLocaleString("id-ID")+" Order";
+
+tampilGrowth(
+document.getElementById("anMingguGrowth"),
+persenAnalisis(mingguIni,mingguLalu)
+);
+
+/* =================
+30 HARI
+================= */
+
+const bulanAwal=new Date(hari);
+
+bulanAwal.setDate(bulanAwal.getDate()-29);
+
+const bulanLaluAwal=new Date(hari);
+
+bulanLaluAwal.setDate(bulanLaluAwal.getDate()-59);
+
+const bulanLaluAkhir=new Date(hari);
+
+bulanLaluAkhir.setDate(bulanLaluAkhir.getDate()-30);
+
+const bulanIni=
+totalOrder(bulanAwal,besok);
+
+const bulanLalu=
+totalOrder(bulanLaluAwal,bulanLaluAkhir);
+
+document.getElementById("anBulanOrder").innerHTML=
+bulanIni.toLocaleString("id-ID")+" Order";
+
+document.getElementById("anBulanVs").innerHTML=
+bulanLalu.toLocaleString("id-ID")+" Order";
+
+tampilGrowth(
+document.getElementById("anBulanGrowth"),
+persenAnalisis(bulanIni,bulanLalu)
+);
+
+}
+/* =========================
+ANALISIS
+ORDER RATA-RATA
+PART 3 ENGINE
+========================= */
+
+function updateRingkasanOrder(){
+
+if(!orderData || orderData.length===0){
+
+document.getElementById("avgOrderHarian").innerHTML="-";
+document.getElementById("totalHariOrder").innerHTML="-";
+document.getElementById("totalOrderAnalisis").innerHTML="-";
+document.getElementById("hariRamai").innerHTML="-";
+document.getElementById("orderHariRamai").innerHTML="-";
+document.getElementById("hariSepi").innerHTML="-";
+document.getElementById("orderHariSepi").innerHTML="-";
+
+return;
+
+}
+
+let totalOrder=0;
+
+let hariRamai=orderData[0];
+
+let hariSepi=orderData[0];
+
+orderData.forEach(function(item){
+
+const jumlah=Number(item.jumlah)||0;
+
+totalOrder+=jumlah;
+
+if(jumlah>hariRamai.jumlah){
+
+hariRamai=item;
+
+}
+
+if(jumlah<hariSepi.jumlah){
+
+hariSepi=item;
+
+}
+
+});
+
+const rataRata=
+Math.round(totalOrder/orderData.length);
+
+document.getElementById("avgOrderHarian").innerHTML=
+rataRata.toLocaleString("id-ID")+" Order";
+
+document.getElementById("totalHariOrder").innerHTML=
+orderData.length.toLocaleString("id-ID")+" Hari";
+
+document.getElementById("totalOrderAnalisis").innerHTML=
+totalOrder.toLocaleString("id-ID")+" Order";
+
+document.getElementById("hariRamai").innerHTML=
+hariRamai.tanggal;
+
+document.getElementById("orderHariRamai").innerHTML=
+Number(hariRamai.jumlah).toLocaleString("id-ID")+" Order";
+
+document.getElementById("hariSepi").innerHTML=
+hariSepi.tanggal;
+
+document.getElementById("orderHariSepi").innerHTML=
+Number(hariSepi.jumlah).toLocaleString("id-ID")+" Order";
+
+}
+
+function ubahTarget(){
+
+const target = prompt(
+"Masukkan Target Harian",
+TARGET_HARIAN
+);
+
+if(target===null) return;
+
+if(isNaN(target) || Number(target)<=0){
+
+alert("Target tidak valid.");
+
+return;
+
+}
+
+TARGET_HARIAN = Number(target);
+
+localStorage.setItem(
+"DIRNOTE_TARGET",
+TARGET_HARIAN
+);
+
+document.getElementById("targetOrder").innerHTML =
+TARGET_HARIAN.toLocaleString("id-ID")+" Order";
+
+updateVolumeHome();
+updateAnalisis();
+}
+
+/* =========================
+ANALISIS
+TARGET HARIAN
+PART 3 ENGINE
+========================= */
+
+function updateTargetAnalisis(){
+
+if(!orderData || orderData.length===0)return;
+
+let tercapai=0;
+let gagal=0;
+let total=0;
+
+orderData.forEach(function(item){
+
+const jumlah=Number(item.jumlah)||0;
+
+total+=jumlah;
+
+if(jumlah>=TARGET_HARIAN){
+
+tercapai++;
+
+}else{
+
+gagal++;
+
+}
+
+});
+
+const rata=Math.round(total/orderData.length);
+
+const selisih=rata-TARGET_HARIAN;
+
+const persen=
+Math.round(
+(tercapai/orderData.length)*100
+);
+
+/*==========================
+ISI DATA
+==========================*/
+
+document.getElementById("targetValue").innerHTML=
+TARGET_HARIAN.toLocaleString("id-ID")+" Order";
+
+document.getElementById("targetAverage").innerHTML=
+rata.toLocaleString("id-ID")+" Order";
+
+document.getElementById("targetSelisih").innerHTML=
+(selisih>=0?"+":"")+
+selisih.toLocaleString("id-ID")+
+" Order";
+
+document.getElementById("targetSuccess").innerHTML=
+tercapai+" Hari";
+
+document.getElementById("targetFail").innerHTML=
+gagal+" Hari";
+
+document.getElementById("legendSuccess").innerHTML=
+tercapai+" Hari ("+persen+"%)";
+
+document.getElementById("legendFail").innerHTML=
+gagal+" Hari ("+(100-persen)+"%)";
+
+/*==========================
+WARNA SELISIH
+==========================*/
+
+const sel=document.getElementById("targetSelisih");
+
+sel.className="";
+
+if(selisih>=0){
+
+sel.classList.add("target-good");
+
+}else{
+
+sel.classList.add("target-bad");
+
+}
+
+/*==========================
+INSIGHT
+==========================*/
+
+document.getElementById("targetInsight").innerHTML=
+
+"Rata-rata harian saat ini mencapai <b>"+
+
+Math.round((rata/TARGET_HARIAN)*100)+
+
+"%</b> dari target harian.";
+
+/*==========================
+DONUT
+==========================*/
+
+gambarDonutTarget(
+
+tercapai,
+
+gagal,
+
+persen
+
+);
+
+}
+
+/* =========================
+ANALISIS
+TARGET HARIAN
+PART 4
+DONUT ANIMATION
+========================= */
+
+let donutAnimasi = null;
+
+function gambarDonutTarget(
+tercapai,
+gagal,
+persen
+){
+
+const canvas =
+document.getElementById("targetDonut");
+
+if(!canvas) return;
+
+const ctx =
+canvas.getContext("2d");
+
+const w = canvas.width;
+const h = canvas.height;
+
+const r = 80;
+
+if(donutAnimasi){
+
+cancelAnimationFrame(donutAnimasi);
+
+}
+
+let progress = 0;
+
+function animasi(){
+
+ctx.clearRect(0,0,w,h);
+
+const tampil =
+persen*(progress/100);
+
+const sudut =
+(tampil/100)*
+Math.PI*2;
+
+/* Ring merah */
+
+ctx.beginPath();
+
+ctx.lineWidth = 34;
+ctx.strokeStyle = "#EF4444";
+
+ctx.arc(
+w/2,
+h/2,
+r,
+-Math.PI/2,
+Math.PI*1.5
+);
+
+ctx.stroke();
+
+/* Ring hijau */
+
+ctx.beginPath();
+
+ctx.lineWidth = 34;
+ctx.strokeStyle = "#22C55E";
+
+ctx.arc(
+w/2,
+h/2,
+r,
+-Math.PI/2,
+sudut-Math.PI/2
+);
+
+ctx.stroke();
+
+/* Tengah */
+
+ctx.textAlign = "center";
+
+ctx.fillStyle = "#CBD5E1";
+ctx.font = "700 13px Plus Jakarta Sans";
+
+ctx.fillText(
+"TINGKAT",
+w/2,
+h/2-18
+);
+
+ctx.fillText(
+"KEBERHASILAN",
+w/2,
+h/2+2
+);
+
+ctx.fillStyle = "#22C55E";
+ctx.font = "700 34px Plus Jakarta Sans";
+
+ctx.fillText(
+Math.round(tampil)+"%",
+w/2,
+h/2+42
+);
+
+progress += 4;
+
+if(progress<=100){
+
+donutAnimasi =
+requestAnimationFrame(animasi);
+
+}
+
+}
+
+animasi();
+
+}
+
+/* =========================
+ANALISIS
+KALENDER
+PART 3 ENGINE
+========================= */
+
+let calendarDate = new Date();
+
+/* ========================= */
+
+function renderCalendar(){
+
+const bulan =
+calendarDate.getMonth();
+
+const tahun =
+calendarDate.getFullYear();
+
+const namaBulan=[
+"Januari","Februari","Maret","April",
+"Mei","Juni","Juli","Agustus",
+"September","Oktober","November","Desember"
+];
+
+document.getElementById("calendarMonth").innerHTML=
+namaBulan[bulan]+" "+tahun;
+
+const grid=
+document.getElementById("calendarGrid");
+
+grid.innerHTML="";
+
+/* Hari pertama */
+
+let first=
+new Date(tahun,bulan,1).getDay();
+
+first=(first+6)%7;
+
+/* Jumlah hari */
+
+const totalHari=
+new Date(tahun,bulan+1,0).getDate();
+
+/* Kotak kosong */
+
+for(let i=0;i<first;i++){
+
+grid.innerHTML+=`
+<div></div>
+`;
+
+}
+
+/* Tanggal */
+
+for(let t=1;t<=totalHari;t++){
+
+const tanggal=
+
+tahun+"-"+
+
+String(bulan+1).padStart(2,"0")+"-"+
+
+String(t).padStart(2,"0");
+
+const data=
+orderData.find(function(item){
+
+return item.tanggal===tanggal;
+
+});
+
+let jumlah=0;
+
+let kelas="calendar-empty";
+
+if(data){
+
+jumlah=Number(data.jumlah)||0;
+
+if(jumlah>=TARGET_HARIAN){
+
+kelas="calendar-success";
+
+}else{
+
+kelas="calendar-fail";
+
+}
+
+}
+
+grid.innerHTML+=`
+
+<div
+class="calendar-day ${kelas}">
+
+<div class="calendar-date">
+
+${t}
+
+</div>
+
+<div class="calendar-order">
+
+${jumlah>0?
+
+jumlah.toLocaleString("id-ID")
+
+:"-"}
+
+</div>
+
+</div>
+
+`;
+
+}
+
+lucide.createIcons();
+
+}
+
+/* ========================= */
+
+function prevMonth(){
+
+calendarDate.setMonth(
+
+calendarDate.getMonth()-1
+
+);
+
+renderCalendar();
+
+}
+
+/* ========================= */
+
+function nextMonth(){
+
+calendarDate.setMonth(
+
+calendarDate.getMonth()+1
+
+);
+
+renderCalendar();
+
+}
+
+/* ========================= */
+
+document.addEventListener(
+
+"DOMContentLoaded",
+
+function(){
+
+renderCalendar();
+
+}
+
+);
+
+/* =========================
+ANALISIS
+POLA HARI PENJUALAN
+PART 3 ENGINE
+========================= */
+
+function updatePolaHari(){
+
+if(!orderData || orderData.length===0)return;
+
+const namaHari=[
+"Minggu",
+"Senin",
+"Selasa",
+"Rabu",
+"Kamis",
+"Jumat",
+"Sabtu"
+];
+
+/* =========================
+RATA-RATA PER HARI
+========================= */
+
+const statistik={};
+
+orderData.forEach(function(item){
+
+const t=new Date(item.tanggal);
+
+const hari=namaHari[t.getDay()];
+
+if(!statistik[hari]){
+
+statistik[hari]={
+nama:hari,
+total:0,
+jumlah:0
+};
+
+}
+
+statistik[hari].total+=Number(item.jumlah)||0;
+statistik[hari].jumlah++;
+
+});
+
+let rataHari=[];
+
+for(const h in statistik){
+
+rataHari.push({
+
+nama:h,
+
+rata:
+Math.round(
+statistik[h].total/
+statistik[h].jumlah
+),
+
+jumlah:
+statistik[h].jumlah
+
+});
+
+}
+
+const dataRata = rataHari
+.filter(item => item.jumlah > 0);
+
+const ramaiAvg = [...dataRata]
+.sort(function(a,b){
+    return b.rata - a.rata;
+})
+.slice(0,3);
+
+const sepiAvg = [...dataRata]
+.sort(function(a,b){
+    return a.rata - b.rata;
+})
+.slice(0,3);
+
+/* =========================
+DATA REALITA
+========================= */
+
+const ramaiReal=
+orderData.slice()
+.sort((a,b)=>b.jumlah-a.jumlah)
+.slice(0,3);
+
+const sepiReal=
+orderData.slice()
+.sort((a,b)=>a.jumlah-b.jumlah)
+.slice(0,3);
+
+/* =========================
+RENDER
+========================= */
+
+renderWeekday(
+"weekdayRamaiAvg",
+ramaiAvg,
+true
+);
+
+renderWeekday(
+"weekdaySepiAvg",
+sepiAvg,
+true
+);
+
+renderWeekday(
+"weekdayRamaiReal",
+ramaiReal,
+false
+);
+
+renderWeekday(
+"weekdaySepiReal",
+sepiReal,
+false
+);
+
+}
+
+/* ========================= */
+
+function renderWeekday(id,data,rata){
+
+const box=
+document.getElementById(id);
+
+if(!box)return;
+
+box.innerHTML="";
+
+const medal=[
+"🥇",
+"🥈",
+"🥉"
+];
+
+data.forEach(function(item,index){
+
+const namaHari=[
+"Minggu",
+"Senin",
+"Selasa",
+"Rabu",
+"Kamis",
+"Jumat",
+"Sabtu"
+];
+
+let nama=item.nama;
+
+if(!rata){
+
+nama=
+namaHari[
+new Date(item.tanggal).getDay()
+];
+
+}
+
+box.innerHTML+=`
+
+<div class="weekday-item">
+
+<div class="weekday-left">
+
+<div class="weekday-rank
+${index===0?"rank-gold":index===1?"rank-silver":"rank-bronze"}">
+
+${medal[index]}
+
+</div>
+
+<div class="weekday-info">
+
+<div class="weekday-name">
+
+${nama}
+
+</div>
+
+<div class="weekday-count">
+
+${
+rata
+? item.jumlah+" Data"
+: item.tanggal
+}
+
+</div>
+
+</div>
+
+</div>
+
+<div class="weekday-value">
+
+<div class="weekday-order">
+
+${Number(item.rata||item.jumlah).toLocaleString("id-ID")} Order
+
+</div>
+
+<div class="weekday-sub">
+
+${
+rata
+? "Rata-rata"
+: "Data Realita"
+}
+
+</div>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+/*==================================
+DIRNOTE TOOLS
+PART 3
+==================================*/
+
+function openTool(nama){
+
+const modal=document.getElementById("toolModal");
+const content=document.getElementById("toolContent");
+
+let html="";
+
+switch(nama){
+
+case "persen":
+
+html=`
+
+<h2>Kalkulator Persen</h2>
+
+<input
+type="number"
+id="angkaAwal"
+class="tool-input"
+placeholder="Angka Awal">
+
+<input
+type="number"
+id="angkaAkhir"
+class="tool-input"
+placeholder="Angka Akhir">
+
+<button
+class="tool-btn"
+onclick="hitungPersen()">
+
+Hitung
+
+</button>
+
+<div
+id="hasilPersen"
+class="tool-result"></div>
+
+`;
+
+break;
+
+case "roas":
+
+html=`
+
+<h2>Kalkulator ROAS</h2>
+
+<input
+type="number"
+id="roasOmzet"
+class="tool-input"
+placeholder="Total Omzet">
+
+<input
+type="number"
+id="roasIklan"
+class="tool-input"
+placeholder="Biaya Iklan">
+
+<button
+class="tool-btn"
+onclick="hitungROAS()">
+
+Hitung ROAS
+
+</button>
+
+<div
+id="roasHasil"
+class="tool-result"></div>
+
+`;
+
+break;
+
+case "sku":
+
+html=`
+
+<h2>SKU Generator</h2>
+
+<p class="tool-result">
+
+Segera Hadir
+
+</p>
+
+`;
+
+break;
+
+case "barcode":
+
+html=`
+
+<h2>Barcode Generator</h2>
+
+<p class="tool-result">
+
+Segera Hadir
+
+</p>
+
+`;
+
+break;
+
+case "qrcode":
+
+html=`
+
+<h2>QR Code Generator</h2>
+
+<p class="tool-result">
+
+Segera Hadir
+
+</p>
+
+`;
+
+break;
+
+case "scanner":
+
+html=`
+
+<h2>Barcode Scanner</h2>
+
+<p class="tool-result">
+
+Segera Hadir
+
+</p>
+
+`;
+
+break;
+
+}
+
+content.innerHTML=html;
+
+modal.style.display="flex";
+
+lucide.createIcons();
+
+}
+
+function closeToolModal(){
+
+document.getElementById("toolModal").style.display="none";
+
+}
+
+/*==================================
+DIRNOTE TOOLS
+PART 4
+CALCULATOR FUNCTION
+==================================*/
+
+function hitungPersen(){
+
+let awal=parseFloat(
+document.getElementById("angkaAwal").value
+)||0;
+
+let akhir=parseFloat(
+document.getElementById("angkaAkhir").value
+)||0;
+
+if(awal===0){
+
+document.getElementById("hasilPersen").innerHTML=
+"Masukkan Angka Awal.";
+
+return;
+
+}
+
+let persen=((akhir-awal)/awal)*100;
+
+let warna=persen>=0?"#22C55E":"#EF4444";
+let simbol=persen>=0?"+":"";
+
+document.getElementById("hasilPersen").innerHTML=`
+
+<div style="
+font-size:34px;
+font-weight:800;
+color:${warna};
+margin-top:10px;
+">
+
+${simbol}${persen.toFixed(2)}%
+
+</div>
+
+<div style="
+margin-top:8px;
+font-size:13px;
+color:#94A3B8;
+">
+
+Perubahan dari ${awal} menjadi ${akhir}
+
+</div>
+
+`;
+
+}
+
+function hitungROAS(){
+
+let omzet=parseFloat(
+document.getElementById("roasOmzet").value
+)||0;
+
+let iklan=parseFloat(
+document.getElementById("roasIklan").value
+)||0;
+
+if(iklan<=0){
+
+document.getElementById("roasHasil").innerHTML=
+"Masukkan biaya iklan.";
+
+return;
+
+}
+
+let roas=omzet/iklan;
+
+document.getElementById("roasHasil").innerHTML=`
+
+<div style="
+font-size:34px;
+font-weight:800;
+color:#22C55E;
+margin-top:10px;
+">
+
+${roas.toFixed(2)} x
+
+</div>
+
+<div style="
+margin-top:8px;
+font-size:13px;
+color:#94A3B8;
+">
+
+ROAS = Omzet ÷ Biaya Iklan
+
+</div>
+
+`;
+
+}
+
+/*==================================
+DIRNOTE TOOLS
+PART 5
+SKU GENERATOR
+==================================*/
+
+function generateSKU(){
+
+let brand=document.getElementById("skuBrand").value.trim().toUpperCase();
+
+let kategori=document.getElementById("skuKategori").value.trim().toUpperCase();
+
+let warna=document.getElementById("skuWarna").value.trim().toUpperCase();
+
+let ukuran=document.getElementById("skuUkuran").value.trim().toUpperCase();
+
+if(
+brand===""||
+kategori===""||
+warna===""||
+ukuran===""){
+
+document.getElementById("skuHasil").innerHTML=
+"Lengkapi semua data.";
+
+return;
+
+}
+
+let sku=
+
+brand.substring(0,3)+"-"+
+kategori.substring(0,3)+"-"+
+warna.substring(0,3)+"-"+
+ukuran;
+
+document.getElementById("skuHasil").innerHTML=
+
+`
+
+<div style="
+font-size:26px;
+font-weight:800;
+letter-spacing:2px;
+color:#22C55E;
+word-break:break-all;
+">
+
+${sku}
+
+</div>
+
+<button
+class="tool-btn"
+style="margin-top:18px"
+onclick="copySKU()">
+
+Salin SKU
+
+</button>
+
+`;
+
+window.lastSKU=sku;
+
+}
+
+function copySKU(){
+
+navigator.clipboard.writeText(window.lastSKU);
+
+alert("SKU berhasil disalin.");
+
+}
+
+/*==================================
+DIRNOTE TOOLS
+PART 6
+SKU FORM
+==================================*/
+
+document.addEventListener("click",function(e){
+
+const btn=e.target.closest(".tool-card");
+
+if(!btn) return;
+
+if(btn.getAttribute("onclick")==="openTool('sku')"){
+
+document.getElementById("toolContent").innerHTML=`
+
+<h2>SKU Generator</h2>
+
+<input
+type="text"
+id="skuBrand"
+class="tool-input"
+placeholder="Brand (Contoh: RAM)">
+
+<input
+type="text"
+id="skuKategori"
+class="tool-input"
+placeholder="Kategori (POLO)">
+
+<input
+type="text"
+id="skuWarna"
+class="tool-input"
+placeholder="Warna (BLACK)">
+
+<input
+type="text"
+id="skuUkuran"
+class="tool-input"
+placeholder="Ukuran (L)">
+
+<button
+class="tool-btn"
+onclick="generateSKU()">
+
+Generate SKU
+
+</button>
+
+<div
+id="skuHasil"
+class="tool-result">
+
+</div>
+
+`;
+
+document.getElementById("toolModal").style.display="flex";
+
+lucide.createIcons();
+
+}
+
+});
+
+/*==================================
+DIRNOTE TOOLS
+PART 7
+QR CODE GENERATOR
+==================================*/
+
+function generateQRCode(){
+
+let text=document.getElementById("qrText").value.trim();
+
+if(text===""){
+
+document.getElementById("qrResult").innerHTML=
+"Masukkan teks atau link.";
+
+return;
+
+}
+
+let url=
+"https://api.qrserver.com/v1/create-qr-code/?size=250x250&data="+
+encodeURIComponent(text);
+
+document.getElementById("qrResult").innerHTML=
+
+`
+
+<img
+src="${url}"
+style="
+width:220px;
+height:220px;
+border-radius:16px;
+background:#FFF;
+padding:10px;
+margin:20px auto;
+display:block;
+">
+
+<button
+class="tool-btn"
+onclick="window.open('${url}','_blank')">
+
+Buka QR Code
+
+</button>
+
+`;
+
+}
+
+/*==================================
+DIRNOTE TOOLS
+PART 8
+QR FORM
+==================================*/
+
+document.addEventListener("click",function(e){
+
+const btn=e.target.closest(".tool-card");
+
+if(!btn) return;
+
+if(btn.getAttribute("onclick")==="openTool('qrcode')"){
+
+document.getElementById("toolContent").innerHTML=`
+
+<h2>QR Code Generator</h2>
+
+<input
+type="text"
+id="qrText"
+class="tool-input"
+placeholder="Masukkan teks atau link">
+
+<button
+class="tool-btn"
+onclick="generateQRCode()">
+
+Generate QR Code
+
+</button>
+
+<div
+id="qrResult"
+class="tool-result">
+
+</div>
+
+`;
+
+document.getElementById("toolModal").style.display="flex";
+
+}
+
+});
+
+/*==================================
+DIRNOTE TOOLS
+PART 9
+BARCODE GENERATOR
+==================================*/
+
+function generateBarcode(){
+
+let text=document.getElementById("barcodeText").value.trim();
+
+if(text===""){
+
+document.getElementById("barcodeResult").innerHTML=
+"Masukkan kode barcode.";
+
+return;
+
+}
+
+let url=
+"https://barcode.tec-it.com/barcode.ashx?data="+
+encodeURIComponent(text)+
+"&code=Code128&dpi=96";
+
+document.getElementById("barcodeResult").innerHTML=`
+
+<img
+src="${url}"
+style="
+width:100%;
+max-width:320px;
+background:#FFF;
+padding:12px;
+border-radius:14px;
+display:block;
+margin:20px auto;
+">
+
+<div style="
+margin-top:10px;
+font-size:13px;
+text-align:center;
+color:#94A3B8;
+">
+
+${text}
+
+</div>
+
+<button
+class="tool-btn"
+onclick="window.open('${url}','_blank')">
+
+Buka Barcode
+
+</button>
+
+`;
+
+}
+
+document.addEventListener("click",function(e){
+
+const btn=e.target.closest(".tool-card");
+
+if(!btn) return;
+
+if(btn.getAttribute("onclick")==="openTool('barcode')"){
+
+document.getElementById("toolContent").innerHTML=`
+
+<h2>Barcode Generator</h2>
+
+<input
+type="text"
+id="barcodeText"
+class="tool-input"
+placeholder="Masukkan SKU atau kode">
+
+<button
+class="tool-btn"
+onclick="generateBarcode()">
+
+Generate Barcode
+
+</button>
+
+<div
+id="barcodeResult"
+class="tool-result">
+
+</div>
+
+`;
+
+document.getElementById("toolModal").style.display="flex";
+
+}
+
+});
+/*==================================
+DIRNOTE TOOLS
+PART 10
+BARCODE SCANNER
+==================================*/
+
+let scannerStream=null;
+
+async function startBarcodeScanner(){
+
+const result=document.getElementById("scannerResult");
+
+if(!("BarcodeDetector" in window)){
+
+result.innerHTML=
+"Browser ini belum mendukung Barcode Scanner.";
+
+return;
+
+}
+
+try{
+
+const detector=new BarcodeDetector({
+formats:[
+"code_128",
+"ean_13",
+"ean_8",
+"qr_code"
+]
+});
+
+scannerStream=
+await navigator.mediaDevices.getUserMedia({
+video:{
+facingMode:"environment"
+}
+});
+
+const video=document.getElementById("scannerVideo");
+
+video.srcObject=scannerStream;
+
+video.play();
+
+async function scan(){
+
+const codes=
+await detector.detect(video);
+
+if(codes.length){
+
+result.innerHTML=`
+
+<div style="
+font-size:22px;
+font-weight:700;
+color:#22C55E;
+word-break:break-all;
+">
+
+${codes[0].rawValue}
+
+</div>
+
+`;
+
+scannerStream.getTracks().forEach(track=>track.stop());
+
+return;
+
+}
+
+requestAnimationFrame(scan);
+
+}
+
+scan();
+
+}catch(err){
+
+result.innerHTML=
+"Gagal membuka kamera.";
+
+}
+
+}
+
+document.addEventListener("click",function(e){
+
+const btn=e.target.closest(".tool-card");
+
+if(!btn)return;
+
+if(btn.getAttribute("onclick")==="openTool('scanner')"){
+
+document.getElementById("toolContent").innerHTML=`
+
+<h2>Barcode Scanner</h2>
+
+<video
+id="scannerVideo"
+autoplay
+playsinline
+style="
+width:100%;
+border-radius:18px;
+background:#000;
+margin-top:15px;
+"></video>
+
+<button
+class="tool-btn"
+onclick="startBarcodeScanner()">
+
+Buka Kamera
+
+</button>
+
+<div
+id="scannerResult"
+class="tool-result">
+
+Arahkan kamera ke Barcode atau QR Code.
+
+</div>
+
+`;
+
+document.getElementById("toolModal").style.display="flex";
+
+}
+
+});
+
+/*==================================
+DIRNOTE TOOLS
+PART 11
+CLOSE MODAL
+==================================*/
+
+function closeToolModal(){
+
+const modal=document.getElementById("toolModal");
+
+modal.style.display="none";
+
+const content=document.getElementById("toolContent");
+
+content.innerHTML="";
+
+if(typeof scannerStream!=="undefined" && scannerStream){
+
+scannerStream.getTracks().forEach(track=>track.stop());
+
+scannerStream=null;
+
+}
+
+}
+
+window.addEventListener("click",function(e){
+
+const modal=document.getElementById("toolModal");
+
+if(e.target===modal){
+
+closeToolModal();
+
+}
+
+});
+
+document.addEventListener("keydown",function(e){
+
+if(e.key==="Escape"){
+
+closeToolModal();
+
+}
+
+});
+
+/*==================================
+DIRNOTE TOOLS
+PART 13
+COPY FUNCTION
+==================================*/
+
+async function copyText(text){
+
+try{
+
+await navigator.clipboard.writeText(text);
+
+showCopyToast("Berhasil disalin");
+
+}catch(e){
+
+const input=document.createElement("textarea");
+
+input.value=text;
+
+document.body.appendChild(input);
+
+input.select();
+
+document.execCommand("copy");
+
+document.body.removeChild(input);
+
+showCopyToast("Berhasil disalin");
+
+}
+
+}
+
+function showCopyToast(msg){
+
+const toast=document.createElement("div");
+
+toast.innerHTML=msg;
+
+toast.style.position="fixed";
+toast.style.left="50%";
+toast.style.bottom="30px";
+toast.style.transform="translateX(-50%)";
+toast.style.background="#101B2D";
+toast.style.color="#FFF";
+toast.style.padding="12px 20px";
+toast.style.borderRadius="12px";
+toast.style.fontSize="13px";
+toast.style.fontWeight="600";
+toast.style.zIndex="99999";
+toast.style.boxShadow="0 10px 30px rgba(0,0,0,.35)";
+
+document.body.appendChild(toast);
+
+setTimeout(function(){
+
+toast.remove();
+
+},1800);
+
+}
+
+/*==================================
+DIRNOTE TOOLS
+PART 14
+HELPER FUNCTION
+==================================*/
+
+function showToast(text){
+
+const toast=document.createElement("div");
+
+toast.className="dirnote-toast";
+
+toast.innerHTML=text;
+
+document.body.appendChild(toast);
+
+setTimeout(function(){
+
+toast.classList.add("show");
+
+},50);
+
+setTimeout(function(){
+
+toast.classList.remove("show");
+
+setTimeout(function(){
+
+toast.remove();
+
+},300);
+
+},1800);
+
+}
+
+function formatRupiah(angka){
+
+angka=Number(angka)||0;
+
+return "Rp "+angka.toLocaleString("id-ID");
+
+}
+
+function formatNumber(angka){
+
+angka=Number(angka)||0;
+
+return angka.toLocaleString("id-ID");
+
+}
+
+function randomID(panjang=8){
+
+const chars="ABCDEFGHJKLMNPQRSTUVWXYZ123456789";
+
+let hasil="";
+
+for(let i=0;i<panjang;i++){
+
+hasil+=chars.charAt(
+Math.floor(Math.random()*chars.length)
+);
+
+}
+
+return hasil;
+
+}
+
+/*==================================
+BUSINESS OVERVIEW V7
+PART 3A
+==================================*/
+
+function updateBusinessOverview(){
+
+const today=new Date();
+today.setHours(0,0,0,0);
+
+const todayStr=
+today.toISOString().split("T")[0];
+
+let orderHari=0;
+let order7=0;
+let order30=0;
+
+const besok=new Date(today);
+besok.setDate(besok.getDate()+1);
+
+const mingguAwal=new Date(today);
+mingguAwal.setDate(mingguAwal.getDate()-6);
+
+const bulanAwal=new Date(today);
+bulanAwal.setDate(bulanAwal.getDate()-29);
+
+orderHari=
+totalOrder(today,besok);
+
+order7=
+totalOrder(mingguAwal,besok);
+
+order30=
+totalOrder(bulanAwal,besok);
+
+const target30=
+TARGET_HARIAN*30;
+
+const persen30=
+Math.min(
+100,
+(order30/target30)*100
+);
+
+const persen7=
+Math.min(
+100,
+(order7/(TARGET_HARIAN*7))*100
+);
+
+const persenHari=
+Math.min(
+100,
+(orderHari/TARGET_HARIAN)*100
+);
+
+document.getElementById("overviewPercent").innerHTML=
+Math.round(persen30)+"%";
+
+document.getElementById("overviewOrder").innerHTML=
+order30.toLocaleString("id-ID")+" Order";
+
+document.getElementById("overviewTarget").innerHTML=
+"Target "+target30.toLocaleString("id-ID");
+
+document.getElementById("summaryOrder").innerHTML=
+order30.toLocaleString("id-ID");
+
+document.getElementById("summaryTarget").innerHTML=
+target30.toLocaleString("id-ID");
+
+document.getElementById("todayProgressText").innerHTML=
+Math.round(persenHari)+"%";
+
+document.getElementById("weekProgressText").innerHTML=
+Math.round(persen7)+"%";
+
+document.getElementById("monthProgressText").innerHTML=
+Math.round(persen30)+"%";
+
+document.getElementById("todayProgressBar").style.width=
+persenHari+"%";
+
+document.getElementById("weekProgressBar").style.width=
+persen7+"%";
+
+document.getElementById("monthProgressBar").style.width=
+persen30+"%";
+
+const circle=
+302;
+
+document.getElementById("overviewDonut").style.strokeDashoffset=
+circle-(circle*persen30/100);
+
+}
+
+/*==================================
+BUSINESS OVERVIEW
+PART 3B
+AUTO UPDATE
+==================================*/
+
+const volumeHomeLama=
+updateVolumeHome;
+
+updateVolumeHome=function(){
+
+volumeHomeLama();
+
+updateBusinessOverview();
+
+};
+
+/*==============================*/
+
+document.addEventListener(
+
+"DOMContentLoaded",
+
+function(){
+
+updateBusinessOverview();
+
+}
+
+);
+
+/*==================================
+BUSINESS OVERVIEW
+PART 3D
+AUTO SYNC
+==================================*/
+
+(function(){
+
+const targetLama=
+ubahTarget;
+
+ubahTarget=function(){
+
+targetLama();
+
+updateBusinessOverview();
+
+};
+
+})();
+
+/*==============================*/
+
+window.addEventListener(
+
+"load",
+
+function(){
+
+setTimeout(function(){
+
+updateBusinessOverview();
+
+},300);
+
+}
+
+/*==============================*/
+
+);
+
+/*==============================*/
+
+document.addEventListener(
+
+"visibilitychange",
+
+function(){
+
+if(!document.hidden){
+
+updateBusinessOverview();
+
+}
+
+}
+
+/*==============================*/
+
+);
+
+/*==============================*/
+
+window.addEventListener(
+
+"storage",
+
+function(e){
+
+if(
+
+e.key==="DIRNOTE_ORDER" ||
+
+e.key==="DIRNOTE_TARGET"
+
+){
+
+updateBusinessOverview();
+
+}
+
+}
+
+/*==============================*/
+
+);
+
+/*==================================
+RESET DATABASE
+==================================*/
+
+function resetDatabase(){
+
+const cek1=confirm(
+"Semua data akan dihapus.\n\nLanjutkan?"
+);
+
+if(!cek1)return;
+
+const cek2=confirm(
+"Konfirmasi terakhir!\n\nData tidak bisa dikembalikan."
+);
+
+if(!cek2)return;
+
+localStorage.clear();
+
+alert("Semua data berhasil dihapus.");
+
+location.reload();
+
+}
+
+</script>
+
+<script>
+/*==================================
+UPDATE BAR
+PART 3
+==================================*/
+
+function updateHomeUpdateBar(){
+
+const avg=document.getElementById("avgOrderHarian");
+const week=document.getElementById("anMingguGrowth");
+const month=document.getElementById("anBulanGrowth");
+
+if(!avg || !week || !month) return;
+
+document.getElementById("updateAvg").innerHTML=
+avg.innerHTML.replace(" Order","/H");
+
+document.getElementById("update7").innerHTML=
+"7H "+week.innerHTML;
+
+document.getElementById("update30").innerHTML=
+"30H "+month.innerHTML;
+
+/* WARNA */
+
+document.getElementById("update7").style.color=
+week.classList.contains("up")
+? "#22C55E"
+: week.classList.contains("down")
+? "#EF4444"
+: "#94A3B8";
+
+document.getElementById("update30").style.color=
+month.classList.contains("up")
+? "#22C55E"
+: month.classList.contains("down")
+? "#EF4444"
+: "#94A3B8";
+
+}
+
+/* Jalankan setelah Analisis selesai */
+
+const updateAnalisisLama=updateAnalisis;
+
+updateAnalisis=function(){
+
+updateAnalisisLama();
+
+updateHomeUpdateBar();
+
+};
+
+/* Saat aplikasi dibuka */
+
+document.addEventListener("DOMContentLoaded",function(){
+
+setTimeout(updateHomeUpdateBar,200);
+
+});
+
+/*==================================
+FOCUS TIMER
+PART 3
+==================================*/
+
+let focusTimer=null;
+let focusRemain=0;
+
+function openFocusTimer(){
+
+document.getElementById("focusPopup").style.display="flex";
+
+}
+
+function closeFocusTimer(){
+
+document.getElementById("focusPopup").style.display="none";
+
+}
+
+function updateFocusView(){
+
+let m=Math.floor(focusRemain/60);
+
+let s=focusRemain%60;
+
+document.getElementById("focusCountdown").innerHTML=
+String(m).padStart(2,"0")+
+":"+
+String(s).padStart(2,"0");
+
+}
+
+function startFocusTimer(){
+
+if(focusTimer){
+
+clearInterval(focusTimer);
+
+}
+
+focusRemain=
+parseInt(
+document.getElementById("focusMinute").value
+)*60;
+
+updateFocusView();
+
+focusTimer=setInterval(function(){
+
+focusRemain--;
+
+updateFocusView();
+
+/* Beep setiap 5 detik */
+if(
+focusRemain>0 &&
+focusRemain%5===0
+){
+
+focusBeep();
+
+}
+
+if(focusRemain<=0){
+
+clearInterval(focusTimer);
+
+focusTimer=null;
+
+/* Bunyi selesai 3 kali */
+focusBeep();
+
+setTimeout(focusBeep,300);
+
+setTimeout(focusBeep,600);
+
+alert("🎉 Focus selesai!");
+
+}
+
+},1000);
+
+closeFocusTimer();
+
+}
+
+function focusBeep(){
+
+const audio =
+new (window.AudioContext || window.webkitAudioContext)();
+
+const osc = audio.createOscillator();
+const gain = audio.createGain();
+
+osc.type = "sine";
+osc.frequency.value = 900;
+
+gain.gain.value = 0.08;
+
+osc.connect(gain);
+gain.connect(audio.destination);
+
+osc.start();
+
+setTimeout(function(){
+
+osc.stop();
+audio.close();
+
+},150);
+
+}
+
+/*==================================
+SETTING
+USERNAME ENGINE
+PART 2
+==================================*/
+
+const APP_SETTING_KEY="DIRNOTE_SETTING";
+const LOGIN_KEY="DIRHUB_LOGIN";
+
+/* AMBIL DATA */
+
+let appSetting=JSON.parse(
+localStorage.getItem(APP_SETTING_KEY)
+)||{};
+
+/* DEFAULT USERNAME */
+
+if(!appSetting.username){
+
+appSetting.username="Owner";
+
+}
+
+/* DEFAULT PIN */
+
+if(!appSetting.pin){
+
+appSetting.pin="123456";
+
+}
+
+/* SIMPAN */
+
+function saveAppSetting(){
+
+localStorage.setItem(
+APP_SETTING_KEY,
+JSON.stringify(appSetting)
+);
+
+}
+
+/* SIMPAN DEFAULT JIKA BARU */
+
+saveAppSetting();
+
+/* RENDER */
+
+function renderSetting(){
+
+const el=document.getElementById("settingUsername");
+
+if(!el)return;
+
+el.innerHTML=appSetting.username;
+
+}
+
+renderSetting();
+
+/*==================================
+SETTING
+GANTI USERNAME
+PART 4C
+==================================*/
+
+function gantiUsername(){
+
+document.getElementById("newUsername").value=
+appSetting.username;
+
+document.getElementById("usernameModal").style.display=
+"flex";
+
+document.getElementById("newUsername").focus();
+
+}
+
+function closeUsernameModal(){
+
+document.getElementById("usernameModal").style.display=
+"none";
+
+}
+
+function saveUsername(){
+
+const nama=
+document.getElementById("newUsername").value.trim();
+
+if(nama===""){
+
+alert("Username tidak boleh kosong.");
+
+return;
+
+}
+
+appSetting.username=nama;
+
+saveAppSetting();
+
+renderSetting();
+
+closeUsernameModal();
+
+alert("Username berhasil diubah.");
+
+}
+
+/*==================================
+SETTING
+PIN MODAL
+PART 2
+==================================*/
+
+function openPinModal(){
+
+document.getElementById("oldPin").value="";
+
+document.getElementById("newPin").value="";
+
+document.getElementById("confirmPin").value="";
+
+document.getElementById("pinModal").style.display="flex";
+
+document.getElementById("oldPin").focus();
+
+}
+
+function closePinModal(){
+
+document.getElementById("pinModal").style.display="none";
+
+}
+
+function savePin(){
+
+const lama=
+document.getElementById("oldPin").value.trim();
+
+const baru=
+document.getElementById("newPin").value.trim();
+
+const konfirmasi=
+document.getElementById("confirmPin").value.trim();
+
+/* JIKA PIN BELUM ADA */
+
+if(typeof appSetting.pin==="undefined"){
+
+appSetting.pin="123456";
+
+saveAppSetting();
+
+}
+
+if(lama!==appSetting.pin){
+
+alert("PIN lama salah.");
+
+return;
+
+}
+
+if(baru.length!==6){
+
+alert("PIN harus 6 digit.");
+
+return;
+
+}
+
+if(baru!==konfirmasi){
+
+alert("Konfirmasi PIN tidak sama.");
+
+return;
+
+}
+
+appSetting.pin=baru;
+
+saveAppSetting();
+
+closePinModal();
+
+alert("PIN berhasil diubah.");
+
+}
+
+/*==================================
+BACKUP DATABASE
+PART 1
+==================================*/
+
+function backupDatabase(){
+
+const database={};
+
+for(let i=0;i<localStorage.length;i++){
+
+const key=localStorage.key(i);
+
+database[key]=localStorage.getItem(key);
+
+}
+
+const backup={
+
+app:"Dirhub",
+
+version:"1.0",
+
+tanggal:new Date().toLocaleString("id-ID"),
+
+database:database
+
+};
+
+const text=JSON.stringify(
+backup,
+null,
+2
+);
+
+const blob=new Blob(
+[text],
+{
+type:"application/json"
+}
+);
+
+const link=document.createElement("a");
+
+link.href=URL.createObjectURL(blob);
+
+link.download="Dirhub_Backup.json";
+
+link.click();
+
+URL.revokeObjectURL(link.href);
+
+alert("Backup berhasil dibuat.");
+
+}
+
+/*==================================
+RESTORE DATABASE
+==================================*/
+
+function restoreDatabase(){
+
+document
+.getElementById("restoreFile")
+.click();
+
+}
+
+function restoreDatabaseFile(event){
+
+const file=event.target.files[0];
+
+if(!file)return;
+
+const reader=new FileReader();
+
+reader.onload=function(e){
+
+try{
+
+const backup=JSON.parse(e.target.result);
+
+if(!backup.database){
+
+alert("File backup tidak valid.");
+
+return;
+
+}
+
+if(!confirm("Restore semua data?")){
+
+return;
+
+}
+
+localStorage.clear();
+
+Object.keys(backup.database).forEach(function(key){
+
+localStorage.setItem(
+
+key,
+
+backup.database[key]
+
+);
+
+});
+
+alert("Restore berhasil.");
+
+location.reload();
+
+}catch(err){
+
+console.error(err);
+
+alert("Restore gagal.");
+
+}
+
+};
+
+reader.readAsText(file);
+
+event.target.value="";
+
+}
+
+/*==================================
+LOGIN LOGOUT V1
+==================================*/
+
+function logoutApp(){
+
+const yakin=confirm(
+"Yakin ingin logout?"
+);
+
+if(!yakin)return;
+
+document.getElementById("loginUsername").value="";
+
+document.getElementById("loginPin").value="";
+
+document.getElementById("loginScreen").style.display="flex";
+
+}
+
+function loginApp(){
+
+const user=
+document.getElementById("loginUsername").value.trim();
+
+const pin=
+document.getElementById("loginPin").value.trim();
+
+if(user!==appSetting.username){
+
+alert("Username salah.");
+
+return;
+
+}
+
+if(pin!==appSetting.pin){
+
+alert("PIN salah.");
+
+return;
+
+}
+
+document.getElementById("loginScreen").style.display="none";
+
+}
+
+/*==================================
+CEK LOGIN SAAT START
+==================================*/
+
+document.addEventListener("DOMContentLoaded",function(){
+
+const status=
+localStorage.getItem(LOGIN_KEY);
+
+if(status==="false"){
+
+document.getElementById("loginScreen").style.display="none";
+
+}else{
+
+document.getElementById("loginScreen").style.display="flex";
+
+}
+
+});
+
+
+
+/*==========================
+UPLOAD IMAGE ENGINE V2
+==========================*/
+
+let strategyImageData="";
+
+const strategyImage=
+document.getElementById("strategyImage");
+
+const uploadPreview=
+document.querySelector(".upload-preview");
+
+if(strategyImage){
+
+strategyImage.addEventListener("change",function(){
+
+const file=this.files[0];
+
+if(!file){
+
+strategyImageData="";
+
+return;
+
+}
+
+const reader=new FileReader();
+
+reader.onload=function(e){
+
+strategyImageData=
+e.target.result;
+
+uploadPreview.innerHTML=`
+
+<img
+src="${strategyImageData}"
+style="
+width:100%;
+height:150px;
+object-fit:cover;
+border-radius:16px;
+display:block;
+">
+
+`;
+
+};
+
+reader.onerror=function(){
+
+alert("Gagal membaca gambar.");
+
+strategyImageData="";
+
+};
+
+reader.readAsDataURL(file);
+
+});
+
+}
+
+/*==========================
+RESET UPLOAD
+==========================*/
+
+function resetStrategyImage(){
+
+strategyImageData="";
+
+if(strategyImage){
+
+strategyImage.value="";
+
+}
+
+if(uploadPreview){
+
+uploadPreview.innerHTML=`
+
+<i data-lucide="image-plus"></i>
+
+<p>Upload Gambar</p>
+
+`;
+
+lucide.createIcons();
+
+}
+
+}
+
+
+/*==================================
+STRATEGY LAB
+PART 4
+ENGINE V2
+==================================*/
+
+const STRATEGY_DB = JSON.parse(
+localStorage.getItem("DIR_STRATEGY_DB") || "[]"
+);
+
+let ACTIVE_STRATEGY=null;
+
+function saveStrategyDB(){
+
+localStorage.setItem(
+"DIR_STRATEGY_DB",
+JSON.stringify(STRATEGY_DB)
+);
+
+}
+
+function strategyID(){
+
+return "STR"+Date.now();
+
+}
+
+function createStrategy(){
+
+const title=
+document.getElementById("strategyTitle").value.trim();
+
+if(title===""){
+
+alert("Nama Strategy wajib diisi");
+
+return;
+
+}
+console.log(
+"TARGET =",
+document.getElementById("strategyTarget").value
+);
+
+STRATEGY_DB.unshift({
+
+id:strategyID(),
+
+title:title,
+
+target:document.getElementById("strategyTarget").value,
+
+description:document.getElementById("strategyDescription").value,
+
+image:strategyImageData,
+
+history:[]
+
+});
+
+saveStrategyDB();
+renderStrategyList();
+resetStrategyImage();
+
+document.getElementById("strategyModal").style.display="none";
+
+document.getElementById("strategyTitle").value="";
+document.getElementById("strategyDescription").value="";
+
+}
+
+function renderStrategyList(){
+
+const list=
+document.getElementById("strategyList");
+
+const total=
+document.getElementById("strategyCount");
+
+list.innerHTML="";
+
+total.innerHTML=
+STRATEGY_DB.length+" Strategi";
+
+if(STRATEGY_DB.length===0){
+
+list.innerHTML=`
+
+<div class="history-empty">
+
+Belum ada Strategy.
+
+</div>
+
+`;
+
+return;
+
+}
+
+
+
+STRATEGY_DB.forEach(function(item){
+
+list.innerHTML+=`
+
+<div class="history-item">
+
+<div
+style="
+display:flex;
+gap:14px;
+align-items:center;
+"
+onclick="openStrategy('${item.id}')">
+
+<img
+src="${item.image || 'https://placehold.co/70x70'}"
+class="strategy-thumb">
+
+<div style="flex:1">
+
+<div class="history-title">
+${item.title}
+</div>
+
+<div class="history-sub">
+🎯 ${item.target || "-"}
+</div>
+
+<div class="history-sub">
+Dipakai ${item.history.length}x
+</div>
+
+</div>
+
+</div>
+
+<div style="margin-top:12px">
+
+<button
+class="tool-btn"
+onclick="deleteStrategy('${item.id}')">
+
+🗑 Hapus
+
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+function openStrategy(id){
+
+console.log("ID diklik :",id);
+
+console.log("Database :",STRATEGY_DB);
+
+ACTIVE_STRATEGY=
+STRATEGY_DB.find(function(item){
+
+return String(item.id)===String(id);
+
+});
+
+if(!ACTIVE_STRATEGY){
+
+alert("Strategy tidak ditemukan.");
+
+return;
+
+}
+
+document.getElementById("strategyName").innerHTML =
+ACTIVE_STRATEGY.title;
+
+document.getElementById("strategyTarget").innerHTML =
+"🎯 " + (ACTIVE_STRATEGY.target || "-");
+
+document.getElementById("strategyDesc").innerHTML =
+ACTIVE_STRATEGY.description;
+
+bukaHalaman("strategyWorkspace");
+
+renderHistory();
+
+}
+
+function deleteStrategy(id){
+
+if(!confirm("Hapus strategy ini?")) return;
+
+const index=STRATEGY_DB.findIndex(function(item){
+
+return String(item.id)===String(id);
+
+});
+
+if(index===-1) return;
+
+STRATEGY_DB.splice(index,1);
+
+saveStrategyDB();
+
+renderStrategyList();
+
+}
+
+/* BUTTON */
+
+document.getElementById("btnNewStrategy").onclick=function(){
+
+document.getElementById("strategyModal").style.display="flex";
+
+};
+
+document.getElementById("btnCancelStrategy").onclick=function(){
+
+document.getElementById("strategyModal").style.display="none";
+
+};
+
+document.getElementById("btnSaveStrategy").onclick=
+
+createStrategy;
+
+
+document.getElementById("btnBackStrategy").onclick=function(){
+
+bukaHalaman("strategyLab");
+
+};
+
+renderStrategyList();
+
+/*==================================
+STRATEGY LAB
+PART 5
+HISTORY ENGINE
+==================================*/
+
+function renderHistory(){
+  
+const historyList =
+document.getElementById("historyList");
+
+const historyCount =
+document.getElementById("historyCount");
+
+const useCount =
+document.getElementById("useCount");
+
+const successCount =
+document.getElementById("successCount");
+
+const failedCount =
+document.getElementById("failedCount");
+
+const totalCost =
+document.getElementById("totalCost");
+
+if(!ACTIVE_STRATEGY) return;
+
+historyList.innerHTML="";
+
+let success=0;
+let failed=0;
+let biaya=0;
+
+historyCount.innerHTML=
+ACTIVE_STRATEGY.history.length;
+
+if(ACTIVE_STRATEGY.history.length===0){
+
+historyList.innerHTML=`
+
+<div class="history-empty">
+
+Belum ada riwayat.
+
+</div>
+
+`;
+
+useCount.innerHTML="0x";
+successCount.innerHTML="0";
+failedCount.innerHTML="0";
+totalCost.innerHTML="Rp0";
+
+return;
+
+}
+
+ACTIVE_STRATEGY.history.forEach(function(item,index){
+
+biaya+=Number(item.cost||0);
+
+if(item.result==="success"){
+
+success++;
+
+}else if(item.result==="failed"){
+
+failed++;
+
+}
+
+historyList.innerHTML+=`
+
+<div class="history-step">
+
+🏳 Langkah ${item.step}
+
+</div>
+
+<div class="history-title">
+
+✨️ ${item.action}
+
+</div>
+
+<div class="history-sub">
+
+📅 ${item.date}
+
+</div>
+
+<div class="history-sub">
+
+💰 ${formatRupiah(item.cost)}
+
+</div>
+
+<div class="history-sub">
+
+📝 ${item.note || "-"}
+
+</div>
+
+<div style="
+display:flex;
+gap:10px;
+align-items:center;
+flex-wrap:wrap;
+">
+
+<div class="history-action">
+
+<span class="status-badge ${
+item.result==="success"
+?"status-success"
+:item.result==="failed"
+?"status-failed"
+:"status-process"
+}">
+${
+item.result==="success"
+?"🟢 Berhasil"
+:item.result==="failed"
+?"🔴 Gagal"
+:"🟡 Proses"
+}
+</span>
+
+<button
+class="tool-btn"
+onclick="editHistory(${index})">
+
+✏️ Edit
+
+</button>
+
+<button
+class="tool-btn"
+onclick="deleteHistory(${index})">
+
+🗑 Hapus
+
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+useCount.innerHTML=
+ACTIVE_STRATEGY.history.length+"x";
+
+successCount.innerHTML=
+success;
+
+failedCount.innerHTML=
+failed;
+
+totalCost.innerHTML=
+formatRupiah(biaya);
+
+
+saveStrategyDB();
+
+
+}
+
+/*==========================
+SIMPAN RIWAYAT
+==========================*/
+
+function saveHistory(){
+
+if(!ACTIVE_STRATEGY) return;
+
+ACTIVE_STRATEGY.history.push({
+
+step: ACTIVE_STRATEGY.history.length + 1,
+
+product:ACTIVE_STRATEGY.title,
+
+
+date:historyDate.value,
+
+action:historyAction.value,
+
+cost:Number(historyCost.value||0),
+
+result:historyResult.value,
+
+note:historyNote.value
+
+});
+
+saveStrategyDB();
+
+historyModal.style.display="none";
+
+historyDate.value="";
+historyCost.value="";
+historyNote.value="";
+
+renderHistory();
+
+}
+
+/*==========================
+HAPUS RIWAYAT
+==========================*/
+
+function deleteHistory(index){
+
+if(!confirm("Hapus riwayat ini?")) return;
+
+ACTIVE_STRATEGY.history.splice(index,1);
+
+saveStrategyDB();
+
+renderHistory();
+
+}
+
+function editHistory(index){
+
+const data=
+ACTIVE_STRATEGY.history[index];
+
+historyDate.value=
+data.date;
+
+historyCost.value=
+data.cost;
+
+historyResult.value=
+data.result;
+
+historyNote.value=
+data.note;
+
+historyModal.style.display="flex";
+
+}
+
+/*==========================
+BUTTON
+==========================*/
+
+btnAddHistory.onclick=function(){
+
+historyModal.style.display="flex";
+
+};
+
+btnCancelHistory.onclick=function(){
+
+historyModal.style.display="none";
+
+};
+
+btnSaveHistory.onclick=saveHistory;
+
+/*==================================
+STRATEGY LAB
+PART 6
+RATING + EXPORT + BACKUP
+==================================*/
+
+/*==========================
+RATING
+==========================*/
+
+function getStrategyRating(){
+
+if(!ACTIVE_STRATEGY) return "☆☆☆☆☆";
+
+const total=ACTIVE_STRATEGY.history.length;
+
+if(total===0) return "☆☆☆☆☆";
+
+let success=0;
+
+ACTIVE_STRATEGY.history.forEach(function(item){
+
+if(item.result==="success"){
+
+success++;
+
+}
+
+});
+
+const score=(success/total)*100;
+
+if(score>=90) return "★★★★★";
+if(score>=75) return "★★★★☆";
+if(score>=60) return "★★★☆☆";
+if(score>=40) return "★★☆☆☆";
+
+return "★☆☆☆☆";
+
+}
+
+/*==========================
+EXPORT TXT
+==========================*/
+
+function exportStrategy(){
+
+if(!ACTIVE_STRATEGY){
+
+alert("Pilih strategy terlebih dahulu.");
+
+return;
+
+}
+
+let text="";
+
+text+="STRATEGY LAB\n\n";
+
+text+="Nama : "+ACTIVE_STRATEGY.title+"\n";
+text+="Kategori : "+ACTIVE_STRATEGY.category+"\n";
+text+="Rating : "+getStrategyRating()+"\n";
+text+="Dipakai : "+ACTIVE_STRATEGY.history.length+"x\n\n";
+
+ACTIVE_STRATEGY.history.forEach(function(item,index){
+
+text+="----------------------\n";
+text+="Riwayat "+(index+1)+"\n";
+text+="Produk : "+item.product+"\n";
+text+="Tanggal : "+item.date+"\n";
+text+="Biaya : "+formatRupiah(item.cost)+"\n";
+
+text+="Hasil : "+(item.result==="success"?"Berhasil":"Gagal")+"\n";
+
+text+="Catatan : "+item.note+"\n\n";
+
+});
+
+const blob=new Blob(
+[text],
+{type:"text/plain"}
+);
+const url=
+
+URL.createObjectURL(blob);
+
+const a=
+
+document.createElement("a");
+
+a.href=url;
+a.download=
+ACTIVE_STRATEGY.title+".txt";
+a.click();
+
+URL.revokeObjectURL(url);
+
+}
+
+/*==========================
+BACKUP DATABASE
+==========================*/
+
+function backupStrategy(){
+const blob=new Blob(
+[JSON.stringify(STRATEGY_DB,null,2)],
+{type:"application/json"}
+
+);
+
+const url=
+URL.createObjectURL(blob);
+const a=
+document.createElement("a");
+a.href=url;
+a.download="strategy-backup.json";
+
+a.click();
+
+URL.revokeObjectURL(url);
+
+}
+
+/*==========================
+BUTTON
+==========================*/
+
+btnExportStrategy.onclick=function(){
+exportStrategy();
+};
+
+/*==========================
+INIT
+==========================*/
+
+renderStrategyList();
+
+</script>
+
+<!-- ===========================
+FOCUS TIMER
+=========================== -->
+
+<div id="focusPopup" class="focus-popup" style="display:none;">
+
+<div class="focus-box">
+<div class="focus-head">
+<h3>⏱ Focus Timer</h3>
+<button onclick="closeFocusTimer()">✕</button>
+
+</div>
+
+<label>Aktivitas</label>
+
+<input
+id="focusTitle"
+type="text"
+placeholder="Contoh: Membalas Chat">
+
+<label>Durasi (Menit)</label>
+
+<input
+id="focusMinute"
+type="number"
+value="25"
+min="1"
+max="180">
+
+<div id="focusCountdown">
+
+25:00
+
+</div>
+
+<button
+class="focusStartBtn"
+onclick="startFocusTimer()">
+
+▶ Mulai Fokus
+
+</button>
+</div>
+</div>
+
+<!-- =====================================
+SETTING
+POPUP USERNAME
+PART 4A
+===================================== -->
+
+<div id="usernameModal" class="setting-modal">
+
+<div class="setting-box">
+
+<h3>Ganti Username</h3>
+
+<input
+id="newUsername"
+type="text"
+placeholder="Masukkan Username">
+
+<div class="setting-action">
+
+<button
+onclick="closeUsernameModal()">
+
+Batal
+</button>
+
+<button
+onclick="saveUsername()">
+Simpan
+
+</button>
+
+</div>
+</div>
+</div>
+
+<!-- =====================================
+SETTING
+PIN MODAL
+===================================== -->
+
+<div id="pinModal" class="setting-modal">
+<div class="setting-box">
+<h3>Ganti PIN</h3>
+<div class="pin-input">
+
+<input
+id="oldPin"
+type="password"
+maxlength="6"
+placeholder="PIN Lama">
+
+<span onclick="togglePin('oldPin',this)">👁</span>
+
+</div>
+<div class="pin-input">
+
+<input
+id="newPin"
+type="password"
+maxlength="6"
+placeholder="PIN Baru">
+
+<span onclick="togglePin('newPin',this)">👁</span>
+</div>
+
+<div class="pin-input">
+
+<input
+id="confirmPin"
+type="password"
+maxlength="6"
+placeholder="Konfirmasi PIN">
+
+<span onclick="togglePin('confirmPin',this)">👁</span>
+
+</div>
+
+<div class="setting-action">
+
+<button onclick="closePinModal()">
+Batal
+</button>
+
+<button onclick="savePin()">
+Simpan
+</button>
+
+</div>
+</div>
+</div>
+
+<input
+type="file"
+id="restoreFile"
+accept=".json"
+style="display:none"
+onchange="restoreDatabaseFile(event)">
+
+<div id="loginScreen" style="
+display:none;
+position:fixed;
+left:0;
+top:0;
+width:100%;
+height:100%;
+background:#08111F;
+z-index:999999;
+justify-content:center;
+align-items:center;
+">
+
+<div class="setting-box" style="max-width:360px;">
+
+<h2 style="margin-bottom:8px;text-align:center;">
+Dirhub
+</h2>
+
+<p style="text-align:center;margin-bottom:20px;">
+Smart Business Toolkit
+</p>
+
+<input
+id="loginUsername"
+placeholder="Username">
+
+<input
+id="loginPin"
+type="password"
+maxlength="6"
+placeholder="PIN"
+style="margin-top:12px;">
+
+<button
+class="tool-btn"
+style="margin-top:20px;"
+onclick="loginApp()">
+
+Masuk
+
+</button>
+
+</div>
+</div>
+
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("./service-worker.js")
+      .then(() => {
+        console.log("Dirhub PWA aktif");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
+}
+</script>
+
+</body>
+</html>
